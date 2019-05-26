@@ -13,9 +13,9 @@ body{
 }
 
 hr{
-    opacity: 0.6;
-    -moz-opacity:0.6;
-    filter:alpha(opacity=60);
+    opacity: 0.8;
+    -moz-opacity:0.8;
+    filter:alpha(opacity=80);
 }
   
 
@@ -62,12 +62,13 @@ hr{
 #img_container{ 
     padding-top: 30px;
     float: left;
-    /*border: 3px solid blue;*/
-    height: 100%;
+     
+    text-align: center;
 }
 
 
 #text_container{
+     
     padding: 5px 5px;
     margin-left: 160px;
    /* border: 3px solid green;*/
@@ -139,8 +140,7 @@ hr{
    
     #img_container{ 
         float: none; 
-        margin-left: 20%;   
-        margin-right: 40%  
+       text-align: center;
         }
     #text_container{
         margin-left: 0px;
