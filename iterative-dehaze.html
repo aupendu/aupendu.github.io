@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+    <meta
+      name="description"
+      content="Dehazing an image with Neural Network, Author: Aupendu Kar, Institution: IIT Kharagpur"
+    />
     <title>Iterative Dehaze</title>
 
     <!--Page Icon-->
@@ -21,15 +25,29 @@
     />
 
     <!--For Cocoen-->
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/cocoen@2.0.5/dist/css/cocoen.min.css"
     />
+
     <!--Extrenal css-->
+
     <link rel="stylesheet" href="iterative-dehaze/subpage.css" />
   </head>
   <body>
     <div class="container">
+      <hr
+        style="
+          height: 0.2em;
+          color: rgb(243, 217, 161);
+          background-color: rgb(196, 193, 193);
+          border: none;
+        "
+      />
+
+      <!--Topic Name-->
+
       <p
         style="
           text-align: center;
@@ -40,11 +58,14 @@
         Iterative Transmission and Atmospheric Light Update based Recurrent
         Neural Network for Single Image Dehazing
       </p>
+
+      <!--Author Name-->
+
       <p
         style="
           text-align: center;
           font-size: calc(10px + 0.5vw);
-          font-family: 'Roboto Mono', monospace;
+          font-family: 'Roboto', sans-serif;
         "
       >
         <a
@@ -53,14 +74,17 @@
           style="text-decoration: none; color: rgb(70, 70, 70);"
           onmouseover="this.style.color='gray'"
           onmouseout="this.style.color='rgb(70, 70, 70)'"
-          >Aupendu Kar</a
+          ><u>Aupendu Kar</u></a
         >, Sobhan Kanti Dhara, Debashis Sen, Prabir Kumar Biswas
       </p>
+
+      <!--Institution Name-->
+
       <p
         style="
           text-align: center;
           font-size: calc(10px + 0.5vw);
-          font-family: 'Roboto Mono', monospace;
+          font-family: 'Roboto', sans-serif;
         "
       >
         Department of Electronics and Electrical Communication Engineering,
@@ -70,36 +94,38 @@
       <p style="text-align: center;">
         Use the slider to compare before and after
       </p>
+
+      <!--*******************   TEASER **************************-->
       <div class="row">
         <div class="col-sm-4 pb-3">
-          <div class="cocoen">
-            <img src="assets/subpage_iterative_dehaze/A.png" alt="Foggy City" />
+          <div class="cocoen" style="box-shadow: 5px 10px 18px #888888;">
+            <img src="assets/subpage_iterative_dehaze/A.jpg" alt="Foggy City" />
             <img
-              src="assets/subpage_iterative_dehaze/A_Out.png"
+              src="assets/subpage_iterative_dehaze/A_Out.jpg"
               alt="Fog Removed City"
             />
           </div>
         </div>
         <div class="col-sm-4 pb-3">
-          <div class="cocoen">
+          <div class="cocoen" style="box-shadow: 5px 10px 18px #888888;">
             <img
-              src="assets/subpage_iterative_dehaze/G.png"
-              alt="Foggy Statue"
+              src="assets/subpage_iterative_dehaze/Z.jpg"
+              alt="Foggy Metro Rail"
             />
             <img
-              src="assets/subpage_iterative_dehaze/G_Out.png"
-              alt="Fog removed Statue"
+              src="assets/subpage_iterative_dehaze/Z_Out.jpg"
+              alt="Fog removed Metro Rail"
             />
           </div>
         </div>
         <div class="col-sm-4 pb-3">
-          <div class="cocoen">
+          <div class="cocoen" style="box-shadow: 5px 10px 18px #888888;">
             <img
-              src="assets/subpage_iterative_dehaze/H.png"
+              src="assets/subpage_iterative_dehaze/H.jpg"
               alt="Foggy Bridge"
             />
             <img
-              src="assets/subpage_iterative_dehaze/H_Out.png"
+              src="assets/subpage_iterative_dehaze/H_Out.jpg"
               alt="Fog removed Bridge"
             />
           </div>
