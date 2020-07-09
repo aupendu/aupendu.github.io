@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Iterative Dehaze</title>
+
+    <!--Page Icon-->
+    <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
+
+    <!--STYLESHEETS (.css)-->
+    <!--For Bootstrap 4-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!--For Cocoen-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/cocoen@2.0.5/dist/css/cocoen.min.css"
+    />
+    <!--Extrenal css-->
+    <link rel="stylesheet" href="iterative-dehaze/subpage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p
+        style="
+          text-align: center;
+          font-size: calc(25px + 0.5vw);
+          font-family: 'Raleway', sans-serif;
+        "
+      >
+        Iterative Transmission and Atmospheric Light Update based Recurrent
+        Neural Network for Single Image Dehazing
+      </p>
+      <p
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto Mono', monospace;
+        "
+      >
+        <a
+          href="https://github.com/aupendu"
+          target="_blank"
+          style="text-decoration: none; color: rgb(70, 70, 70);"
+          onmouseover="this.style.color='gray'"
+          onmouseout="this.style.color='rgb(70, 70, 70)'"
+          >Aupendu Kar</a
+        >, Sobhan Kanti Dhara, Debashis Sen, Prabir Kumar Biswas
+      </p>
+      <p
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto Mono', monospace;
+        "
+      >
+        Department of Electronics and Electrical Communication Engineering,
+        Indian Institute of Technology Kharagpur, India
+      </p>
+      <hr />
+      <p style="text-align: center;">
+        Use the slider to compare before and after
+      </p>
+      <div class="row">
+        <div class="col-sm-4 pb-3">
+          <div class="cocoen">
+            <img src="assets/subpage_iterative_dehaze/A.png" alt="Foggy City" />
+            <img
+              src="assets/subpage_iterative_dehaze/A_Out.png"
+              alt="Fog Removed City"
+            />
+          </div>
+        </div>
+        <div class="col-sm-4 pb-3">
+          <div class="cocoen">
+            <img
+              src="assets/subpage_iterative_dehaze/G.png"
+              alt="Foggy Statue"
+            />
+            <img
+              src="assets/subpage_iterative_dehaze/G_Out.png"
+              alt="Fog removed Statue"
+            />
+          </div>
+        </div>
+        <div class="col-sm-4 pb-3">
+          <div class="cocoen">
+            <img
+              src="assets/subpage_iterative_dehaze/H.png"
+              alt="Foggy Bridge"
+            />
+            <img
+              src="assets/subpage_iterative_dehaze/H_Out.png"
+              alt="Fog removed Bridge"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--SCRIPTS (.js)-->
+    <!--For Bootstrap 4-->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!--For Cocoen-->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/cocoen@2.0.5/dist/js/cocoen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cocoen@2.0.5/dist/js/cocoen-jquery.min.js"></script>
+    <!--External JS-->
+    <script src="iterative-dehaze/subjs.js"></script>
+    <script>
+      $(function () {
+        $(".cocoen").cocoen();
+      });
+    </script>
+  </body>
+</html>
