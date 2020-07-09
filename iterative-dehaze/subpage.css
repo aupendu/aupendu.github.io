@@ -1,1 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@577&family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
+body {
+  background-color: rgb(236, 233, 233);
+}
+/*.img_container {
+  position: relative;
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+}*/
