@@ -15,6 +15,12 @@
     <!--Page Icon-->
     <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
 
+    <!--Font Awesome 5-->
+    <script
+      src="https://kit.fontawesome.com/53a29261c0.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!--STYLESHEETS (.css)-->
     <!--For Bootstrap 4-->
     <link
@@ -36,7 +42,7 @@
     <link rel="stylesheet" href="iterative-dehaze/subpage.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" style="background-color: rgb(255, 255, 255);">
       <hr
         style="
           height: 0.2em;
@@ -53,6 +59,7 @@
           text-align: center;
           font-size: calc(25px + 0.5vw);
           font-family: 'Raleway', sans-serif;
+          font-weight: bold;
         "
       >
         Iterative Transmission and Atmospheric Light Update based Recurrent
@@ -99,9 +106,12 @@
       <div class="row">
         <div class="col-sm-4 pb-3">
           <div class="cocoen" style="box-shadow: 5px 10px 18px #888888;">
-            <img src="assets/subpage_iterative_dehaze/A.jpg" alt="Foggy City" />
             <img
-              src="assets/subpage_iterative_dehaze/A_Out.jpg"
+              src="assets/subpage_iterative_dehaze/Teaser/A.jpg"
+              alt="Foggy City"
+            />
+            <img
+              src="assets/subpage_iterative_dehaze/Teaser/A_Out.jpg"
               alt="Fog Removed City"
             />
           </div>
@@ -109,11 +119,11 @@
         <div class="col-sm-4 pb-3">
           <div class="cocoen" style="box-shadow: 5px 10px 18px #888888;">
             <img
-              src="assets/subpage_iterative_dehaze/Z.jpg"
+              src="assets/subpage_iterative_dehaze/Teaser/Z.jpg"
               alt="Foggy Metro Rail"
             />
             <img
-              src="assets/subpage_iterative_dehaze/Z_Out.jpg"
+              src="assets/subpage_iterative_dehaze/Teaser/Z_Out.jpg"
               alt="Fog removed Metro Rail"
             />
           </div>
@@ -121,16 +131,159 @@
         <div class="col-sm-4 pb-3">
           <div class="cocoen" style="box-shadow: 5px 10px 18px #888888;">
             <img
-              src="assets/subpage_iterative_dehaze/H.jpg"
+              src="assets/subpage_iterative_dehaze/Teaser/H.jpg"
               alt="Foggy Bridge"
             />
             <img
-              src="assets/subpage_iterative_dehaze/H_Out.jpg"
+              src="assets/subpage_iterative_dehaze/Teaser/H_Out.jpg"
               alt="Fog removed Bridge"
             />
           </div>
         </div>
       </div>
+      <hr />
+
+      <!----ABSTRACT-->
+
+      <div class="row">
+        <div class="col">
+          <p
+            style="
+              text-align: left;
+              font-size: calc(10px + 0.5vw);
+              font-weight: bold;
+            "
+          >
+            <i class="fas fa-archive"></i>&nbsp;Abstract
+          </p>
+        </div>
+      </div>
+      <hr />
+
+      <!---------------------------Pipeline-------------------------------->
+
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+      >
+        <i class="fas fa-stream"></i>&nbsp;Training Pipeline
+      </p>
+      <div class="row">
+        <div class="col-sm-4">
+          <figure class="figure">
+            <img
+              src="assets/subpage_iterative_dehaze/Training_Pipeline/GA_1.jpg"
+              alt=""
+              class="figure-img img-fluid rounded"
+            />
+            <figcaption class="figure-caption text-center">
+              Caption 1
+              <!--EDIT CAPTION HERE-->
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-4">
+          <figure class="figure">
+            <img
+              src="assets/subpage_iterative_dehaze/Training_Pipeline/GA_2.jpg"
+              alt=""
+              class="figure-img img-fluid rounded"
+            />
+            <figcaption class="figure-caption text-center">
+              Caption 2
+              <!--EDIT CAPTION HERE-->
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-4">
+          <figure class="figure">
+            <img
+              src="assets/subpage_iterative_dehaze/Training_Pipeline/GA_3.jpg"
+              alt=""
+              class="figure-img img-fluid rounded"
+            />
+            <figcaption class="figure-caption text-center">
+              Caption 3
+              <!--EDIT CAPTION HERE-->
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+      <!------------------------------HIGHLIGHTS-------------------->
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+      >
+        <i class="fas fa-satellite-dish"></i>&nbsp;Highlights
+      </p>
+      <div class="row">
+        <div class="col">
+          <ol type="a">
+            <li>First Item</li>
+            <li>Second Item</li>
+            <li>Third Item</li>
+          </ol>
+        </div>
+      </div>
+      <hr />
+      <!---------------------------------Architecture--------------------->
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+      >
+        <i class="fas fa-dna"></i>&nbsp;Modal Architecture: Iterative Dehazing
+      </p>
+      <div class="row">
+        <div class="col">
+          <figure class="figure">
+            <img
+              src="assets/subpage_iterative_dehaze/Model_Architecture/AmbModel.jpg"
+              alt=""
+              class="figure-img img-fluid rounded"
+            />
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="figure">
+            <img
+              src="assets/subpage_iterative_dehaze/Model_Architecture/DehazeModel.jpg"
+              alt=""
+              class="figure-img img-fluid rounded"
+            />
+          </figure>
+        </div>
+      </div>
+      <hr />
+      <!----------------------------------COMPARISON-------------->
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+      >
+        <i class="fas fa-equals"></i>&nbsp;Comparison with other Models
+      </p>
+      <div class="row">
+        <figure>
+          <img
+            src="assets/subpage_iterative_dehaze/Visual_Comparison/comp1.jpg"
+            alt=""
+            class="img-fluid"
+          />
+        </figure>
+      </div>
+      <hr />
     </div>
 
     <!--SCRIPTS (.js)-->
