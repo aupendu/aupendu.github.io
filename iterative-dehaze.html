@@ -145,16 +145,46 @@
 
       <!----ABSTRACT-->
 
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+      >
+        <i class="fas fa-archive"></i>&nbsp;Abstract
+      </p>
       <div class="row">
-        <div class="col">
-          <p
-            style="
-              text-align: left;
-              font-size: calc(10px + 0.5vw);
-              font-weight: bold;
-            "
-          >
-            <i class="fas fa-archive"></i>&nbsp;Abstract
+        <div class="col-sm">
+          <p style="text-align: justify;">
+            Hazy images suffer from the visibility of the scene due to various
+            environmental effects. Recent advancements in image dehazing propose
+            different haze removal approaches, but their performances degrade
+            with the increase of haze and color cast. It is always desirable to
+            have a dehazing model that works across a wide variety of hazy
+            conditions. To address this, we propose an Iterative Prior Updated
+            Dehazing Network (IPUDN), a recurrent convolutional neural network
+            for progressive haze removal. We estimate and iteratively update the
+            priors for dehazing. We estimate the transmission map and
+            atmospheric light intensity as prior information to the dehazing
+            network. These priors help to reduce the burden on the dehazing
+            network while performing end-to-end training. Our transmission map
+            and atmospheric light updater networks iteratively update the
+            transmission map and atmospheric light intensity, which prevent the
+            significant performance drop while increasing the haze density and
+            also produce visually pleasant outputs. We also address the color
+            cast problem and propose a novel convolutional architecture to
+            estimate atmospheric light intensity to handle the same. Our prior
+            updater based recursive mechanism without recurrent block performs
+            significantly better (upto ~3.4 dB boost up) than LSTM based
+            recurrent mechanism. The fusion of both LSTM and prior updater
+            mechanism further increases the performance of the dehazing
+            framework. To assess our model's full capacity, we experimentally
+            validate our results in a wide range of hazy conditions, and our
+            approach outperforms recently developed state-of-the-art techniques
+            by considerable margins. We also evaluate our network's performance
+            in real-world hazy images, and experimental evidence confirms its
+            superiority over other methods.
           </p>
         </div>
       </div>
