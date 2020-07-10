@@ -22,6 +22,7 @@
     ></script>
 
     <!--STYLESHEETS (.css)-->
+
     <!--For Bootstrap 4-->
     <link
       rel="stylesheet"
@@ -43,17 +44,50 @@
   </head>
   <body>
     <div class="container" style="background-color: rgb(255, 255, 255);">
-      <hr
+      <!-- <hr
         style="
           height: 0.2em;
           color: rgb(243, 217, 161);
           background-color: rgb(196, 193, 193);
           border: none;
         "
-      />
+      />-->
 
       <!--Topic Name-->
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="https://aupendu.github.io/"
+          ><i
+            class="fas fa-home"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='white'"
+          ></i
+        ></a>
 
+        <!-- Toggler/collapsibe Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#section_result">Result</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cite">Citation</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <p
         style="
           text-align: center;
@@ -374,6 +408,7 @@
           font-size: calc(10px + 0.5vw);
           font-weight: bold;
         "
+        id="section_result"
       >
         <i class="fas fa-equals"></i>&nbsp;Comparison with other Models
       </p>
@@ -478,16 +513,16 @@
               <img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Ablation/1_0009_Hazy.jpg"
-                alt=""
+                alt="Hazy"
                 class="figure-img img-fluid rounded"
               />
             </a>
             <figcaption class="figure-caption text-center">
-              Caption1
+              Hazy
             </figcaption>
           </figure>
         </div>
-        <div class="col-sm-4">
+        <!--<div class="col-sm-4">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/2_0009_GT.jpg"
@@ -500,7 +535,7 @@
             /></a>
             <figcaption class="figure-caption text-center">Caption2</figcaption>
           </figure>
-        </div>
+        </div>-->
         <div class="col-sm-4">
           <figure class="figure">
             <a
@@ -509,15 +544,14 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Ablation/3_0009_ResNet_L1.jpg"
-                alt=""
+                alt="ResNet"
                 class="figure-img img-fluid rounded"
             /></a>
-            <figcaption class="figure-caption text-center">Caption3</figcaption>
+            <figcaption class="figure-caption text-center">ResNet</figcaption>
           </figure>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
+
+        <div class="col-sm-4">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/4_0009_LResX2_L1.jpg"
@@ -525,13 +559,15 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Ablation/4_0009_LResX2_L1.jpg"
-                alt=""
+                alt="LResX2"
                 class="figure-img img-fluid rounded"
             /></a>
-            <figcaption class="figure-caption text-center">Caption4</figcaption>
+            <figcaption class="figure-caption text-center">LResX2</figcaption>
           </figure>
         </div>
-        <div class="col-sm-3">
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/5_0009_LResXLSTM2_L1.jpg"
@@ -539,13 +575,15 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Ablation/5_0009_LResXLSTM2_L1.jpg"
-                alt=""
+                alt="LResXLSTM2"
                 class="figure-img img-fluid rounded"
             /></a>
-            <figcaption class="figure-caption text-center">Caption5</figcaption>
+            <figcaption class="figure-caption text-center">
+              LResXLSTM2
+            </figcaption>
           </figure>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/6_0009_LResXC2_L1.jpg"
@@ -553,13 +591,13 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Ablation/6_0009_LResXC2_L1.jpg"
-                alt=""
+                alt="LResXC2"
                 class="figure-img img-fluid rounded"
             /></a>
-            <figcaption class="figure-caption text-center">Caption6</figcaption>
+            <figcaption class="figure-caption text-center">LResXC2</figcaption>
           </figure>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/7_0009_LResXLSTMC2_L1.jpg"
@@ -567,10 +605,12 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Ablation/7_0009_LResXLSTMC2_L1.jpg"
-                alt=""
+                alt="LResXLSTMC2"
                 class="figure-img img-fluid rounded"
             /></a>
-            <figcaption class="figure-caption text-center">Caption7</figcaption>
+            <figcaption class="figure-caption text-center">
+              LResXLSTMC2
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -596,7 +636,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_01.jpg"
-                alt=""
+                alt="Input Image 1"
                 class="figure-img img-fluid rounded"
             /></a>
           </figure>
@@ -609,7 +649,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_02.jpg"
-                alt=""
+                alt="Input Image 2"
                 class="figure-img img-fluid rounded"
             /></a>
           </figure>
@@ -622,7 +662,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_03.jpg"
-                alt=""
+                alt="Input Image 3"
                 class="figure-img img-fluid rounded"
             /></a>
           </figure>
@@ -638,7 +678,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_01.jpg"
-                alt=""
+                alt="Our Output 1"
                 class="figure-img img-fluid rounded"
             /></a>
           </figure>
@@ -651,7 +691,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_02.jpg"
-                alt=""
+                alt="Our Output 2"
                 class="figure-img img-fluid rounded"
             /></a>
           </figure>
@@ -664,7 +704,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_03.jpg"
-                alt=""
+                alt="Our Output 3"
                 class="figure-img img-fluid rounded"
             /></a>
           </figure>
@@ -683,7 +723,7 @@
         <i class="fas fa-globe-asia"></i>&nbsp;Extension to Other Applications
       </p>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Glare.jpg"
@@ -691,13 +731,13 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Glare.jpg"
-                alt=""
+                alt="Glare"
                 class="figure-img img-fluid rounded"
             /></a>
             <figcaption class="figure-caption text-center">Glare</figcaption>
           </figure>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Rain.jpg"
@@ -705,13 +745,15 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Rain.jpg"
-                alt=""
+                alt="Rain"
                 class="figure-img img-fluid rounded"
             /></a>
             <figcaption class="figure-caption text-center">Rain</figcaption>
           </figure>
         </div>
-        <div class="col-sm-4">
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Halation.jpg"
@@ -719,14 +761,13 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Halation.jpg"
-                alt=""
+                alt="Halation"
                 class="figure-img img-fluid rounded"
             /></a>
             <figcaption class="figure-caption text-center">Halation</figcaption>
           </figure>
         </div>
-      </div>
-      <div class="row">
+
         <div class="col-sm-6">
           <figure class="figure">
             <a
@@ -735,7 +776,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Underwater.jpg"
-                alt=""
+                alt="Underwater"
                 class="figure-img img-fluid rounded"
             /></a>
             <figcaption class="figure-caption text-center">
@@ -743,6 +784,8 @@
             </figcaption>
           </figure>
         </div>
+      </div>
+      <div class="row justify-content-center">
         <div class="col-sm-6">
           <figure class="figure">
             <a
@@ -751,7 +794,7 @@
               ><img
                 style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Hazefree.jpg"
-                alt=""
+                alt="Hazefree"
                 class="figure-img img-fluid rounded"
             /></a>
             <figcaption class="figure-caption text-center">Hazefree</figcaption>
@@ -759,6 +802,69 @@
         </div>
       </div>
       <hr />
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+        id="download"
+      >
+        <i class="fas fa-file-download"></i>&nbsp;Download
+      </p>
+      <div class="row">
+        <div class="col">
+          <a href=""
+            ><img
+              src="assets/images/arxiv.svg"
+              alt=""
+              width="150px"
+              height="75px"
+              onmouseover="this.style.opacity='0.5'"
+              onmouseout="this.style.opacity='1'"
+          /></a>
+        </div>
+      </div>
+      <hr />
+      <p
+        style="
+          text-align: left;
+          font-size: calc(10px + 0.5vw);
+          font-weight: bold;
+        "
+        id="cite"
+      >
+        <i class="fas fa-map-marker"></i>&nbsp;Citation
+      </p>
+      <div class="row">
+        <div class="col jumbotron">
+          <p id="myInput">
+            Citation will be here soon.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <footer>
+        <p style="text-align: center;">
+          Copyright &#169; 2020
+          <a href="https://github.com/aupendu" target="_blank" id="foot_name"
+            >Aupendu Kar</a
+          >. Made in
+          <img
+            src="https://aniket-patra.github.io/assets/india-16x16.png"
+            alt="India Logo"
+            height="16"
+            width="16"
+          />
+          India by
+          <a
+            href="https://aniket-patra.github.io/"
+            target="_blank"
+            id="foot_name"
+            >Aniket Patra.
+          </a>
+        </p>
+      </footer>
     </div>
 
     <!--SCRIPTS (.js)-->
