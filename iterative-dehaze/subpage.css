@@ -3,9 +3,21 @@
 
 body {
   background-color: rgb(255, 255, 255);
+}
 /*.img_container {
   position: relative;
   margin: auto;
   max-width: 700px;
   text-align: center;
 }*/
+
+a {
+  text-decoration: none;
+}
+#foot_name {
+  color: grey;
+}
+
+#foot_name:hover {
+  color: rgb(68, 68, 68);
+}
