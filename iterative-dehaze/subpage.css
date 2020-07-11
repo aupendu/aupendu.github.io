@@ -21,3 +21,12 @@ a {
 #foot_name:hover {
   color: rgb(68, 68, 68);
 }
+
+#headingStyles,
+#sectionResult,
+#download,
+#cite {
+  text-align: left;
+  font-size: calc(10px + 0.5vw);
+  font-weight: bold;
+}
