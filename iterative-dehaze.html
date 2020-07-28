@@ -317,34 +317,20 @@
       <div class="row">
         <div class="col-sm">
           <p style="text-align: justify;">
-            Hazy images suffer from the visibility of the scene due to various
-            environmental effects. Recent advancements in image dehazing propose
-            different haze removal approaches, but their performances degrade
-            with the increase of haze and color cast. It is always desirable to
-            have a dehazing model that works across a wide variety of hazy
-            conditions. To address this, we propose an Iterative Prior Updated
-            Dehazing Network (IPUDN), a recurrent convolutional neural network
-            for progressive haze removal. We estimate and iteratively update the
-            priors for dehazing. We estimate the transmission map and
-            atmospheric light intensity as prior information to the dehazing
-            network. These priors help to reduce the burden on the dehazing
-            network while performing end-to-end training. Our transmission map
-            and atmospheric light updater networks iteratively update the
-            transmission map and atmospheric light intensity, which prevent the
-            significant performance drop while increasing the haze density and
-            also produce visually pleasant outputs. We also address the color
-            cast problem and propose a novel convolutional architecture to
-            estimate atmospheric light intensity to handle the same. Our prior
-            updater based recursive mechanism without recurrent block performs
-            significantly better (upto ~3.4 dB boost up) than LSTM based
-            recurrent mechanism. The fusion of both LSTM and prior updater
-            mechanism further increases the performance of the dehazing
-            framework. To assess our model's full capacity, we experimentally
-            validate our results in a wide range of hazy conditions, and our
-            approach outperforms recently developed state-of-the-art techniques
-            by considerable margins. We also evaluate our network's performance
-            in real-world hazy images, and experimental evidence confirms its
-            superiority over other methods.
+            Hazy images obscure content visibility and hinder several subsequent computer vision tasks. 
+            For dehazing in a wide variety of hazy conditions, an end-to-end deep network jointly estimating 
+            the dehazed image along with suitable transmission map and atmospheric light for guidance could prove effective. 
+            To this end, we propose an Iterative Prior Updated Dehazing Network (IPUDN) based on a novel iterative update framework. 
+            We present a novel convolutional architecture to estimate channel-wise atmospheric light, 
+            which along with an estimated transmission map are used as priors for the dehazing network. 
+            Use of channel-wise atmospheric light allows our network to handle color casts in hazy images. 
+            In our IPUDN, the transmission map and atmospheric light estimates are updated iteratively using corresponding novel updater networks. 
+            The iterative mechanism is leveraged to gradually modify the estimates toward those appropriately representing the hazy condition. 
+            These updates occur jointly with the iterative estimation of the dehazed image using a convolutional 
+            neural network with LSTM driven recurrence, which introduces inter-iteration dependencies. Our approach is 
+            qualitatively and quantitatively found effective for synthetic and real-world hazy images depicting varied 
+            hazy conditions, and it outperforms the state-of-the-art. 
+            Thorough analyses of IPUDN through additional experiments and detailed ablation studies are also presented.
           </p>
         </div>
       </div>
