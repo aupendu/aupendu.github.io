@@ -9,7 +9,7 @@
             >Tashfeen's Pen</a></li>
   <li>Added hyperlink to Aupendu Kar in footer on 07/May/2020</li>
   <li>Added JS to update copyright year automatically</li>
-  <li><span style="color:red;">NEW</span>Added Page <a href="https://aupendu.github.io/iterative-dehaze.html" target="_blank" id="foot_name"
+  <li>![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)`NEW` Added Page <a href="https://aupendu.github.io/iterative-dehaze.html" target="_blank" id="foot_name"
             >Iterative Dehaze</a  29/July/2020</li>
 </ol>
 
