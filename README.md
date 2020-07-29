@@ -1,11 +1,17 @@
-# Aupendu Kar Profile
+<h1>Aupendu Kar Profile</h1>
 
 
-**CHANGES**
+<h2>**CHANGES**</h2>
 
-[_previous changes_]
+<ol>
+  <li><i>[previous changes]</i><li>
+  <li> Added a CSS based loader using <a href="https://codepen.io/tashfene/pen/raEqrJ" target="_blank" 
+            >Tashfeen's Pen</a></li>
+  <li></li>
+  <li></li>
+</ol>
 
--Added a CSS based loader using [Tashfeen's Pen](https://codepen.io/tashfene/pen/raEqrJ) on 07/May/2020 
+
 
 -Added hyperlink to Aupendu Kar in footer on 07/May/2020
 
