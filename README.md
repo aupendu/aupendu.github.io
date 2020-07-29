@@ -11,4 +11,4 @@
 
 -Added JS to update copyright year automatically
 
-<p -Added New Page available here [Iterative-Dehaze](https://aupendu.github.io/iterative-dehaze.html) 29/July/2020 </p>
+<p -Added New Page available here  29/July/2020 </p>
