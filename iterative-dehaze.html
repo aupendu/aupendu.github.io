@@ -222,7 +222,8 @@
           font-weight: bold;
         "
       >
-        Transmission Map and Atmospheric Light Guided Iterative Updater Network for Single Image Dehazing
+        Transmission Map and Atmospheric Light Guided Iterative Updater Network
+        for Single Image Dehazing
       </h1>
 
       <!--Author Name-->
@@ -315,20 +316,29 @@
       <div class="row">
         <div class="col-sm">
           <p style="text-align: justify;">
-            Hazy images obscure content visibility and hinder several subsequent computer vision tasks. 
-            For dehazing in a wide variety of hazy conditions, an end-to-end deep network jointly estimating 
-            the dehazed image along with suitable transmission map and atmospheric light for guidance could prove effective. 
-            To this end, we propose an Iterative Prior Updated Dehazing Network (IPUDN) based on a novel iterative update framework. 
-            We present a novel convolutional architecture to estimate channel-wise atmospheric light, 
-            which along with an estimated transmission map are used as priors for the dehazing network. 
-            Use of channel-wise atmospheric light allows our network to handle color casts in hazy images. 
-            In our IPUDN, the transmission map and atmospheric light estimates are updated iteratively using corresponding novel updater networks. 
-            The iterative mechanism is leveraged to gradually modify the estimates toward those appropriately representing the hazy condition. 
-            These updates occur jointly with the iterative estimation of the dehazed image using a convolutional 
-            neural network with LSTM driven recurrence, which introduces inter-iteration dependencies. Our approach is 
-            qualitatively and quantitatively found effective for synthetic and real-world hazy images depicting varied 
-            hazy conditions, and it outperforms the state-of-the-art. 
-            Thorough analyses of IPUDN through additional experiments and detailed ablation studies are also presented.
+            Hazy images obscure content visibility and hinder several subsequent
+            computer vision tasks. For dehazing in a wide variety of hazy
+            conditions, an end-to-end deep network jointly estimating the
+            dehazed image along with suitable transmission map and atmospheric
+            light for guidance could prove effective. To this end, we propose an
+            Iterative Prior Updated Dehazing Network (IPUDN) based on a novel
+            iterative update framework. We present a novel convolutional
+            architecture to estimate channel-wise atmospheric light, which along
+            with an estimated transmission map are used as priors for the
+            dehazing network. Use of channel-wise atmospheric light allows our
+            network to handle color casts in hazy images. In our IPUDN, the
+            transmission map and atmospheric light estimates are updated
+            iteratively using corresponding novel updater networks. The
+            iterative mechanism is leveraged to gradually modify the estimates
+            toward those appropriately representing the hazy condition. These
+            updates occur jointly with the iterative estimation of the dehazed
+            image using a convolutional neural network with LSTM driven
+            recurrence, which introduces inter-iteration dependencies. Our
+            approach is qualitatively and quantitatively found effective for
+            synthetic and real-world hazy images depicting varied hazy
+            conditions, and it outperforms the state-of-the-art. Thorough
+            analyses of IPUDN through additional experiments and detailed
+            ablation studies are also presented.
           </p>
         </div>
       </div>
@@ -352,7 +362,7 @@
                 class="figure-img img-fluid rounded"
                 title="Image GA 1"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Training Stage-1
               <!--EDIT CAPTION HERE-->
             </figcaption>
@@ -370,7 +380,7 @@
                 class="figure-img img-fluid rounded"
                 title="Image GA 2"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Training Stage-2
               <!--EDIT CAPTION HERE-->
             </figcaption>
@@ -388,7 +398,7 @@
                 class="figure-img img-fluid rounded"
                 title="Image GA 3"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Training Stage-3 (End-to-end Network)
               <!--EDIT CAPTION HERE-->
             </figcaption>
@@ -400,12 +410,23 @@
       <h2 id="headingStyles">
         <i class="fas fa-satellite-dish"></i>&nbsp;Highlights
       </h2>
-      <div class="row jumbotron">
+      <div class="row jumbotron" id="jumbo">
         <div class="col">
           <ol type="a">
-            <li>We propose a recurrent convolutional neural network based novel iterative framework that progressively dehazes images, which is effective in different types of hazy conditions.</li>
-            <li>We introduce novel updater networks that update initial estimates of transmission map and atmospheric light in each iterative step.</li>
-            <li>We propose a novel convolutional neural network based architecture to get an initial estimate of channel-wise atmospheric light, which helps in handling color cast when present.</li>
+            <li>
+              We propose a recurrent convolutional neural network based novel
+              iterative framework that progressively dehazes images, which is
+              effective in different types of hazy conditions.
+            </li>
+            <li>
+              We introduce novel updater networks that update initial estimates
+              of transmission map and atmospheric light in each iterative step.
+            </li>
+            <li>
+              We propose a novel convolutional neural network based architecture
+              to get an initial estimate of channel-wise atmospheric light,
+              which helps in handling color cast when present.
+            </li>
           </ol>
         </div>
       </div>
@@ -428,7 +449,7 @@
                 class="figure-img img-fluid rounded"
                 title="Algorithm for Iterative Dehazing"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Proposed Dehazing Algorithm
             </figcaption>
           </figure>
@@ -446,7 +467,7 @@
                 class="figure-img img-fluid rounded"
                 title="Architecture of Dehaze Model"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Our Proposed LSTM based Iterative Dehazing Network
             </figcaption>
           </figure>
@@ -474,7 +495,7 @@
                 class="figure-img img-fluid rounded"
                 title="Atmospheric Light Model"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Proposed Atmospheric Light Estimation Model
             </figcaption>
           </figure>
@@ -492,7 +513,7 @@
                 class="figure-img img-fluid rounded"
                 title="Transmission Model"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Densely Connected Transmission Map Estimation Model [1]
             </figcaption>
           </figure>
@@ -517,7 +538,7 @@
                 class="figure-img img-fluid"
                 title="Hazy Images"
             /></a>
-            <figcaption class="figure-caption text-center">Hazy</figcaption>
+            <figcaption class="text-center" id="figCap">Hazy</figcaption>
           </figure>
         </div>
         <div class="col-2">
@@ -531,7 +552,7 @@
                 class="figure-img img-fluid"
                 title="After Using EPDN"
             /></a>
-            <figcaption class="figure-caption text-center">EPDN [2]</figcaption>
+            <figcaption class="text-center" id="figCap">EPDN [2]</figcaption>
           </figure>
         </div>
         <div class="col-2">
@@ -545,7 +566,7 @@
                 class="figure-img img-fluid"
                 title="After using Haze-line"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Haze-line [3]
             </figcaption>
           </figure>
@@ -561,7 +582,7 @@
                 class="figure-img img-fluid"
                 title="After using FSID"
             /></a>
-            <figcaption class="figure-caption text-center">FSID [4]</figcaption>
+            <figcaption class="text-center" id="figCap">FSID [4]</figcaption>
           </figure>
         </div>
         <div class="col-2">
@@ -575,7 +596,9 @@
                 class="figure-img img-fluid"
                 title="After using MSBDN"
             /></a>
-            <figcaption class="figure-caption text-center">MSBDN [5]</figcaption>
+            <figcaption class="text-center" id="figCap">
+              MSBDN [5]
+            </figcaption>
           </figure>
         </div>
         <div class="col-2">
@@ -590,7 +613,9 @@
                 class="figure-img img-fluid"
                 title="After using Our model"
             /></a>
-            <figcaption class="figure-caption text-center">Our Proposed IPUDN</figcaption>
+            <figcaption class="text-center" id="figCap">
+              Our Proposed IPUDN
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -613,7 +638,7 @@
                 class="figure-img img-fluid rounded"
               />
             </a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Hazy Image
             </figcaption>
           </figure>
@@ -644,7 +669,7 @@
                 class="figure-img img-fluid rounded"
                 title="Using ResNet"
             /></a>
-            <figcaption class="figure-caption text-center">ResNet16</figcaption>
+            <figcaption class="text-center" id="figCap">ResNet16</figcaption>
           </figure>
         </div>
 
@@ -660,7 +685,9 @@
                 class="figure-img img-fluid rounded"
                 title="Using LResX2"
             /></a>
-            <figcaption class="figure-caption text-center">ResNet6+A+T</figcaption>
+            <figcaption class="text-center" id="figCap">
+              ResNet6+A+T
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -677,7 +704,7 @@
                 class="figure-img img-fluid rounded"
                 title="Using LResXLSTM2"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               ResNet6+A+T+LSTM
             </figcaption>
           </figure>
@@ -694,7 +721,9 @@
                 class="figure-img img-fluid rounded"
                 title="Using LResXC2"
             /></a>
-            <figcaption class="figure-caption text-center">ResNet6+A+T+IUN</figcaption>
+            <figcaption class="text-center" id="figCap">
+              ResNet6+A+T+IUN
+            </figcaption>
           </figure>
         </div>
         <div class="col-sm-4">
@@ -709,7 +738,7 @@
                 class="figure-img img-fluid rounded"
                 title="Using LResXLSTMC2"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               ResNet6+A+T+IUN+LSTM
             </figcaption>
           </figure>
@@ -766,7 +795,7 @@
           </figure>
         </div>
       </div>
-      <p class="figure-caption" style="text-align: center;">Hazy Image</p>
+      <p id="figCap" style="text-align: center;">Hazy Image</p>
       <div class="row">
         <div class="col-sm-4">
           <figure class="figure">
@@ -811,7 +840,7 @@
           </figure>
         </div>
       </div>
-      <p class="figure-caption" style="text-align: center;">Dehazed Image</p>
+      <p id="figCap" style="text-align: center;">Dehazed Image</p>
       <hr />
       <!--------------------------------Extension to Other Applications---------------------------------------------->
       <h2 id="headingStyles">
@@ -824,13 +853,12 @@
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Glare.jpg"
               target="_blank"
               ><img
-                style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Glare.jpg"
                 alt="Glare reduction using our iterative dehaze method."
                 class="figure-img img-fluid rounded"
                 title="Glare reduction in cityscape"
             /></a>
-            <figcaption class="figure-caption text-center">Glare</figcaption>
+            <figcaption class="text-center" id="figCap">Glare</figcaption>
           </figure>
         </div>
         <div class="col-sm-6">
@@ -839,13 +867,12 @@
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Rain.jpg"
               target="_blank"
               ><img
-                style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Rain.jpg"
                 alt="Rain reduction using our iterative dehaze method."
                 class="figure-img img-fluid rounded"
                 title="Rain effect reduction from a scenary"
             /></a>
-            <figcaption class="figure-caption text-center">Rain</figcaption>
+            <figcaption class="text-center" id="figCap">Rain</figcaption>
           </figure>
         </div>
       </div>
@@ -856,13 +883,12 @@
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Halation.jpg"
               target="_blank"
               ><img
-                style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Halation.jpg"
                 alt="Halation reduction using our iterative dehaze method."
                 class="figure-img img-fluid rounded"
                 title="Halation reduction of a scenary"
             /></a>
-            <figcaption class="figure-caption text-center">Halation</figcaption>
+            <figcaption class="text-center" id="figCap">Halation</figcaption>
           </figure>
         </div>
 
@@ -872,13 +898,12 @@
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Underwater.jpg"
               target="_blank"
               ><img
-                style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Underwater.jpg"
                 alt="Underwater glare reduction using our iterative dehaze method."
                 class="figure-img img-fluid rounded"
                 title="Underwater image cleaning"
             /></a>
-            <figcaption class="figure-caption text-center">
+            <figcaption class="text-center" id="figCap">
               Underwater
             </figcaption>
           </figure>
@@ -891,13 +916,12 @@
               href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Hazefree.jpg"
               target="_blank"
               ><img
-                style="box-shadow: 5px 10px 18px #888888;"
                 src="assets/subpage_iterative_dehaze/Enhance/Hazefree.jpg"
                 alt="Haze reduction using our iterative dehaze method."
                 class="figure-img img-fluid rounded"
                 title="Haze reduction from an image of horse"
             /></a>
-            <figcaption class="figure-caption text-center">Hazefree</figcaption>
+            <figcaption class="text-center" id="figCap">Hazefree</figcaption>
           </figure>
         </div>
       </div>
@@ -905,17 +929,83 @@
       <!-----------------------DOWNLOADS------------------------------->
       <h2 id="download"><i class="fas fa-file-download"></i>&nbsp;Download</h2>
       <div class="row">
+        <div class="col-sm-4 text-center">
+          <figure class="figure">
+            <a href="" rel="external nofollow"
+              ><img
+                src="assets/images/arxiv.svg"
+                alt="Arxiv image icon"
+                width="150px"
+                height="75px"
+                title="Click to Open"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption
+              class="text-center"
+              style="font-size: calc(10px + 0.5vw); color: black;"
+            >
+              Paper
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-4 text-center">
+          <figure class="figure">
+            <a href="" rel="external nofollow"
+              ><img
+                src="assets/images/github.svg"
+                alt="Github image icon"
+                width="150px"
+                height="75px"
+                title="Click to View"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption
+              class="text-center"
+              style="font-size: calc(10px + 0.5vw); color: black;"
+            >
+              Code
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-4 text-center">
+          <figure class="figure">
+            <a href="" rel="external nofollow"
+              ><img
+                src="assets/images/gdrive.svg"
+                alt="Google drive image icon"
+                width="150px"
+                height="75px"
+                title="Click to Open"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption
+              class="text-center"
+              style="font-size: calc(10px + 0.5vw); color: black;"
+            >
+              Training & Testing Datasets
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+      <!-------------------------REFERENCES---------------------------->
+      <h2 id="headingStyles"><i class="fas fa-asterisk"></i></i>&nbsp;References</h2>
+      <div class="row">
         <div class="col">
-          <a href="" rel="external nofollow"
-            ><img
-              src="assets/images/arxiv.svg"
-              alt="Arxiv image icon"
-              width="150px"
-              height="75px"
-              title="Click to Download"
-              onmouseover="this.style.opacity='0.5'"
-              onmouseout="this.style.opacity='1'"
-          /></a>
+          <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
         </div>
       </div>
       <hr />
@@ -929,6 +1019,8 @@
         </div>
       </div>
       <hr />
+
+      <!-----------------------------FOOTER------------------------------->
       <footer>
         <p style="text-align: center;">
           Copyright &#169; 2020

@@ -11,6 +11,16 @@ body {
   text-align: center;
 }*/
 
+#jumbo {
+  padding: 5px;
+}
+
+#figCap {
+  font-size: calc(10px + 0.5vw);
+  color: black;
+  font-weight: 500;
+}
+
 a {
   text-decoration: none;
 }
