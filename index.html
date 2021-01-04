@@ -1,389 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--All the meta tags-->
     <meta charset="UTF-8" />
-
-    <!--Stylesheets-->
-    <link rel="stylesheet" href="main.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Update this for shortest possible description-->
+    <meta
+      name="description"
+      content="Concise work detail and profile of Aupendu Kar, PhD Scholar, Indian Institute of Technology, Kharagpur, India"
     />
+    <!--This part is to give credit to the person who developed the site-->
+    <meta name="author" content="Aniket Patra" />
+    <!--og tags are for open graph (facebook)-->
+    <meta property="og:title" content="Profile of Aupendu Kar" />
+    <meta property="og:url" content="https://aupendu.github.io/" />
+    <meta
+      property="og:image"
+      content="https://aupendu.github.io/assets/images/ak2.ico"
+    />
+    <meta property="og:type" content="profile" />
+    <meta
+      property="og:description"
+      content="Concise work detail and profile of Aupendu Kar, PhD Scholar, Indian Institute of Technology, Kharagpur, India"
+    />
+
+    <title>Homepage of Aupendu Kar</title>
+
+    <!--All link tags-->
+    <link rel="stylesheet" href="main.css" />
+
+    <!--Page icon/fevicon change-->
+    <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
+    <!--Bootstrap 5-->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
 
-    <!--Scripts (one inside body)-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <!--Fevicon-->
-    <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
-
-    <title>Homepage of Aupendu Kar</title>
-    <style>
-      hr {
-        margin: 3px;
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 1px solid #ccc;
-      }
-    </style>
+    <!--Scripts-->
+    <!--Font Awesome 5-->
+    <script
+      src="https://kit.fontawesome.com/58bac38d13.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body style="background-color: rgb(236, 233, 233);">
-    <div class="outer_wrapper">
-      <hr />
-      <div id="top_head">
-        <div id="img_container">
+  <body>
+    <div class="container containerProperty">
+      <!--Name and Image-->
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col">
+              <h1
+                class="headColor"
+                style="
+                  font-family: 'Heebo', sans-serif;
+                  font-size: calc(30px + 0.5vw);
+                "
+              >
+                AUPENDU KAR<br />অপেন্দু কর
+              </h1>
+
+              <span class="headColor">PhD Student</span> <br />
+              <span>
+                Indian Institute of Technology Kharagpur (IIT-KGP), West Bengal,
+                India
+              </span>
+              <br />
+              <span>
+                <a class="headColor" href="" onclick="emailProtection()"
+                  >Email</a
+                >
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
           <img
-            src="/assets/images/karnb.png"
-            alt="pictureAupendu"
-            height="170"
-            width="170"
-            style="border-radius: 50px;"
+            src="assets/images/kar_square.jfif"
+            class="rounded float-md-end mx-auto d-block"
+            alt=""
+            style="max-width: 200px; max-height: auto"
           />
         </div>
-        <div id="text_container">
-          <h1
-            style="
-              font-family: Arial, Helvetica, sans-serif;
-              font-weight: bolder;
-            "
-          >
-            Aupendu Kar (অপেন্দু কর)
-          </h1>
-          <p>
-            <span style="font-size: 18px;"
-              ><b>PhD Student</b><br />
-              Indian Institute of Technology Kharagpur (IIT-KGP),
-              India<br />
-              Email:&nbsp;<a href="mailto:aupendukar@iitkgp.ac.in" id="tweet"
-                >aupendukar[at]iitkgp[dot]ac[dot]in</a
-              ><br /><br
-            /></span>
-
-            <a
-              href="https://www.facebook.com/aupenduk"
-              target="_blank"
-              id="tweet"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            &nbsp; &nbsp;
-            <a
-              href="https://www.linkedin.com/in/aupendu-kar-297b97184/"
-              target="_blank"
-              id="tweet"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            &nbsp;&nbsp;
-            <a href="https://twitter.com/aupendu" target="_blank" id="tweet">
-              <i class="fab fa-twitter-square"></i
-            ></a>
-          </p>
+      </div>
+      <!--Biography-->
+      <h2 class="headColor">Biography</h2>
+      <hr />
+      <div class="row">
+        <div class="col-sm">
+          I have joined Indian Institute of Technology Kharagpur, India, as a
+          PhD Research Scholar. I received the MTech degree in Instrumentation
+          and Signal Processing from the same institute, in 2018. My research
+          interests include computer vision, image processing, and medical image
+          analysis.
         </div>
       </div>
+      <!--News-->
+      <h2 class="headColor">News</h2>
       <hr />
-      <div class="nav_container">
-        <ul class="nav nav-tab nav-justified">
-          <li><a href="#bio">CONSICE BIO</a></li>
-          <li><a href="#exps">EXPERIENCE</a></li>
-          <li><a href="#education">EDUCATION</a></li>
-          <li><a href="#publications">PUBLICATIONS</a></li>
-        </ul>
-      </div>
-      <hr />
-      <div class="hot_area">
-        <div id="bio">
-          <h2>Concise Bio</h2>
-          <p>
-            I have joined Indian Institute of Technology Kharagpur, India, as a
-            PhD Research Scholar. I received the MTech degree in Instrumentation
-            and Signal Processing from the same institute, in 2018. My research
-            interests include computer vision, image processing, and medical
-            image analysis.
-          </p>
-        </div>
-        <div id="news">
-          <h2 style="color: rgb(47, 0, 255);">Recent News</h2>
-          <ul style="list-style: none;">
-            <li>
-              <i class="fas fa-atom"></i>&nbsp;&nbsp;March 2020: Graduate
-              Student Member: IEEE
+      <div class="row">
+        <div class="col-sm">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="far fa-calendar"></i>&nbsp;January 2021: Iterative
+              Dehaze Code
+              <a
+                href="https://aupendu.github.io/iterative-dehaze.html"
+                target="_blank"
+                class="badge bg-primary rounded-pill"
+                style="margin-left: 2%"
+                >Click Here</a
+              >
             </li>
-            <li>
-              <i class="fas fa-atom"></i>&nbsp;&nbsp;March 2020: Reviewer: IET
+            <li class="list-group-item">
+              <i class="far fa-calendar"></i>&nbsp;March 2019: Graduate Student
+              Member: IEEE
+              <span class="badge bg-danger rounded-pill" style="margin-left: 2%"
+                >NEW</span
+              >
+            </li>
+            <li class="list-group-item">
+              <i class="far fa-calendar"></i>&nbsp;March 2019: Reviewer: IET
               Image Processing; Circuits, Systems, & Signal Processing
             </li>
-            <li>
-              <i class="fas fa-atom"></i>&nbsp;&nbsp;04/06/2018: Joined PhD
+            <li class="list-group-item">
+              <i class="far fa-calendar"></i>&nbsp;2018: Joined PhD
             </li>
           </ul>
         </div>
       </div>
+      <!--Publications-->
+      <h2 class="headColor">Publications</h2>
       <hr />
-      <div id="exps">
-        <h2>Experience</h2>
-        <p>
-          <b style="font-size: 18px;">Graduate Researcher</b
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-            class="far fa-calendar-times"
-          ></i>
-          Autumn 2017 – ongoing<br />
-          <span style="font-size: 16px; font-style: italic;"
-            >Indian Institute of Technology Kharagpur</span
-          ><br />
-        </p>
-
-        <ul>
-          <li>
-            Proposed a domain speciﬁc learned image compression technique.
-          </li>
-          <li>
-            Proposed a method for detecting thoracic disease from high
-            resolution x-ray image.
-          </li>
-          <li>
-            Proposed a state-of-the-art novel algorithm for multi-class motor
-            imagery classiﬁcation.
-          </li>
-        </ul>
-        <p>
-          <b style="font-size: 18px;">Teaching Assistant</b
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="far fa-calendar-times"></i> Autumn 2017 – ongoing<br />
-          <span style="font-size: 16px; font-style: italic;"
-            >Indian Institute of Technology Kharagpur</span
-          ><br />
-        </p>
-
-        <ul>
-          <li>
-            TA for EE69016 (Embedded Systems Lab) and EE69014 (Real Time Signal
-            Processing Lab) courses.
-          </li>
-          <li>
-            TA for Deep Learning for Visual Computing NPTEL course (A Project
-            funded by MHRD, Govt.ofIndia).
-          </li>
-          <li>
-            Taught deep learning tutorials for Deep Learning for Visual
-            Computing (DLVC) summer and winter school (2017-2018).
-          </li>
-          <li>TA for Deep Learning NPTEL course</li>
-        </ul>
+      <div class="row">
+        <div class="col">
+          <ul style="list-style: square">
+            <li class="subHead">Arxiv Pre-prints</li>
+            <ul style="list-style: outside">
+              <li>
+                <b
+                  >"Transmission Map and Atmospheric Light Guided Iterative
+                  Updater Network for Single Image Dehazing."</b
+                ><br />
+                <u>Aupendu Kar</u>, Sobhan Kanti Dhara, Debashis Sen, Prabir
+                Kumar Biswas <br />
+                <i>arXiv preprint arXiv:2008.01701 </i>(2020).
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://arxiv.org/pdf/2008.01701.pdf" target="_blank"
+                  >[PDF]</a
+                >&nbsp;
+                <a href="https://aupendu.github.io/iterative-dehaze">[CODE]</a>
+                <span class="badge bg-danger">New</span>
+              </li>
+              <li>
+                <b
+                  >"Fast Bayesian Uncertainty Estimation of Batch Normalized
+                  Single Image Super-Resolution Network."</b
+                ><br />
+                <u>Aupendu Kar</u>, Prabir Kumar Biswas <br />
+                <i>arXiv preprint arXiv:1903.09410 </i>(2019).
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://arxiv.org/pdf/1903.09410.pdf" target="_blank"
+                  >[PDF]</a
+                >
+              </li>
+            </ul>
+            <li class="subHead">Conference Papers</li>
+            <ul style="list-style: outside">
+              <li>
+                <b
+                  >"UltraCompression: Framework for High Density Compression of
+                  Ultrasound Volumes using Physics Modeling Deep Neural
+                  Networks."</b
+                ><br />
+                Debarghya China, Francis Tom, Sumanth Nandamuri,
+                <u>Aupendu Kar</u>, Mukundhan Srinivasan, Pabitra Mitra, Debdoot
+                Sheet <br />
+                <i>16th International Symposiumon Biomedical Imaging (ISBI).</i>
+                IEEE, 2019. &nbsp;&nbsp;&nbsp;&nbsp;
+                <a
+                  href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8759159"
+                  target="_blank"
+                  >[PDF]</a
+                >
+              </li>
+              <li>
+                <b
+                  >"Fully convolutional model for variable bit length and lossy
+                  high density compression of mammograms."</b
+                ><br />
+                <u>Aupendu Kar</u>, Sri Phani Krishna Karri, Nirmalya Ghosh,
+                Ramanathan Sethuraman, Debdoot Sheet<br />
+                <i
+                  >Proceedings of the IEEE Conference on Computer Vision and
+                  Pattern Recognition Workshops (CVPR-W).</i
+                >
+                IEEE, 2018. &nbsp;&nbsp;&nbsp;&nbsp;
+                <a
+                  href="http://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w50/Kar_Fully_Convolutional_Model_CVPR_2018_paper.pdf"
+                  target="_blank"
+                  >[PDF]</a
+                >
+              </li>
+              <li>
+                <b
+                  >"A Deep Convolutional Neural Network Based Classiﬁcation Of
+                  Multi-Class Motor Imagery With Improved Generalization."</b
+                ><br />
+                <u>Aupendu Kar</u>, Sutanu Bera, SP K Karri, Sudipta Ghosh,
+                Manjunatha Mahadevappa, Debdoot Sheet<br />
+                <i
+                  >40th Annual International Conference of the IEEE Engineering
+                  in Medicine and Biology Society (EMBC).</i
+                >
+                IEEE, 2018. &nbsp;&nbsp;&nbsp;&nbsp;
+                <a
+                  href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8513451
+                                 "
+                  target="_blank"
+                  >[PDF]</a
+                >
+              </li>
+              <li>
+                <b
+                  >"A Randomised Ensemble Learning Approach for Multiclass Motor
+                  Imagery Classiﬁcation Using Error Correcting Output
+                  Coding."</b
+                ><br />
+                Sutanu Bera, Rinku Roy, Debdeep Sikdar, <u>Aupendu Kar</u>,
+                Rupsha Mukhopadhyay, Manjunatha Mahadevappal <br />
+                <i
+                  >40th Annual International Conference of the IEEE Engineering
+                  in Medicine and Biology Society (EMBC).</i
+                >
+                IEEE, 2018.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a
+                  href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8513421"
+                  target="_blank"
+                  >[PDF]</a
+                >
+              </li>
+              <li>
+                <b
+                  >"Jointly Learning Convolutional Representations to Compress
+                  Radiological Images and Classify Thoracic Diseases in the
+                  Compressed Domain."</b
+                ><br />
+                Ekagra Ranjan, Soumava Paul, Siddharth Kapoor,
+                <u>Aupendu Kar</u>, Ramanathan Sethuraman, Debdoot Sheet <br />
+                <i
+                  >Proceedings of the Indian Conference on Computer Vision
+                  Graphics and Image Processing (ICVGIP).</i
+                >
+                ACM, 2018.&nbsp;&nbsp;&nbsp;&nbsp;<a
+                  href="https://dl.acm.org/doi/abs/10.1145/3293353.3293408"
+                  target="_blank"
+                  >[PDF]</a
+                >
+                &nbsp;
+                <a href="https://github.com/ekagra-ranjan/AE-CNN">[CODE]</a>
+              </li>
+            </ul>
+            <li class="subHead">Journal Papers</li>
+            <ul style="list-style: outside">
+              <li>
+                <b
+                  >"Maximum Power Point Tracking (MPPT) Algorithm in Wind Energy
+                  Conversion System."</b
+                ><br />
+                Aupendu Kar <br />
+                <i
+                  >IJSTE-International Journal of Science Technology &
+                  Engineering </i
+                >(2016): 281-284.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="" target="_blank">[PDF]</a>
+              </li>
+            </ul>
+          </ul>
+        </div>
       </div>
+      <!--Education-->
+      <h2 class="headColor">Education</h2>
       <hr />
-      <div id="education">
-        <h2>Education</h2>
-        <p>
-          <b style="font-size: 18px;">PhD in Machine Learning</b
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-            class="far fa-calendar-times"
-          ></i>
-          June 18 – Ongoing<br />
-          <span style="font-size: 16px; font-style: italic;"
-            >Indian Institute of Technology Kharagpur</span
-          >
-          <br />
-          – Image Restoration using Deep Learning.<br />
-          – Tools: Python, PyTorch, Tensorﬂow <br />
-          <b>Supervisor:</b> Prof. Prabir Kumar Biswas <br />
-        </p>
-        <p>
-          <b style="font-size: 18px;"
-            >Masters of Technology in Instrumentation and Signal Processing </b
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-            class="far fa-calendar-times"
-          ></i>
-          May 2018 <br />
-          <span style="font-size: 16px; font-style: italic;"
-            >Indian Institute of Technology Kharagpur</span
-          >
-          <br />
-          <b>Thesis Title:</b> Deep Neural Architectures for Domain Speciﬁc
-          Adaptive Bit Rate Image Compression.<br />
-          – Proposed a learned image compression technique for image compression
-          and achieved better performance than JPEG, JPEG2000.<br />
-          – Tools: Lua, Torch, Python, PyTorch
-        </p>
-        <p>
-          <b style="font-size: 18px;"
-            >Bachelors of Technology in Electrical Engineering </b
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-            class="far fa-calendar-times"
-          ></i>
-          June 2015<br />
-          <span style="font-size: 16px; font-style: italic;"
-            >Kalyani Government Engineering College</span
-          >
-          <br />
-          <b>Thesis Title:</b> Maximum Power Point Tracking (MPPT) Algorithmin
-          Wind Energy Conversion System. <br />
-          – Proposed an algorithm to track the maxima of the power-coefﬁcient of
-          the wind power model with respect to the tip-speed ratio.<br />
-          – Tools: Matlab
-        </p>
-      </div>
-      <hr />
-      <div id="publications">
-        <h2>Selected Publications</h2>
-        <h3>Arxiv Pre-prints</h3>
-        <ul>
-          <li>
-            <b
-              >"Transmission Map and Atmospheric Light Guided Iterative Updater Network for Single Image Dehazing."</b
-            ><br />
-            <u>Aupendu Kar</u>, Sobhan Kanti Dhara, Debashis Sen, Prabir Kumar Biswas <br />
-            <i
-              >arXiv preprint arXiv:2008.01701 </i
-            >(2020).&nbsp;&nbsp;&nbsp;
-            <a href="https://arxiv.org/pdf/2008.01701.pdf" target="_blank">[PDF]</a
-              >&nbsp; <a href="https://aupendu.github.io/iterative-dehaze">[CODE]</a>
-          </li>
-          <li>
-            <b
-              >"Fast Bayesian Uncertainty Estimation of Batch Normalized Single Image Super-Resolution Network."</b
-            ><br />
-            <u>Aupendu Kar</u>, Prabir Kumar Biswas <br />
-            <i
-              >arXiv preprint arXiv:1903.09410 </i
-            >(2019).&nbsp;&nbsp;&nbsp;
-            <a href="https://arxiv.org/pdf/1903.09410.pdf" target="_blank">[PDF]</a>
-          </li>
-        </ul>
-        <h3>Conference Papers</h3>
-        <ul>
-          <li>
-            <b
-              >"UltraCompression: Framework for High Density Compression of
-              Ultrasound Volumes using Physics Modeling Deep Neural
-              Networks."</b
-            ><br />
-            Debarghya China, Francis Tom, Sumanth Nandamuri, <u>Aupendu Kar</u>,
-            Mukundhan Srinivasan, Pabitra Mitra, Debdoot Sheet <br />
-            <i>16th International Symposiumon Biomedical Imaging (ISBI).</i>
-            IEEE, 2019. &nbsp;&nbsp;&nbsp;<a
-              href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8759159"
-              target="_blank"
-              >[PDF]</a
-            >
-          </li>
-          <li>
-            <b
-              >"Fully convolutional model for variable bit length and lossy high
-              density compression of mammograms."</b
-            ><br />
-            <u>Aupendu Kar</u>, Sri Phani Krishna Karri, Nirmalya Ghosh,
-            Ramanathan Sethuraman, Debdoot Sheet<br />
-            <i
-              >Proceedings of the IEEE Conference on Computer Vision and Pattern
-              Recognition Workshops (CVPR-W).</i
-            >
-            IEEE, 2018. &nbsp;&nbsp;&nbsp;<a
-              href="http://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w50/Kar_Fully_Convolutional_Model_CVPR_2018_paper.pdf"
-              target="_blank"
-              >[PDF]</a
-            >
-          </li>
-          <li>
-            <b
-              >"A Deep Convolutional Neural Network Based Classiﬁcation Of
-              Multi-Class Motor Imagery With Improved Generalization."</b
-            ><br />
-            <u>Aupendu Kar</u>, Sutanu Bera, SP K Karri, Sudipta Ghosh,
-            Manjunatha Mahadevappa, Debdoot Sheet<br />
-            <i
-              >40th Annual International Conference of the IEEE Engineering in
-              Medicine and Biology Society (EMBC).</i
-            >
-            IEEE, 2018. &nbsp;&nbsp;&nbsp;<a
-              href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8513451
-                             "
-              target="_blank"
-              >[PDF]</a
-            >
-          </li>
-          <li>
-            <b
-              >"A Randomised Ensemble Learning Approach for Multiclass Motor
-              Imagery Classiﬁcation Using Error Correcting Output Coding."</b
-            ><br />
-            Sutanu Bera, Rinku Roy, Debdeep Sikdar, <u>Aupendu Kar</u>, Rupsha
-            Mukhopadhyay, Manjunatha Mahadevappal <br />
-            <i
-              >40th Annual International Conference of the IEEE Engineering in
-              Medicine and Biology Society (EMBC).</i
-            >
-            IEEE, 2018. &nbsp;&nbsp;&nbsp;
-            <a
-              href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8513421"
-              target="_blank"
-              >[PDF]</a
-            >
-          </li>
-          <li>
-            <b
-              >"Jointly Learning Convolutional Representations to Compress
-              Radiological Images and Classify Thoracic Diseases in the
-              Compressed Domain."</b
-            ><br />
-            Ekagra Ranjan, Soumava Paul, Siddharth Kapoor, <u>Aupendu Kar</u>,
-            Ramanathan Sethuraman, Debdoot Sheet <br />
-            <i
-              >Proceedings of the Indian Conference on Computer Vision Graphics
-              and Image Processing (ICVGIP).</i
-            >
-            ACM, 2018. &nbsp;&nbsp;<a
-              href="https://dl.acm.org/doi/abs/10.1145/3293353.3293408"
-              target="_blank"
-              >[PDF]</a
-            >
-            &nbsp; <a href="https://github.com/ekagra-ranjan/AE-CNN">[CODE]</a>
-          </li>
-        </ul>
-        <h3>Journal Papers</h3>
-        <ul>
-          <li>
-            <b
-              >"Maximum Power Point Tracking (MPPT) Algorithm in Wind Energy
-              Conversion System."</b
-            ><br />
-            Aupendu Kar <br />
-            <i
-              >IJSTE-International Journal of Science Technology & Engineering </i
-            >(2016): 281-284.&nbsp;&nbsp;&nbsp;
-            <a href="" target="_blank">[PDF]</a>
-          </li>
-        </ul>
-      </div>
-      <hr />
+      <div class="row">
+        <div class="col">
+          <ul style="list-style: square">
+            <li>
+              <span class="subHead">PhD in Machine Learning</span>
+              <span class="timePeriod"
+                ><i class="far fa-calendar"></i>&nbsp;June 18 – Ongoing</span
+              ><br /><span style="font-style: italic"
+                >Indian Institute of Technology Kharagpur</span
+              >
+            </li>
+            <ul style="list-style: outside">
+              <li>Image Restoration using Deep Learning</li>
+              <li>Tools: Python, PyTorch, Tensorflow</li>
+              <li><b>Supervisor:</b> Prof. Prabir Kumar Biswas</li>
+            </ul>
+            <li>
+              <span class="subHead">
+                Masters of Technology in Instrumentation and Signal
+                Processing</span
+              >
 
+              <span class="timePeriod"
+                ><i class="far fa-calendar"></i>&nbsp;May 2018</span
+              ><br /><span style="font-style: italic"
+                >Indian Institute of Technology Kharagpur</span
+              >
+            </li>
+            <ul style="list-style: outside">
+              <li>
+                <b>Thesis Title:</b> Deep Neural Architectures for Domain
+                Speciﬁc Adaptive Bit Rate Image Compression.
+              </li>
+              <li>
+                Proposed a learned image compression technique for image
+                compression and achieved better performance than JPEG, JPEG2000.
+              </li>
+              <li>Tools: Lua, Torch, Python, PyTorch</li>
+            </ul>
+            <li>
+              <span class="subHead"
+                >Bachelors of Technology in Electrical Engineering</span
+              >
+              <span class="timePeriod"
+                ><i class="far fa-calendar"></i>&nbsp;June 2015</span
+              ><br /><span style="font-style: italic"
+                >Kalyani Government Engineering College</span
+              >
+            </li>
+            <ul style="list-style: outside">
+              <li>
+                <b>Thesis Title:</b> Maximum Power Point Tracking (MPPT)
+                Algorithmin Wind Energy Conversion System.
+              </li>
+              <li>
+                Proposed an algorithm to track the maxima of the
+                power-coefﬁcient of the wind power model with respect to the
+                tip-speed ratio.
+              </li>
+              <li>Tools: Matlab</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <!--Teaching-->
+      <h2 class="headColor">Experience</h2>
       <hr />
-    </div>
-    <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
+      <div class="row">
+        <div class="col">
+          <ul style="list-style: square">
+            <li>
+              <span class="subHead">Graduate Researcher </span
+              ><span class="timePeriod"
+                ><i class="far fa-calendar"></i>&nbsp;Autumn 2017 –
+                ongoing</span
+              >
+              <br /><span style="font-style: italic"
+                >Indian Institute of Technology Kharagpur</span
+              >
+            </li>
+            <ul style="list-style: outside">
+              <li>
+                Proposed a domain speciﬁc learned image compression technique.
+              </li>
+              <li>
+                Proposed a method for detecting thoracic disease from high
+                resolution x-ray image.
+              </li>
+              <li>
+                Proposed a state-of-the-art novel algorithm for multi-class
+                motor imagery classiﬁcation.
+              </li>
+            </ul>
+            <li>
+              <span class="subHead">Teaching Assistant </span
+              ><span class="timePeriod"
+                ><i class="far fa-calendar"></i>&nbsp;Autumn 2017 –
+                ongoing</span
+              >
+              <br /><span style="font-style: italic"
+                >Indian Institute of Technology Kharagpur</span
+              >
+            </li>
+            <ul style="list-style: outside">
+              <li>
+                TA for EE69016 (Embedded Systems Lab) and EE69014 (Real Time
+                Signal Processing Lab) courses.
+              </li>
+              <li>
+                TA for Deep Learning for Visual Computing NPTEL course (A
+                Project funded by MHRD, Govt.ofIndia).
+              </li>
+              <li>
+                Taught deep learning tutorials for Deep Learning for Visual
+                Computing (DLVC) summer and winter school (2017-2018).
+              </li>
+              <li>TA for Deep Learning NPTEL course</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <!--Professional
+      <h2>Professional Activities</h2>
+      <hr />
+      <div class="row" style="background-color: green"></div>-->
     </div>
     <footer>
-      <p style="text-align: center;">
-        Copyright &#169; <span id="yearContainer"></span>
-        <a href="https://github.com/aupendu" target="_blank" id="foot_name"
-          >Aupendu Kar</a
-        >. Developed by
-        <a href="https://aniket-patra.github.io/" target="_blank" id="foot_name"
+      <p style="text-align: center">
+        Copyright &#169; 2020
+        <a href="https://github.com/aupendu" target="_blank">Aupendu Kar</a>.
+        Made in
+        <img
+          src="https://aniket-patra.github.io/assets/india-16x16.png"
+          alt="India Logo"
+          height="16"
+          width="16"
+        />
+        by
+        <a href="https://aniket-patra.github.io/" target="_blank"
           >Aniket Patra.
         </a>
       </p>
     </footer>
-    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
     <script>
-      $(window).on("load", function () {
-        $(".loader-wrapper").fadeOut("slow");
-      });
+      function emailProtection() {
+        var part2 = "kar";
+        var part1 = "aupendu";
+        var part3 = Math.pow(2, 6);
+        var part6 = ".ac.in";
+        var part5 = "iitkgp";
+
+        var x = alert(
+          part1 + part2 + String.fromCharCode(part3) + part5 + part6
+        );
+      }
     </script>
   </body>
 </html>
