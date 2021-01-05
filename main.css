@@ -10,11 +10,37 @@ a {
 
 h2 {
   font-size: calc(25px + 0.5vw);
-  margin-top: 4% !important;
+  margin-top: 2% !important;
 }
 .headColor {
   color: #527bbd;
   font-family: "Heebo", sans-serif;
+}
+
+#mailTo {
+  color: grey;
+}
+
+#mailTo:hover {
+  color: rgb(209, 209, 209);
+}
+
+.fa-linkedin,
+.fa-twitter-square,
+.ai-google-scholar-square,
+.ai-researchgate-square,
+.ai-dblp-square,
+.ai-cv-square {
+  color: #527bbd !important;
+}
+
+.fa-linkedin:hover,
+.fa-twitter-square:hover,
+.ai-google-scholar-square:hover,
+.ai-researchgate-square:hover,
+.ai-dblp-square:hover,
+.ai-cv-square:hover {
+  color: rgb(110, 112, 114) !important;
 }
 
 .containerProperty {
