@@ -9,7 +9,9 @@ a {
 }
 
 h2 {
-  font-size: calc(25px + 0.5vw);
+  font-size: calc(
+    25px + 0.5vw
+  ); /*Change this (px part only) for Headings font*/
   margin-top: 2% !important;
 }
 .headColor {
@@ -53,11 +55,13 @@ h2 {
   padding-right: 10% !important;
   text-align: justify;
   font-family: "Heebo", sans-serif;
-  font-size: calc(10px + 0.5vw);
+  font-size: calc(8px + 0.5vw); /*Change this (px part only) for content font*/
 }
 
 .subHead {
-  font-size: calc(15px + 0.5vw);
+  font-size: calc(
+    15px + 0.5vw
+  ); /*Change this (px part only) for subheading font size*/
   font-weight: 600;
 }
 
