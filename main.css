@@ -55,7 +55,7 @@ h2 {
   padding-right: 10% !important;
   text-align: justify;
   font-family: "Heebo", sans-serif;
-  font-size: calc(8px + 0.5vw); /*Change this (px part only) for content font*/
+  font-size: calc(9px + 0.5vw); /*Change this (px part only) for content font*/
 }
 
 .subHead {
