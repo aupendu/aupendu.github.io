@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
 
     <!--Update this for shortest possible description-->
     <meta
@@ -37,31 +40,124 @@
       crossorigin="anonymous"
     />
 
+    <!--Page CSS-->
+    <link rel="stylesheet" href="zero-restore/subpage.css" />
+
     <!--Page Icon-->
     <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
+
+    <!--Font Awesome 5-->
+    <script
+      src="https://kit.fontawesome.com/58bac38d13.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <p>
-            Zero-shot Single Image Restoration through Controlled Perturbation
-            of Koschmieder's Model
-          </p>
+    <div class="container" style="background-color: rgb(255, 255, 255)">
+      <!-- <hr
+          style="
+            height: 0.2em;
+            color: rgb(243, 217, 161);
+            background-color: rgb(196, 193, 193);
+            border: none;
+          "
+        />-->
+
+      <!--Topic Name-->
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="https://aupendu.github.io/"
+          ><i
+            class="fas fa-home"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='white'"
+          ></i
+        ></a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionResult">Result</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cite">Citation</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href=""
+                onclick="emailProtection()"
+                id="email_hide"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <p>
-            Aupendu Kar, Sobhan Kanti Dhara, Debashis Sen, Prabir Kumar Biswas
-          </p>
-        </div>
-      </div>
+      </nav>
+      <h1
+        style="
+          text-align: center;
+          font-size: calc(25px + 0.5vw);
+          font-family: 'Raleway', sans-serif;
+          font-weight: bold;
+        "
+      >
+        Zero-shot Single Image Restoration through Controlled Perturbation of
+        Koschmieder's Model
+      </h1>
+
+      <!--Author Name-->
+
+      <h2
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        "
+      >
+        <a
+          href="https://github.com/aupendu"
+          target="_blank"
+          style="text-decoration: none; color: rgb(70, 70, 70)"
+          onmouseover="this.style.color='gray'"
+          onmouseout="this.style.color='rgb(70, 70, 70)'"
+          ><u>Aupendu Kar</u></a
+        >, Sobhan Kanti Dhara, Debashis Sen, Prabir Kumar Biswas
+      </h2>
+
+      <!--Institution Name-->
+
+      <h3
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        "
+      >
+        Department of Electronics and Electrical Communication Engineering
+        <br />
+        Indian Institute of Technology Kharagpur, India
+      </h3>
+      <hr />
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
+    <script src="zero-restore/subjs.js"></script>
   </body>
 </html>
