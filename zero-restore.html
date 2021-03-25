@@ -32,16 +32,23 @@
 
     <title>Zero Restore</title>
 
-    <!--BS 5.0.0-beta2-->
+    <!--BS 5.0.0-beta3-->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
 
     <!--Page CSS-->
     <link rel="stylesheet" href="zero-restore/subpage.css" />
+
+    <!--For Cocoen-->
+
+    <link
+      rel="stylesheet"
+      href="assets/dependencies/cocoen-2.0.5/dist/css/cocoen.min.css"
+    />
 
     <!--Page Icon-->
     <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
@@ -53,7 +60,7 @@
     ></script>
   </head>
   <body>
-    <div class="container" style="background-color: rgb(255, 255, 255)">
+    <div class="container">
       <!-- <hr
           style="
             height: 0.2em;
@@ -107,6 +114,8 @@
           </ul>
         </div>
       </nav>
+
+      <!----------Topic Name-------------->
       <h1
         style="
           text-align: center;
@@ -152,12 +161,100 @@
         Indian Institute of Technology Kharagpur, India
       </h3>
       <hr />
+      <!-----------------------------SLIDER IMAGE------------------------->
+      <div class="row">
+        <div class="col-4 pb-3">
+          <div class="cocoen">
+            <img
+              src="assets/subpage_zero_restore/haze/comp/I4/0048_Hazy.png"
+              alt="Village top view image filled with smog or fog."
+              title="Foggy Village"
+            />
+            <img
+              src="assets/subpage_zero_restore/haze/comp/I4/0048_Our.png"
+              alt="Village top view image after removing the smog or fog using our technique"
+              title="Output village image"
+            />
+          </div>
+        </div>
+        <div class="col-4 pb-3">
+          <div class="cocoen">
+            <img
+              src="assets/subpage_zero_restore/underwater/comp/I5/RGT_4492_Underwater.jpg"
+              alt="Underwater coral image."
+              title="Coral Image"
+            />
+            <img
+              src="assets/subpage_zero_restore/underwater/comp/I5/RGT_4492_Ours.jpg"
+              alt="Underwater coral image after using our technique"
+              title="Output coral image"
+            />
+          </div>
+        </div>
+        <div class="col-4 pb-3">
+          <div class="cocoen">
+            <img
+              src="assets/subpage_iterative_dehaze/Teaser/H.jpg"
+              alt="A view of densely Foggy Railway Bridge"
+              title="Foggy Railway bridge"
+            />
+            <img
+              src="assets/subpage_iterative_dehaze/Teaser/H_Out.jpg"
+              alt="Railway Bridge after removing the smog or fog using iterative dehazing technique"
+              title="Fog removed Railway bridge."
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-----------------------------FOOTER------------------------------->
+      <footer>
+        <p style="text-align: center">
+          Copyright &#169; 2020
+          <a href="https://github.com/aupendu" target="_blank" id="foot_name"
+            >Aupendu Kar</a
+          >. Made in
+          <img
+            src="https://aniket-patra.github.io/assets/india-16x16.png"
+            alt="India Logo"
+            height="16"
+            width="16"
+          />
+          India by
+          <a
+            href="https://aniket-patra.github.io/"
+            target="_blank"
+            id="foot_name"
+            >Aniket Patra.
+          </a>
+        </p>
+      </footer>
     </div>
+
+    <!--For BS 5.0.0-beta3-->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
+
+    <!--For Cocoen-->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/dependencies/cocoen-2.0.5/dist/js/cocoen.min.js"></script>
+    <script src="assets/dependencies/cocoen-2.0.5/dist/js/cocoen-jquery.min.js"></script>
+
+    <!--Page JS-->
     <script src="zero-restore/subjs.js"></script>
+
+    <!--For Cocoen-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Cocoen();
+      });
+    </script>
   </body>
 </html>
