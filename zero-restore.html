@@ -204,7 +204,7 @@
                 title="Output coral image"
               />
             </div>
-            <figcaption class="text-center figure-caption">
+            <figcaption class="text-center figure-caption" id="figCap">
               Underwater Enhancement
             </figcaption>
           </figure>
@@ -225,7 +225,7 @@
                 title="Output Low Light Room"
               />
             </div>
-            <figcaption class="text-center figure-caption">
+            <figcaption class="text-center figure-caption" id="figCap">
               Lowlight Enhancement
             </figcaption>
           </figure>
@@ -312,7 +312,7 @@
                 class="figure-img img-fluid rounded"
                 title="Algorithm for Iterative Dehazing"
             /></a>
-            <figcaption class="text-center" id="figCap">
+            <figcaption class="text-center figure-caption" id="figCap">
               Training Model
             </figcaption>
           </figure>
@@ -330,7 +330,7 @@
                 class="figure-img img-fluid rounded"
                 title="Architecture of Dehaze Model"
             /></a>
-            <figcaption class="text-center" id="figCap">
+            <figcaption class="text-center figure-caption" id="figCap">
               Testing Model
             </figcaption>
           </figure>
@@ -342,7 +342,7 @@
 
       <h2 id="sectionResult"><i class="fas fa-dna"></i>&nbsp;Results</h2>
       <div class="row">
-        <div class="col-xl">
+        <div class="col">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_1.png"
@@ -367,7 +367,9 @@
             </figcaption>
           </figure>
         </div>
-        <div class="col-xl">
+      </div>
+      <div class="row">
+        <div class="col">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_2.png"
@@ -392,7 +394,9 @@
             </figcaption>
           </figure>
         </div>
-        <div class="col-xl">
+      </div>
+      <div class="row">
+        <div class="col">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_3.png"
@@ -425,7 +429,8 @@
         <i class="fas fa-microscope"></i>&nbsp;Ablation Studies
       </h2>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-2 offset-sm-1">
+          <!--------using offset to center align horizontaly the 5 elements-->
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/0013.png"
@@ -439,11 +444,13 @@
                 title="Input Image"
               />
             </a>
-            <figcaption class="text-center" id="figCap">Input</figcaption>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Input
+            </figcaption>
           </figure>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-2">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLoss.png"
@@ -455,11 +462,13 @@
                 class="figure-img img-fluid"
                 title="All Loss"
             /></a>
-            <figcaption class="text-center" id="figCap">Using L</figcaption>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Using L
+            </figcaption>
           </figure>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-2">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoColor.png"
@@ -471,12 +480,13 @@
                 class="figure-img img-fluid"
                 title="All Loss No Color"
             /></a>
-            <figcaption class="text-center" id="figCap">w/o LGW</figcaption>
+            <figcaption class="text-center figure-caption" id="figCap">
+              w/o LGW
+            </figcaption>
           </figure>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
+
+        <div class="col-sm-2">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoSimilarity.png"
@@ -488,12 +498,12 @@
                 class="figure-img img-fluid"
                 title="All Loss No Similarity"
             /></a>
-            <figcaption class="text-center" id="figCap">
+            <figcaption class="text-center figure-caption" id="figCap">
               w/o LTR & LLS
             </figcaption>
           </figure>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-2">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoPenalty.png"
@@ -505,7 +515,7 @@
                 class="figure-img img-fluid img-thumbnail"
                 title="All Loss No Penalty"
             /></a>
-            <figcaption class="text-center" id="figCap">
+            <figcaption class="text-center figure-caption" id="figCap">
               w/o LSPW & LSPB
             </figcaption>
           </figure>
@@ -528,11 +538,13 @@
               <img
                 src="assets/subpage_zero_restore/maps/result_1.png"
                 alt="Visualization of our approach’s estimates. Input Image."
-                class="figure-img img-fluid"
+                class="figure-img img-fluid img-thumbnail"
                 title="Input Image"
               />
             </a>
-            <figcaption class="text-center" id="figCap">Input (I)</figcaption>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Input (I)
+            </figcaption>
           </figure>
         </div>
 
@@ -544,10 +556,12 @@
               ><img
                 src="assets/subpage_zero_restore/maps/result_2.png"
                 alt="Visualization of our approach’s estimates. T-Map."
-                class="figure-img img-fluid"
+                class="figure-img img-fluid img-thumbnail"
                 title="T-map"
             /></a>
-            <figcaption class="text-center" id="figCap">T-map (t)</figcaption>
+            <figcaption class="text-center figure-caption" id="figCap">
+              T-map (t)
+            </figcaption>
           </figure>
         </div>
 
@@ -559,10 +573,10 @@
               ><img
                 src="assets/subpage_zero_restore/maps/result_3.png"
                 alt="Visualization of our approach’s estimates. A/GB-light."
-                class="figure-img img-fluid"
+                class="figure-img img-fluid img-thumbnail"
                 title="A/GB-light"
             /></a>
-            <figcaption class="text-center" id="figCap">
+            <figcaption class="text-center figure-caption" id="figCap">
               A/GB-light (A)
             </figcaption>
           </figure>
@@ -575,10 +589,12 @@
               ><img
                 src="assets/subpage_zero_restore/maps/result_4.png"
                 alt="Visualization of our approach’s estimates. Output."
-                class="figure-img img-fluid"
+                class="figure-img img-fluid img-thumbnail"
                 title="Output"
             /></a>
-            <figcaption class="text-center" id="figCap">Output (J)</figcaption>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Output (J)
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -587,12 +603,12 @@
       <!-----------------------DOWNLOADS------------------------------->
       <h2 id="download"><i class="fas fa-file-download"></i>&nbsp;Download</h2>
       <div class="row">
-        <div class="col-sm-4 text-center">
+        <div class="col-md-4 text-center">
           <figure class="figure">
             <a href=" " rel="external nofollow" target="_blank"
               ><img
-                src="assets/images/arxiv.png"
-                alt="Arxiv image icon"
+                src="assets/images/cvpr2021_logo.png"
+                alt="CVPR2021 image icon"
                 width="220px"
                 height="120px"
                 title="Click to Open"
@@ -600,15 +616,12 @@
                 onmouseout="this.style.opacity='1'"
               />
             </a>
-            <figcaption
-              class="text-center"
-              style="font-size: calc(10px + 0.5vw); color: black"
-            >
+            <figcaption class="text-center figure-caption" id="figCap">
               Paper
             </figcaption>
           </figure>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-md-4 text-center">
           <figure class="figure">
             <a href=" " rel="external nofollow" target="_blank"
               ><img
@@ -621,15 +634,12 @@
                 onmouseout="this.style.opacity='1'"
               />
             </a>
-            <figcaption
-              class="text-center"
-              style="font-size: calc(10px + 0.5vw); color: black"
-            >
+            <figcaption class="text-center figure-caption" id="figCap">
               Code
             </figcaption>
           </figure>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-md-4 text-center">
           <figure class="figure">
             <a href=" " rel="external nofollow" target="_blank"
               ><img
@@ -642,10 +652,7 @@
                 onmouseout="this.style.opacity='1'"
               />
             </a>
-            <figcaption
-              class="text-center"
-              style="font-size: calc(10px + 0.5vw); color: black"
-            >
+            <figcaption class="text-center figure-caption" id="figCap">
               Training & Testing Datasets
             </figcaption>
           </figure>

@@ -5,6 +5,12 @@
   background-color: rgb(255, 255, 255) !important;
 }
 
+#figCap {
+  font-size: calc(
+    12px + 0.5vw
+  ) !important; /* Change px part for caption font size*/
+}
+
 #jumbo {
   padding: 5px !important;
 }
