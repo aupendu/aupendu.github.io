@@ -3,12 +3,12 @@
 
 .container {
   background-color: rgb(255, 255, 255) !important;
-  font-size: calc(12px + 0.5vw) !important; /*Page content font size*/
+  /*font-size: calc(12px + 0.5vw) !important; Page content font size*/
 }
 
 #figCap {
   font-size: calc(
-    9px + 0.5vw
+    12px + 0.5vw
   ) !important; /* Change px part for all caption font size*/
 }
 
