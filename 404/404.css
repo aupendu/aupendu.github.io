@@ -1,3 +1,31 @@
 body {
-  background-color: aquamarine !important;
+  background-color: rgb(232, 233, 232) !important;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+a:hover {
+  color: blueviolet;
+  transition: 0.5s;
+}
+
+ol {
+  font-size: 30px;
+}
+
+.blinker {
+  color: red;
+  animation: myBlinker 0.5s infinite;
+}
+
+@keyframes myBlinker {
+  from {
+    color: red;
+  }
+  to {
+    color: white;
+  }
 }

@@ -362,7 +362,7 @@
       </div>
       <hr />
 
-      <!---------------------------------Framework--------------------------------->
+      <!---------------------------------Algorithm--------------------------------->
       <h2 id="headingStyles">
         <i class="fas fa-dna"></i>&nbsp;Modified Method for Uncertainty
         Estimation
@@ -382,6 +382,7 @@
             /></a>
             <figcaption class="text-center figure-caption" id="figCap">
               Algorithm 1
+              <!-----EDIT THIS ONLY----->
             </figcaption>
           </figure>
         </div>
@@ -399,104 +400,50 @@
             /></a>
             <figcaption class="text-center figure-caption" id="figCap">
               Algorithm 2
+              <!-----EDIT THIS ONLY----->
             </figcaption>
           </figure>
         </div>
       </div>
       <hr />
 
-      <!--------------------------------------Results----------------------------------->
+      <!--------------------------------------Proposed Algorithm----------------------------------->
 
-      <h2 id="sectionResult"><i class="fas fa-poll"></i>&nbsp;Results</h2>
-      <div class="row">
+      <h2 id="sectionResult">
+        <i class="fas fa-poll"></i>&nbsp;Proposed Method for Uncertainty
+        Reduction
+      </h2>
+      <div class="row text-center">
         <div class="col">
           <figure class="figure">
             <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_1.png"
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo3.jpg"
               target="_blank"
             >
               <img
-                src="assets/subpage_zero_restore/tables/table_1.png"
-                alt="Quantitative comparison of the different dehazing
-                approaches on standard hazy image datasets. A Table."
+                src="assets/subpage_sr_uncertainty/algos/algo3.jpg"
+                height="501px"
+                width="396px"
+                alt="Image of Proposed Algorithm."
                 class="figure-img img-fluid"
-                title="Table 1"
+                title="Algorithm 3"
             /></a>
-            <figcaption
-              class="text-center"
-              style="font-size: calc(5px + 0.5vw)"
-              id="figCap"
-            >
-              Table 1. Quantitative comparison of the different dehazing
-              approaches on standard hazy image datasets. Higher PSNR, SSIM, VI
-              and RI are better, lower CIEDE2000 is better. (Best: Red
-              highlight, Second best: Blue highlight)
+            <figcaption class="text-center figure-caption" id="figCap">
+              Algorithm 3
+              <!-----EDIT THIS ONLY----->
             </figcaption>
           </figure>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_2.png"
-              target="_blank"
-            >
-              <img
-                src="assets/subpage_zero_restore/tables/table_2.png"
-                alt="Quantitative comparison of the different underwater image
-                restoration approaches on standard underwater image datasets."
-                class="figure-img img-fluid"
-                title="Table 2"
-            /></a>
-            <figcaption
-              class="text-center"
-              style="font-size: calc(5px + 0.5vw)"
-              id="figCap"
-            >
-              Table 2. Quantitative comparison of the different underwater image
-              restoration approaches on standard underwater image datasets.
-              Higher UIQM and UCIQE are better. (Best: Red highlight, Second
-              best: Blue highlight)
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_3.png"
-              target="_blank"
-            >
-              <img
-                src="assets/subpage_zero_restore/tables/table_3.png"
-                alt="Quantitative comparison of the different low-light image
-                enhancement approaches on a standard low-light image dataset."
-                class="figure-img img-fluid"
-                title="Table 3"
-            /></a>
-            <figcaption
-              class="text-center"
-              style="font-size: calc(5px + 0.5vw)"
-              id="figCap"
-            >
-              Table 3. Quantitative comparison of the different low-light image
-              enhancement approaches on a standard low-light image dataset.
-              Higher PSNR, SSIM are better, lower CIEDE2000 is better. (Best:
-              Red highlight, Second best: Blue highlight)
-            </figcaption>
-          </figure>
-        </div>
-      </div>
+
       <hr />
 
-      <!-----------------------------------Ablation------------------------------------------------------>
+      <!-----------------------------------Understanding Uncertainty------------------------------------------------------>
       <h2 id="headingStyles">
-        <i class="fas fa-microscope"></i>&nbsp;Ablation Studies
+        <i class="fas fa-microscope"></i>&nbsp;Understanding Uncertainty
       </h2>
       <div class="row">
-        <div class="col-sm-2 offset-sm-1">
+        <div class="col-sm-6">
           <!--------using offset to center align horizontaly the 5 elements-->
           <figure class="figure">
             <a
@@ -504,7 +451,7 @@
               target="_blank"
             >
               <img
-                src="assets/subpage_zero_restore/ablation/0013.png"
+                src="assets/subpage_sr_uncertainty/plot/MCvsP_BSDS100_4.png"
                 alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
                 and pixel saturation prevention may be noted. Input Image."
                 class="figure-img img-fluid"
@@ -512,82 +459,116 @@
               />
             </a>
             <figcaption class="text-center figure-caption" id="figCap">
-              Input
+              PSNR vs MC Samples
             </figcaption>
           </figure>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-6">
           <figure class="figure">
             <a
               href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLoss.png"
               target="_blank"
               ><img
-                src="assets/subpage_zero_restore/ablation/AllLoss.png"
+                src="assets/subpage_sr_uncertainty/plot/MCvsU_BSDS100_4.png"
                 alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
                 and pixel saturation prevention may be noted. Using L."
                 class="figure-img img-fluid"
                 title="All Loss"
             /></a>
             <figcaption class="text-center figure-caption" id="figCap">
-              Using L
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-sm-2">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoColor.png"
-              target="_blank"
-              ><img
-                src="assets/subpage_zero_restore/ablation/AllLossNoColor.png"
-                alt=" A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
-                and pixel saturation prevention may be noted. w/o LGW."
-                class="figure-img img-fluid"
-                title="All Loss No Color"
-            /></a>
-            <figcaption class="text-center figure-caption" id="figCap">
-              w/o LGW
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-sm-2">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoSimilarity.png"
-              target="_blank"
-              ><img
-                src="assets/subpage_zero_restore/ablation/AllLossNoSimilarity.png"
-                alt=" A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
-                and pixel saturation prevention may be noted. w/o LTR & LLS"
-                class="figure-img img-fluid"
-                title="All Loss No Similarity"
-            /></a>
-            <figcaption class="text-center figure-caption" id="figCap">
-              w/o LTR & LLS
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-sm-2">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoPenalty.png"
-              target="_blank"
-              ><img
-                src="assets/subpage_zero_restore/ablation/AllLossNoPenalty.png"
-                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
-                and pixel saturation prevention may be noted. w/o LSPW & LSPB."
-                class="figure-img img-fluid img-thumbnail"
-                title="All Loss No Penalty"
-            /></a>
-            <figcaption class="text-center figure-caption" id="figCap">
-              w/o LSPW & LSPB
+              Uncertainty vs MC Samples
             </figcaption>
           </figure>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/0013.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/plot/PvsU_BSDS100_4.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              PSNR vs Uncertainty
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLoss.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_sr_uncertainty/plot/AdvAttackvsUn_BSDS100_4.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. Using L."
+                class="figure-img img-fluid"
+                title="All Loss"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs Adv. Noise Level
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/0013.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/plot/UvsFactor.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs Scale
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLoss.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_sr_uncertainty/plot/NoiseVsUn.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. Using L."
+                class="figure-img img-fluid"
+                title="All Loss"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs Noise Level
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="text-center figure-caption" id="figCap">
+        (a)-(b) present effect of PSNR and uncertainty with the increase of MC
+        samples and (c)-(d) present impact of PSNR and adv. noise with
+        uncertainty. (e)-(f) present the influence of Bayesian uncertainty with
+        different Scale factor models and random noise on LR images. (click on
+        the image for the best view.)
+      </p>
       <hr />
 
       <!-----------------------------------Estimates------------------------------------------------------>
