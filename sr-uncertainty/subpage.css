@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@577&family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.container {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+#figCap {
+  font-size: calc(
+    12px + 0.5vw
+  ) !important; /* Change px part for caption font size*/
+}
+
+#jumbo {
+  padding: 5px !important;
+}
+
+#headingStyles,
+#sectionResult,
+#download,
+#cite {
+  text-align: left;
+  font-size: calc(18px + 0.5vw);
+  font-weight: bold;
+  color: rgb(23, 23, 141);
+}
+
+#foot_name {
+  color: grey;
+}
+
+#foot_name:hover {
+  color: rgb(68, 68, 68);
+}

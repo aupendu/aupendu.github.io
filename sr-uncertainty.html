@@ -3,62 +3,808 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
 
     <!--Update this for shortest possible description-->
     <meta
       name="description"
-      content="Fast Bayesian Uncertainty Estimation and reduction of Batch Normalized
-      Single Image Super-Resolution Network."
+      content="Fast Bayesian Uncertainty Estimation and reduction of Batch
+      Normalized Single Image Super-Resolution Network."
     />
 
     <!--This part is to give credit to the person who developed the site-->
     <meta name="author" content="Aniket Patra" />
-    <!--og tags are for open graph (facebook)-->
-    <meta property="og:title" content="Profile of Aupendu Kar" />
-    <!--This should be the home address-->
-    <meta property="og:url" content="https://aupendu.github.io/" />
+
+    <!--og tags are for open graph-->
+    <meta property="og:title" content="SR Uncertainty" />
+    <meta
+      property="og:url"
+      content="https://aupendu.github.io/sr-uncertainty"
+    />
     <meta
       property="og:image"
-      content="https://aupendu.github.io/assets/images/ak2.ico"
+      content="https://aupendu.github.io/assets/images/lr_sruncertainty.jpg"
     />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Zero Restore Training Framework" />
+
     <meta property="og:type" content="article" />
     <meta
       property="og:description"
-      content="Concise work detail and profile of Aupendu Kar, PhD Scholar, Indian Institute of Technology, Kharagpur, India"
+      content="Fast Bayesian Uncertainty Estimation and reduction of Batch
+      Normalized Single Image Super-Resolution Network"
+    />
+
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!---------------TWITTER CRDS------------------------>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SR Uncertainty" />
+    <meta
+      name="twitter:description"
+      content="Fast Bayesian Uncertainty Estimation and reduction of Batch
+      Normalized Single Image Super-Resolution Network"
+    />
+    <meta
+      name="twitter:url"
+      content="https://aupendu.github.io/sr-uncertainty"
+    />
+    <meta
+      name="twitter:image"
+      content="https://aupendu.github.io/assets/images/lr_sruncertainty.jpg"
     />
 
     <title>SR Uncertainty</title>
 
-    <!--BS 5.0.0-beta2-->
+    <!--For Bootstrap 4-->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
 
+    <!--Page CSS-->
+    <link rel="stylesheet" href="/sr-uncertainty/subpage.css" />
+
     <!--Page Icon-->
     <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
+
+    <!--Font Awesome 5-->
+    <script
+      src="https://kit.fontawesome.com/58bac38d13.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
+      <!-- <hr
+          style="
+            height: 0.2em;
+            color: rgb(243, 217, 161);
+            background-color: rgb(196, 193, 193);
+            border: none;
+          "
+        />-->
+
+      <!--Topic Name-->
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="https://aupendu.github.io/"
+          ><i
+            class="fas fa-home"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='white'"
+          ></i
+        ></a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionResult">Result</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cite">Citation</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href=""
+                onclick="emailProtection()"
+                id="email_hide"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!----------Topic Name-------------->
+      <h1
+        style="
+          text-align: center;
+          font-size: calc(25px + 0.5vw);
+          font-family: 'Raleway', sans-serif;
+          font-weight: bold;
+        "
+      >
+        Fast Bayesian Uncertainty Estimation and reduction of Batch Normalized
+        Single Image Super-Resolution Network
+      </h1>
+
+      <!--Author Name-->
+
+      <h2
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        "
+      >
+        <a
+          href="https://aupendu.github.io"
+          target="_blank"
+          style="text-decoration: none; color: rgb(70, 70, 70)"
+          onmouseover="this.style.color='gray'"
+          onmouseout="this.style.color='rgb(70, 70, 70)'"
+          >Aupendu Kar</a
+        >,
+
+        <a
+          href="http://www.ecdept.iitkgp.ac.in/Eece/facultydetails/ece-pkb"
+          target="_blank"
+          style="text-decoration: none; color: rgb(70, 70, 70)"
+          onmouseover="this.style.color='gray'"
+          onmouseout="this.style.color='rgb(70, 70, 70)'"
+          >Prabir Kumar Biswas</a
+        >
+      </h2>
+
+      <!--Institution Name-->
+
+      <h3
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        "
+      >
+        Department of Electronics and Electrical Communication Engineering
+        <br />
+        Indian Institute of Technology Kharagpur, India
+      </h3>
+      <hr />
+
+      <!------------Figure 1--------------->
+
       <div class="row">
         <div class="col">
-          <p>
-            Fast Bayesian Uncertainty Estimation and reduction of Batch
-            Normalized Single Image Super-Resolution Network
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/new.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/GA/new.png"
+                alt="the left image is an LR image,
+                and the model’s uncertainty during upscaling is in the right."
+                class="figure-img img-fluid img-thumbnail"
+                title="LR Image and Uncertainty"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Left image is an LR image, and in the right, model’s uncertainty
+              during upscaling
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/lr_combined.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/GA/lr_combined.png"
+                alt="Two LR Images"
+                class="figure-img img-fluid img-thumbnail"
+                title="LR Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              LR Image
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/hr_combined.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/GA/hr_combined.png"
+                alt="Two HR images."
+                class="figure-img img-fluid img-thumbnail"
+                title="HR Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              HR Image
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/sr_combined.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/GA/sr_combined.png"
+                alt="Two SR Images"
+                class="figure-img img-fluid img-thumbnail"
+                title="SR Images"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              SR Image
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/un_combined.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/GA/un_combined.png"
+                alt="Two Uncertainty Images"
+                class="figure-img img-fluid img-thumbnail"
+                title="Uncertainty Images"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <hr />
+
+      <!------------ABSTRACT---------------->
+
+      <h2 id="headingStyles"><i class="fas fa-archive"></i>&nbsp;Abstract</h2>
+      <div class="row">
+        <div class="col-sm">
+          <p style="text-align: justify">
+            Convolutional neural network (CNN) has achieved unprecedented
+            success in image super-resolution tasks in recent years. However,
+            the network's performance depends on the distribution of the
+            training sets and degrades on out-of-distribution samples. This
+            paper adopts a Bayesian approach for estimating uncertainty
+            associated with output and applies it in a deep image
+            super-resolution model to address the concern mentioned above. We
+            use the uncertainty estimation technique using the
+            batch-normalization layer, where stochasticity of the batch mean and
+            variance generate Monte-Carlo (MC) samples. The MC samples, which
+            are nothing but different super-resolved images using different
+            stochastic parameters, reconstruct the image, and provide a
+            confidence or uncertainty map of the reconstruction. We propose a
+            faster approach for MC sample generation, and it allows the variable
+            image size during testing. Therefore, it will be useful for image
+            reconstruction domain. Our experimental findings show that this
+            uncertainty map strongly relates to the quality of reconstruction
+            generated by the deep CNN model and explains its limitation.
+            Furthermore, this paper proposes an approach to reduce the model's
+            uncertainty for an input image, and it helps to defend the
+            adversarial attacks on the image super-resolution model. The
+            proposed uncertainty reduction technique also improves the
+            performance of the model for out-of-distribution test images. To the
+            best of our knowledge, we are the first to propose an adversarial
+            defense mechanism in any image reconstruction domain.
           </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col"><p>Aupendu Kar, Prabir Kumar Biswas</p></div>
+      <hr />
+      <!------------------------------HIGHLIGHTS-------------------->
+      <h2 id="headingStyles">
+        <i class="fas fa-satellite-dish"></i>&nbsp;Highlights
+      </h2>
+      <div class="row jumbotron" id="jumbo">
+        <div class="col">
+          <ol type="a">
+            <li>
+              We propose a faster implementation of Monte Carlo
+              batch-normalization uncertainty to generate MC samples and
+              overcome the hurdle of variable image size.
+            </li>
+            <li>
+              We address the uncertainty of deep SISR models using Bayesian
+              approach to measure it. To the best of our knowledge, we are the
+              first to estimate uncertainty in deep learning models for image
+              reconstruction. We also discuss the advantages and implications of
+              uncertainty in SISR and its usefulness in understanding the
+              model's limitations and outcome.
+            </li>
+            <li>
+              We also propose an approach to reduce the model uncertainty for a
+              test image. The uncertainty reduction method acts as a defense
+              against the adversarial attack on the SISR model and proves to be
+              beneficial for out-of-distribution noisy low-resolution images.
+            </li>
+          </ol>
+        </div>
       </div>
+      <hr />
+
+      <!---------------------------------Framework--------------------------------->
+      <h2 id="headingStyles">
+        <i class="fas fa-dna"></i>&nbsp;Modified Method for Uncertainty
+        Estimation
+      </h2>
+      <div class="row">
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo1.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/algos/algo1.jpg"
+                alt="Image of Algorithm 1"
+                class="figure-img img-fluid rounded"
+                title="Algorithm 1"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Algorithm 1
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/algos/algo2.jpg"
+                alt="Image of Algorithm 2"
+                class="figure-img img-fluid rounded"
+                title="Algorithm 2"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Algorithm 2
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+
+      <!--------------------------------------Results----------------------------------->
+
+      <h2 id="sectionResult"><i class="fas fa-poll"></i>&nbsp;Results</h2>
+      <div class="row">
+        <div class="col">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_1.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_zero_restore/tables/table_1.png"
+                alt="Quantitative comparison of the different dehazing
+                approaches on standard hazy image datasets. A Table."
+                class="figure-img img-fluid"
+                title="Table 1"
+            /></a>
+            <figcaption
+              class="text-center"
+              style="font-size: calc(5px + 0.5vw)"
+              id="figCap"
+            >
+              Table 1. Quantitative comparison of the different dehazing
+              approaches on standard hazy image datasets. Higher PSNR, SSIM, VI
+              and RI are better, lower CIEDE2000 is better. (Best: Red
+              highlight, Second best: Blue highlight)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_2.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_zero_restore/tables/table_2.png"
+                alt="Quantitative comparison of the different underwater image
+                restoration approaches on standard underwater image datasets."
+                class="figure-img img-fluid"
+                title="Table 2"
+            /></a>
+            <figcaption
+              class="text-center"
+              style="font-size: calc(5px + 0.5vw)"
+              id="figCap"
+            >
+              Table 2. Quantitative comparison of the different underwater image
+              restoration approaches on standard underwater image datasets.
+              Higher UIQM and UCIQE are better. (Best: Red highlight, Second
+              best: Blue highlight)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/tables/table_3.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_zero_restore/tables/table_3.png"
+                alt="Quantitative comparison of the different low-light image
+                enhancement approaches on a standard low-light image dataset."
+                class="figure-img img-fluid"
+                title="Table 3"
+            /></a>
+            <figcaption
+              class="text-center"
+              style="font-size: calc(5px + 0.5vw)"
+              id="figCap"
+            >
+              Table 3. Quantitative comparison of the different low-light image
+              enhancement approaches on a standard low-light image dataset.
+              Higher PSNR, SSIM are better, lower CIEDE2000 is better. (Best:
+              Red highlight, Second best: Blue highlight)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+
+      <!-----------------------------------Ablation------------------------------------------------------>
+      <h2 id="headingStyles">
+        <i class="fas fa-microscope"></i>&nbsp;Ablation Studies
+      </h2>
+      <div class="row">
+        <div class="col-sm-2 offset-sm-1">
+          <!--------using offset to center align horizontaly the 5 elements-->
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/0013.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_zero_restore/ablation/0013.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Input
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-2">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLoss.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/ablation/AllLoss.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. Using L."
+                class="figure-img img-fluid"
+                title="All Loss"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Using L
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-2">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoColor.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/ablation/AllLossNoColor.png"
+                alt=" A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. w/o LGW."
+                class="figure-img img-fluid"
+                title="All Loss No Color"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              w/o LGW
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-2">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoSimilarity.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/ablation/AllLossNoSimilarity.png"
+                alt=" A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. w/o LTR & LLS"
+                class="figure-img img-fluid"
+                title="All Loss No Similarity"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              w/o LTR & LLS
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-2">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/ablation/AllLossNoPenalty.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/ablation/AllLossNoPenalty.png"
+                alt="A study of importance of the different loss functions in our zero-shot learning framework. Haze reduction, color cast reduction
+                and pixel saturation prevention may be noted. w/o LSPW & LSPB."
+                class="figure-img img-fluid img-thumbnail"
+                title="All Loss No Penalty"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              w/o LSPW & LSPB
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+
+      <!-----------------------------------Estimates------------------------------------------------------>
+      <h2 id="headingStyles">
+        <i class="fas fa-window-restore"></i>&nbsp;The Estimates in our
+        Restoration Approach
+      </h2>
+      <div class="row">
+        <div class="col-sm-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_1.png"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_zero_restore/maps/result_1.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid img-thumbnail"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Input (I)
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_2.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/maps/result_2.png"
+                alt="Visualization of our approach’s estimates. T-Map."
+                class="figure-img img-fluid img-thumbnail"
+                title="T-map"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              T-map (t)
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_3.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/maps/result_3.png"
+                alt="Visualization of our approach’s estimates. A/GB-light."
+                class="figure-img img-fluid img-thumbnail"
+                title="A/GB-light"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              A/GB-light (A)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-3">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_4.png"
+              target="_blank"
+              ><img
+                src="assets/subpage_zero_restore/maps/result_4.png"
+                alt="Visualization of our approach’s estimates. Output."
+                class="figure-img img-fluid img-thumbnail"
+                title="Output"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Output (J)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <hr />
+      <!-----------------------DOWNLOADS------------------------------->
+      <h2 id="download"><i class="fas fa-download"></i>&nbsp;Downloads</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <figure class="figure">
+            <a href=" " rel="external nofollow" target="_blank"
+              ><img
+                src="assets/images/cvpr2021_logo.png"
+                alt="CVPR2021 image icon"
+                width="220px"
+                height="120px"
+                title="Click to Open"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Paper
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-4 text-center">
+          <figure class="figure">
+            <a href=" " rel="external nofollow" target="_blank"
+              ><img
+                src="assets/images/github.svg"
+                alt="Github image icon"
+                width="150px"
+                height="120px"
+                title="Click to View"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Code
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-4 text-center">
+          <figure class="figure">
+            <a href=" " rel="external nofollow" target="_blank"
+              ><img
+                src="assets/images/gdrive.png"
+                alt="Google drive image icon"
+                width="150px"
+                height="120px"
+                title="Click to Open"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Results
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+      <!-------------------------REFERENCES---------------------------->
+      <h2 id="headingStyles">
+        <i class="fas fa-asterisk"></i>&nbsp;References
+      </h2>
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li style="text-align: justify">References</li>
+            <li style="text-align: justify">References</li>
+            <li style="text-align: justify">References</li>
+            <li style="text-align: justify">References</li>
+            <li style="text-align: justify">References</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <!-------------------------CITATION---------------------------->
+      <h2 id="cite">
+        <i class="fas fa-map-marker"></i>&nbsp;Citation (BibTeX)
+      </h2>
+      <div class="row">
+        <div class="col jumbotron" id="jumbo">
+          <p id="myInput">
+            <span style="display: block; padding-left: 15px"
+              >@InProceedings{Kar_2021_CVPR,
+              <span style="padding-left: 53px; display: block"
+                >author = {Kar, Aupendu and Kanti Dhara, Sobhan and Sen,
+                Debashis and Kumar Biswas, Prabir}, <br />
+                title = {Zero-shot Single Image Restoration through Controlled
+                Perturbation of Koschmieder’s Model}, <br />
+                booktitle = {IEEE/CVF Conference on Computer Vision and Pattern
+                Recognition (CVPR)}, <br />
+                month = {June}, <br />
+                year = {2021}<br />
+              </span>
+              &nbsp;}</span
+            >
+          </p>
+        </div>
+      </div>
+      <hr />
+
+      <!-----------------------------FOOTER------------------------------->
+      <footer>
+        <p style="text-align: center">
+          <i class="far fa-copyright"></i> 2021
+          <a href="https://github.com/aupendu" target="_blank" id="foot_name"
+            >Aupendu Kar</a
+          >. Made in
+          <img
+            src="https://aniket-patra.github.io/assets/india-16x16.png"
+            alt="India Logo"
+            height="16"
+            width="16"
+          />
+          India by
+          <a
+            href="https://aniket-patra.github.io/"
+            target="_blank"
+            id="foot_name"
+            >Aniket Patra.
+          </a>
+        </p>
+      </footer>
     </div>
+
+    <!--For Bootstrap 4-->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Page JS-->
+    <script src="/sr-uncertainty/subjs.js"></script>
   </body>
 </html>
