@@ -11,6 +11,11 @@
   ) !important; /* Change px part for caption font size*/
 }
 
+.wally {
+  height: 235px;
+  width: 147px;
+}
+
 #jumbo {
   padding: 5px !important;
 }
@@ -31,4 +36,11 @@
 
 #foot_name:hover {
   color: rgb(68, 68, 68);
+}
+
+@media only screen and (min-width: 1024px) {
+  .spacer {
+    margin-left: 250px !important;
+    margin-right: 250px !important;
+  }
 }
