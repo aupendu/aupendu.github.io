@@ -213,10 +213,10 @@
                 title="LR Image and Uncertainty"
               />
             </a>
-            <figcaption class="text-center figure-caption" id="figCap">
+            <!-- <figcaption class="text-center figure-caption" id="figCap">
               Left image is an LR image, and in the right, model’s uncertainty
               during upscaling
-            </figcaption>
+            </figcaption>-->
           </figure>
         </div>
       </div>
@@ -295,6 +295,14 @@
           </figure>
         </div>
       </div>
+
+      <p class="text-center figure-caption" id="figCap">
+        In the first row images, the left image is an LR image, and the model’s
+        uncertainty during upscaling is in the right. Two cropped regions have
+        different textures. We can observe from two patches in the second and
+        third-row that whenever the model fails to reconstruct the texture
+        correctly (second-row image), it leads to higher uncertainty.
+      </p>
 
       <hr />
 
@@ -598,8 +606,7 @@
 
       <!----------------------------------- Visual Results of Adversarial Defense------------------------------------------------------>
       <h2 id="headingStyles">
-        <i class="fas fa-window-restore"></i>&nbsp;Visual Results of Adversarial
-        Defense
+        <i class="far fa-eye"></i>&nbsp;Visual Results of Adversarial Defense
       </h2>
       <div class="row">
         <div class="col-sm">
@@ -823,10 +830,9 @@
             <span style="display: block; padding-left: 15px"
               >@InProceedings{Kar_2021_CVPR,
               <span style="padding-left: 53px; display: block"
-                >author = {Kar, Aupendu and Kanti Dhara, Sobhan and Sen,
-                Debashis and Kumar Biswas, Prabir}, <br />
-                title = {Zero-shot Single Image Restoration through Controlled
-                Perturbation of Koschmieder’s Model}, <br />
+                >author = {Kar, Aupendu and Kumar Biswas, Prabir}, <br />
+                title = {Fast Bayesian Uncertainty Estimation and reduction of
+                Batch Normalized Single Image Super-Resolution Network}, <br />
                 booktitle = {IEEE/CVF Conference on Computer Vision and Pattern
                 Recognition (CVPR)}, <br />
                 month = {June}, <br />
