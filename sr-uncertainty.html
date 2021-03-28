@@ -207,7 +207,7 @@
                 src="assets/subpage_sr_uncertainty/GA/new.png"
                 alt="the left image is an LR image,
                 and the model’s uncertainty during upscaling is in the right."
-                class="figure-img img-fluid img-thumbnail"
+                class="figure-img img-fluid"
                 title="LR Image and Uncertainty"
               />
             </a>
@@ -229,7 +229,7 @@
               <img
                 src="assets/subpage_sr_uncertainty/GA/lr_combined.png"
                 alt="Two LR Images"
-                class="figure-img img-fluid img-thumbnail"
+                class="figure-img img-fluid"
                 title="LR Image"
               />
             </a>
@@ -247,7 +247,7 @@
               <img
                 src="assets/subpage_sr_uncertainty/GA/hr_combined.png"
                 alt="Two HR images."
-                class="figure-img img-fluid img-thumbnail"
+                class="figure-img img-fluid"
                 title="HR Image"
               />
             </a>
@@ -265,7 +265,7 @@
               <img
                 src="assets/subpage_sr_uncertainty/GA/sr_combined.png"
                 alt="Two SR Images"
-                class="figure-img img-fluid img-thumbnail"
+                class="figure-img img-fluid"
                 title="SR Images"
               />
             </a>
@@ -283,7 +283,7 @@
               <img
                 src="assets/subpage_sr_uncertainty/GA/un_combined.png"
                 alt="Two Uncertainty Images"
-                class="figure-img img-fluid img-thumbnail"
+                class="figure-img img-fluid"
                 title="Uncertainty Images"
               />
             </a>
@@ -555,92 +555,187 @@
         </div>
       </div>
 
-      <p class="text-center figure-caption" id="figCap">
+      <p class="text-justify figure-caption" id="figCap">
         (a)-(b) present effect of PSNR and uncertainty with the increase of MC
         samples and (c)-(d) present impact of PSNR and adv. noise with
         uncertainty. (e)-(f) present the influence of Bayesian uncertainty with
         different Scale factor models and random noise on LR images. (click on
-        the image for the best view.)
+        the image for the best view)
       </p>
       <hr />
 
-      <!-----------------------------------Estimates------------------------------------------------------>
+      <!----------------------------------- Performance analysis of Adversarial Defense------------------------------------------------------>
       <h2 id="headingStyles">
-        <i class="fas fa-window-restore"></i>&nbsp;The Estimates in our
-        Restoration Approach
+        <i class="fas fa-window-restore"></i>&nbsp;Performance Analysis of
+        Adversarial Defense
       </h2>
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col">
           <figure class="figure">
             <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_1.png"
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
               target="_blank"
             >
               <img
-                src="assets/subpage_zero_restore/maps/result_1.png"
+                src="assets/subpage_sr_uncertainty/table2.jpg"
                 alt="Visualization of our approach’s estimates. Input Image."
-                class="figure-img img-fluid img-thumbnail"
+                class="figure-img img-fluid"
                 title="Input Image"
               />
             </a>
             <figcaption class="text-center figure-caption" id="figCap">
-              Input (I)
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_2.png"
-              target="_blank"
-              ><img
-                src="assets/subpage_zero_restore/maps/result_2.png"
-                alt="Visualization of our approach’s estimates. T-Map."
-                class="figure-img img-fluid img-thumbnail"
-                title="T-map"
-            /></a>
-            <figcaption class="text-center figure-caption" id="figCap">
-              T-map (t)
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_3.png"
-              target="_blank"
-              ><img
-                src="assets/subpage_zero_restore/maps/result_3.png"
-                alt="Visualization of our approach’s estimates. A/GB-light."
-                class="figure-img img-fluid img-thumbnail"
-                title="A/GB-light"
-            /></a>
-            <figcaption class="text-center figure-caption" id="figCap">
-              A/GB-light (A)
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_zero_restore/maps/result_4.png"
-              target="_blank"
-              ><img
-                src="assets/subpage_zero_restore/maps/result_4.png"
-                alt="Visualization of our approach’s estimates. Output."
-                class="figure-img img-fluid img-thumbnail"
-                title="Output"
-            /></a>
-            <figcaption class="text-center figure-caption" id="figCap">
-              Output (J)
+              Table 2. Quantitative evaluation of our proposed Bayesian
+              uncertainty reduction technique based adversarial defense
+              mechanism.
             </figcaption>
           </figure>
         </div>
       </div>
 
       <hr />
+
+      <!----------------------------------- Visual Results of Adversarial Defense------------------------------------------------------>
+      <h2 id="headingStyles">
+        <i class="fas fa-window-restore"></i>&nbsp;Visual Results of Adversarial
+        Defense
+      </h2>
+      <div class="row">
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/FullHR.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              HR
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/FullLRx2.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              LR
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/FullLRx2A4.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Adversarial LR
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/BeforeDefense.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              SR (No Def.)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/AfterDefense.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              SR (After Def.)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/BeforeUncertainty.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              UN (No Def.)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/subpage_sr_uncertainty/ADX/AfterUncertainty.png"
+                alt="Visualization of our approach’s estimates. Input Image."
+                class="figure-img img-fluid"
+                title="Input Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              UN (After Def.)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="text-center figure-caption" id="figCap">
+        Performance of our proposed adversarial defense mechanism using the
+        Bayesian uncertainty reduction technique. The cropped region shows
+        undesired artifacts in the SR image without any defense, and our defense
+        mechanism successfully suppresses those artifacts.
+      </p>
+
+      <hr />
+
       <!-----------------------DOWNLOADS------------------------------->
       <h2 id="download"><i class="fas fa-download"></i>&nbsp;Downloads</h2>
       <div class="row">
