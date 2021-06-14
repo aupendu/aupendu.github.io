@@ -16,16 +16,9 @@ $(document).ready(
     }),
     $(".gScholar").mouseover(function () {
 
-        $(this).css("cursor", "pointer");
-        $(this).css("color", "#527bbd");
-        $(this).css("font-weight", "bold");
-
+        $(this).css("cursor", "pointer").css("color", "#527bbd").css("font-weight", "bold");
     }),
     $(".gScholar").mouseleave(function () {
 
-        $(this).css("color", "gray");
-        $(this).css("font-weight", "normal");
-        $(this).css("cursor", "context-menu");
-
-    })
-);
+        $(this).css("color", "gray").css("font-weight", "normal").css("cursor", "context-menu");
+    }));

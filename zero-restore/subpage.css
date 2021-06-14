@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@577&family=Raleway:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+a {
+  text-decoration: none;
+}
+
 .container {
   background-color: rgb(255, 255, 255) !important;
 }
@@ -25,11 +29,32 @@
   color: rgb(23, 23, 141);
   padding-bottom: 20px;
 }
-
-#foot_name {
-  color: grey;
+#flag {
+  height: 15px;
+  width: 19px;
+  margin-bottom: 5px;
 }
 
-#foot_name:hover {
-  color: rgb(68, 68, 68);
+footer {
+  color: rgb(187, 186, 186);
+  font-size: calc(8px + 0.5vw);
+
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+
+footer a {
+  color: rgb(155, 155, 155);
+}
+
+footer a:hover {
+  color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 480px) {
+  #flag {
+    height: 10px;
+    width: 13px;
+    margin-bottom: 5px;
+  }
 }
