@@ -19,14 +19,6 @@ h2 {
   font-family: "Heebo", sans-serif;
 }
 
-#mailTo {
-  color: grey;
-}
-
-#mailTo:hover {
-  color: rgb(209, 209, 209);
-}
-
 .fa-linkedin,
 .fa-twitter-square,
 .ai-google-scholar-square,

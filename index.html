@@ -48,7 +48,7 @@
     <title>Homepage of Aupendu Kar</title>
 
     <!--All link tags-->
-    <link rel="stylesheet" href="main.min.css" />
+    <link rel="stylesheet" href="main.css" />
 
     <!--ACADEMICON-->
     <link
@@ -71,7 +71,11 @@
     />
   </head>
   <body>
-    <noscript><p class="text-center"><b>Please ENABLE Javascript to view this page properly.</b></p></noscript>
+    <noscript
+      ><p class="text-center">
+        <b>Please ENABLE Javascript to view this page properly.</b>
+      </p></noscript
+    >
     <div class="container containerProperty">
       <!--Name and Image-->
       <div class="row justify-content-between align-items-center">
@@ -96,6 +100,7 @@
                 <br />
                 Indian Institute of Technology Kharagpur, West Bengal, India
                 <br />
+                <br />
                 <a href="https://www.linkedin.com/in/aupendu/">
                   <i class="fab fa-linkedin fa-2x"></i
                 ></a>
@@ -117,11 +122,12 @@
                   <i class="ai ai-cv-square ai-2x"></i
                 ></a>
               </span>
-              <br />
-              <span>
-                <a class="headColor" href="" onclick="emailProtection()"
-                  >Email:
-                  <span id="mailTo">aupendukar[at]iitkgp[dot]ac[dot]in</span></a
+              <br /><br />
+              <span class="headColor"
+                >Email <i class="fas fa-envelope"></i> :
+
+                <span class="gScholar" id="mailTo"
+                  >aupendukar[at]iitkgp[dot]ac[dot]in</span
                 >
               </span>
             </div>
@@ -214,6 +220,7 @@
           href="https://scholar.google.com/citations?hl=en&authuser=1&user=4ignEUcAAAAJ"
           target="_blank"
           style="color: gray"
+          class="gScholar"
         >
           Google Scholar</a
         >)
@@ -594,26 +601,27 @@
       crossorigin="anonymous"
     ></script>
 
+    <!--JQUERY-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <!--Bootstrap 5-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
-
+    <script src="script.js"></script>
     <script>
-      function emailProtection() {
-        var part2 = "kar";
-        var part1 = "aupendu";
-        var part3 = Math.pow(2, 6);
-        var part6 = ".ac.in";
-        var part5 = "iitkgp";
-
-        var x = alert(
-          part1 + part2 + String.fromCharCode(part3) + part5 + part6
-        );
-      }
+      /*if (typeof jQuery !== "undefined") {
+        console.log("jQuery Loaded");
+      } else {
+        console.log("not loaded yet");
+      }*/
     </script>
-    
   </body>
 </html>
