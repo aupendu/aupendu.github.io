@@ -1,12 +1,12 @@
 $(document).ready(
     $("#mailTo").click(function () {
-        var part2 = "kar";
-        var part1 = "aupendu";
-        var part3 = Math.pow(2, 6);
-        var part6 = ".ac.in";
-        var part5 = "iitkgp";
+        const part2 = "kar";
+        const part1 = "aupendu";
+        const part3 = Math.pow(2, 6);
+        const part6 = ".ac.in";
+        const part5 = "iitkgp";
 
-        var x = confirm(
+        const x = confirm(
             "Click \"OK\" to open your default email app."
         );
         if (x == true)
