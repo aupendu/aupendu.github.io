@@ -16,7 +16,7 @@ body {
 }
 
 #figCap {
-  font-size: calc(10px + 0.5vw);
+  font-size: calc(12px + 0.5vw) !important;
   color: black;
   font-weight: 500;
 }
