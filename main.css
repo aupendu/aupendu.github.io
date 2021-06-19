@@ -84,6 +84,15 @@ footer a:hover {
   color: rgb(0, 0, 0);
 }
 
+.arrowUp {
+  font-size: calc(35px + 0.5vw);
+  color: gray;
+}
+
+.arrowUp:hover {
+  color: rgba(95, 95, 95);
+}
+
 @media only screen and (max-width: 480px) {
   #flag {
     height: 10px;

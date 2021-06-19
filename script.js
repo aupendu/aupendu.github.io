@@ -21,4 +21,15 @@ $(document).ready(
     $(".gScholar").mouseleave(function () {
 
         $(this).css("color", "gray").css("font-weight", "normal").css("cursor", "context-menu");
+    }),
+    $(".webBadge").mouseover(function () {
+        $(this).removeClass('bg-dark').addClass('bg-secondary');
+    }),
+    $(".webBadge").mouseleave(function () {
+        $(this).removeClass('bg-secondary').addClass('bg-dark');
+    }), $(".pdfBadge").mouseover(function () {
+        $(this).removeClass('bg-info').addClass('bg-warning');
+    }),
+    $(".pdfBadge").mouseleave(function () {
+        $(this).removeClass('bg-warning').addClass('bg-info');
     }));
