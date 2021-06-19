@@ -6,6 +6,10 @@
   /*font-size: calc(12px + 0.5vw) !important; Page content font size*/
 }
 
+a {
+  text-decoration: none;
+}
+
 #figCap {
   font-size: calc(
     12px + 0.5vw
@@ -31,12 +35,34 @@
   color: rgb(23, 23, 141);
 }
 
-#foot_name {
-  color: grey;
+#flag {
+  height: 15px;
+  width: 19px;
+  margin-bottom: 5px;
 }
 
-#foot_name:hover {
-  color: rgb(68, 68, 68);
+footer {
+  color: rgb(187, 186, 186);
+  font-size: calc(8px + 0.5vw);
+
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+
+footer a {
+  color: rgb(155, 155, 155);
+}
+
+footer a:hover {
+  color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 480px) {
+  #flag {
+    height: 10px;
+    width: 13px;
+    margin-bottom: 5px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
