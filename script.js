@@ -15,7 +15,6 @@ $(document).ready(
 
     }),
     $(".gScholar").mouseover(function () {
-
         $(this).css("cursor", "pointer").css("color", "#527bbd").css("font-weight", "bold");
     }),
     $(".gScholar").mouseleave(function () {
@@ -32,4 +31,17 @@ $(document).ready(
     }),
     $(".pdfBadge").mouseleave(function () {
         $(this).removeClass('bg-warning').addClass('bg-info');
-    }));
+    }),
+    $('.emailIcon').mouseover(function () {
+        $('.fa-envelope').removeClass('d-none');
+    }),
+    $('.emailIcon').mouseleave(function () {
+        $('.fa-envelope').addClass('d-none');
+    }),
+    $('.extLink').mouseover(function () {
+        $('.fa-external-link-alt').removeClass('d-none');
+    }),
+    $('.extLink').mouseleave(function () {
+        $('.fa-external-link-alt').addClass('d-none');
+    })
+);
