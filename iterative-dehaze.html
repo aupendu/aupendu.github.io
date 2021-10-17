@@ -137,7 +137,7 @@
           font-weight: bold;
         "
       >
-        Transmission Map and Atmospheric Light Guided Iterative Updater Network
+        Progressive Update Guided Interdependent Networks
         for Single Image Dehazing
       </h1>
 
@@ -233,29 +233,21 @@
       <div class="row">
         <div class="col-sm">
           <p style="text-align: justify">
-            Hazy images obscure content visibility and hinder several subsequent
-            computer vision tasks. For dehazing in a wide variety of hazy
-            conditions, an end-to-end deep network jointly estimating the
-            dehazed image along with suitable transmission map and atmospheric
-            light for guidance could prove effective. To this end, we propose an
-            Iterative Prior Updated Dehazing Network (IPUDN) based on a novel
-            iterative update framework. We present a novel convolutional
-            architecture to estimate channel-wise atmospheric light, which along
-            with an estimated transmission map are used as priors for the
-            dehazing network. Use of channel-wise atmospheric light allows our
-            network to handle color casts in hazy images. In our IPUDN, the
-            transmission map and atmospheric light estimates are updated
-            iteratively using corresponding novel updater networks. The
-            iterative mechanism is leveraged to gradually modify the estimates
-            toward those appropriately representing the hazy condition. These
-            updates occur jointly with the iterative estimation of the dehazed
-            image using a convolutional neural network with LSTM driven
-            recurrence, which introduces inter-iteration dependencies. Our
-            approach is qualitatively and quantitatively found effective for
-            synthetic and real-world hazy images depicting varied hazy
-            conditions, and it outperforms the state-of-the-art. Thorough
-            analyses of IPUDN through additional experiments and detailed
-            ablation studies are also presented.
+            Images with haze of different varieties often pose a significant challenge to dehazing. 
+            Therefore, guidance by estimates of haze parameters related to its variety would be beneficial 
+            and they should be progressively updated along with iterative haze reduction to allow optimal 
+            dehazing. To this end, we propose a multi-network dehazing framework containing novel interdependent 
+            dehazing and haze parameter updater networks that operate within a unique iterative mechanism. 
+            The haze parameters, transmission map and atmospheric light, are first estimated using specific 
+            convolutional networks allowing color cast handling. The estimated parameters are then used as 
+            priors in our dehazing module, where the estimates are progressively updated by novel convolutional 
+            networks using the iterative mechanism.  The updating takes place jointly with progressive dehazing 
+            by a convolutional network that invokes inter-iteration dependencies. The joint updating and dehazing 
+            within the iterative mechanism gradually modify the haze parameter estimates toward achieving optimal 
+            dehazing. Through ablation studies, our iterative dehazing framework is shown to be more effective than 
+            the use of conventional LSTM based recurrence, image-to-image mapping and haze model based estimation. 
+            Our dehazing framework is qualitatively and quantitatively found to outperform the state-of-the-art on 
+            synthetic and real-world hazy images of several datasets with varied hazy conditions.
           </p>
         </div>
       </div>
@@ -618,125 +610,6 @@
         </div>
       </div>
       <hr />
-
-      <!--------------------------Visual Recognition Results---------------------------------->
-
-      <h2 id="headingStyles" class="text-center text-md-start">
-        <i class="fas fa-eye"></i>&nbsp;Visual Recognition Results
-      </h2>
-      <div class="row">
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_01.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_01.jpg"
-                alt="Image recognition on the hazy images based on a road full of vehicles."
-                class="figure-img img-fluid rounded"
-                title="Image of hazy highway 1"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_02.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_02.jpg"
-                alt="Image recognition on the hazy images based on a road full of vehicles."
-                class="figure-img img-fluid rounded"
-                title="Image of a hazy highway 2"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_04.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_04.jpg"
-                alt="Image recognition on the hazy images based on a road full of vehicles."
-                class="figure-img img-fluid rounded"
-                title="Image of a hazy highway 3"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <!-------------------CHANGE THIS ONE-------------------->
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_05.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Hazy_05.jpg"
-                alt="Image recognition on the hazy images based on a road full of vehicles."
-                class="figure-img img-fluid rounded"
-                title="Image of hazy highway 4"
-            /></a>
-          </figure>
-        </div>
-      </div>
-      <p id="figCap" style="text-align: center">Hazy Image</p>
-      <div class="row">
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_01.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_01.jpg"
-                alt="Image recognition on the Dehazed images based on a road full of vehicles using our iterative dehaze method."
-                class="figure-img img-fluid rounded"
-                title="Image of clean filtered highway 1"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_02.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_02.jpg"
-                alt="Image recognition on the Dehazed images based on a road full of vehicles using our iterative dehaze method."
-                class="figure-img img-fluid rounded"
-                title="Image of clean filtered highway 2"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_04.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_04.jpg"
-                alt="Image recognition on the Dehazed images based on a road full of vehicles using our iterative dehaze method."
-                class="figure-img img-fluid rounded"
-                title="Image of clean filtered highway 3"
-            /></a>
-          </figure>
-        </div>
-        <div class="col-sm-3">
-          <!-------------------CHANGE THIS ONE-------------------->
-          <figure class="figure">
-            <a
-              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_05.jpg"
-              target="_blank"
-              ><img
-                src="assets/subpage_iterative_dehaze/Visual_Recognition_Results/Our_05.jpg"
-                alt="Image recognition on the Dehazed images based on a road full of vehicles using our iterative dehaze method."
-                class="figure-img img-fluid rounded"
-                title="Image of clean filtered highway 1"
-            /></a>
-          </figure>
-        </div>
-      </div>
-      <p id="figCap" style="text-align: center">Dehazed Image</p>
-      <hr />
       <!--------------------------------Extension to Other Applications---------------------------------------------->
       <h2 id="headingStyles" class="text-center text-md-start">
         <i class="fas fa-globe-asia"></i>&nbsp;Extension to Other Applications
@@ -874,7 +747,7 @@
         <div class="col-sm-4 text-center">
           <figure class="figure">
             <a
-              href="https://drive.google.com/drive/folders/1UX2V93hDJ58cX3X4E3_Wtn4-L4tCotmJ?usp=sharing"
+              href="https://github.com/aupendu/iterative-dehaze"
               rel="external nofollow"
               target="_blank"
               onmouseover="this.style.opacity='0.5'"
