@@ -137,8 +137,8 @@
           font-weight: bold;
         "
       >
-        Progressive Update Guided Interdependent Networks
-        for Single Image Dehazing
+        Progressive Update Guided Interdependent Networks for Single Image
+        Dehazing
       </h1>
 
       <!--Author Name-->
@@ -233,21 +233,29 @@
       <div class="row">
         <div class="col-sm">
           <p style="text-align: justify">
-            Images with haze of different varieties often pose a significant challenge to dehazing. 
-            Therefore, guidance by estimates of haze parameters related to its variety would be beneficial 
-            and they should be progressively updated along with iterative haze reduction to allow optimal 
-            dehazing. To this end, we propose a multi-network dehazing framework containing novel interdependent 
-            dehazing and haze parameter updater networks that operate within a unique iterative mechanism. 
-            The haze parameters, transmission map and atmospheric light, are first estimated using specific 
-            convolutional networks allowing color cast handling. The estimated parameters are then used as 
-            priors in our dehazing module, where the estimates are progressively updated by novel convolutional 
-            networks using the iterative mechanism.  The updating takes place jointly with progressive dehazing 
-            by a convolutional network that invokes inter-iteration dependencies. The joint updating and dehazing 
-            within the iterative mechanism gradually modify the haze parameter estimates toward achieving optimal 
-            dehazing. Through ablation studies, our iterative dehazing framework is shown to be more effective than 
-            the use of conventional LSTM based recurrence, image-to-image mapping and haze model based estimation. 
-            Our dehazing framework is qualitatively and quantitatively found to outperform the state-of-the-art on 
-            synthetic and real-world hazy images of several datasets with varied hazy conditions.
+            Images with haze of different varieties often pose a significant
+            challenge to dehazing. Therefore, guidance by estimates of haze
+            parameters related to its variety would be beneficial and they
+            should be progressively updated along with iterative haze reduction
+            to allow optimal dehazing. To this end, we propose a multi-network
+            dehazing framework containing novel interdependent dehazing and haze
+            parameter updater networks that operate within a unique iterative
+            mechanism. The haze parameters, transmission map and atmospheric
+            light, are first estimated using specific convolutional networks
+            allowing color cast handling. The estimated parameters are then used
+            as priors in our dehazing module, where the estimates are
+            progressively updated by novel convolutional networks using the
+            iterative mechanism. The updating takes place jointly with
+            progressive dehazing by a convolutional network that invokes
+            inter-iteration dependencies. The joint updating and dehazing within
+            the iterative mechanism gradually modify the haze parameter
+            estimates toward achieving optimal dehazing. Through ablation
+            studies, our iterative dehazing framework is shown to be more
+            effective than the use of conventional LSTM based recurrence,
+            image-to-image mapping and haze model based estimation. Our dehazing
+            framework is qualitatively and quantitatively found to outperform
+            the state-of-the-art on synthetic and real-world hazy images of
+            several datasets with varied hazy conditions.
           </p>
         </div>
       </div>
