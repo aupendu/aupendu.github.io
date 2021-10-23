@@ -297,18 +297,26 @@
         <div class="col">
           <ol type="a">
             <li>
-              We propose a recurrent convolutional neural network based novel
-              iterative framework that progressively dehazes images, which is
-              effective in different types of hazy conditions.
+              We propose an end-to-end dehazing module that progressively dehazes hazy images using 
+              interdependent dehazing and updater networks within a novel iterative mechanism.
             </li>
             <li>
-              We introduce novel updater networks that update initial estimates
-              of transmission map and atmospheric light in each iterative step.
+              We introduce novel updater networks that update initial estimates of transmission map 
+              and atmospheric light to guide the dehazing process.
             </li>
             <li>
-              We propose a novel convolutional neural network based architecture
-              to get an initial estimate of channel-wise atmospheric light,
-              which helps in handling color cast when present.
+              We propose a dehazing network that performs the progressive dehazing jointly with the 
+              progressive updating by the updaters while invoking inter-interation dependencies.
+              </li>
+            <li>
+              To handle color cast in hazy images, we estimate channel-wise atmospheric light using a novel 
+              deep network and subsequently update it in the dehazing module.
+              </li>
+            <li>
+              We find our dehazing framework to be effective in different types of hazy conditions. 
+              We show that it outperforms the state-of-the-art and possesses a unique image artifact handling capability. 
+              The importance of our iterative mechanism, the guidance by updated transmission map and atmospheric light, 
+              and the end-to-end learning of our dehazing module are established through ablation studies.
             </li>
           </ol>
         </div>
@@ -825,8 +833,8 @@
             <span style="display: block; padding-left: 35px"
               >@misc{kar2020transmission,><br />
               <span style="padding-left: 53px; display: block"
-                >title={Transmission Map and Atmospheric Light Guided Iterative
-                Updater Network for Single Image Dehazing},<br />
+                >title={Progressive Update Guided Interdependent Networks for Single Image
+                        Dehazing},<br />
                 author={Aupendu Kar and Sobhan Kanti Dhara and Debashis Sen and
                 Prabir Kumar Biswas},<br />
                 year={2020},<br />
