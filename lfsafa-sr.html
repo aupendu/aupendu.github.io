@@ -125,8 +125,9 @@
             <div class="col d-flex justify-content-center">
                 <figure class="figure">
                     <span class="d-flex justify-content-center">
-                    <img class="img-fluid figure-img" src="assets/lfsafa-sr/teaser/fig1.jpg" class="figure-img img-fluid rounded"
-                        title="Image Training" height="600" width="600" /></a></span>
+                        <img class="img-fluid figure-img" src="assets/lfsafa-sr/teaser/fig1.jpg"
+                            class="figure-img img-fluid rounded" title="Image Training" height="600" width="600"
+                            alt="machine learning image training diagram" /></a></span>
                     <figcaption class="text-center" id="figCap">
                         Feature extraction and upscale module are from any
                         pre-trained SISR model. The adaptation module aims to learn
@@ -139,6 +140,100 @@
                 </figure>
             </div>
         </div>
+        <hr>
+        <!------------------------------ABSTRACT-------------------->
+        <h2 id="headingStyles" class="text-center text-md-start">
+            Abstract
+        </h2>
+        <div class="row">
+            <div class="col-sm">
+                <p style="text-align: justify">
+                    With the availability of commercial Light Field (LF) cam-
+                    eras, LF imaging has emerged as an up-and-coming tech-
+                    nology in computational photography. However, the spatial
+                    resolution is significantly constrained in commercial micro-
+                    lens-based LF cameras because of the inherent multiplexing
+                    of spatial and angular information. Therefore, it becomes the
+                    main bottleneck for other applications of light field cameras.
+                    This paper proposes an adaptation module in a pre-trained
+                    Single Image Super-Resolution (SISR) network to leverage
+                    the powerful SISR model instead of using highly engineered
+                    light field imaging domain-specific Super Resolution models.
+                    The adaption module consists of a Sub-aperture Shift block
+                    and a fusion block. It is an adaptation in the SISR network
+                    to further exploit the spatial and angular information in LF
+                    images to improve the super-resolution performance. Exper-
+                    imental validation shows that the proposed method outper-
+                    forms existing light field super-resolution algorithms. It also
+                    achieves PSNR gains of more than 1 dB across all the datasets
+                    as compared to the same pre-trained SISR models for scale
+                    factor 2, and PSNR gains 0.6 − 1 dB for scale factor 4.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <!------------------------------HIGHLIGHTS-------------------->
+        <h2 id="headingStyles" class="text-center text-md-start">
+            <i class="fas fa-satellite-dish"></i>&nbsp;Highlights
+        </h2>
+        <div class="row" id="jumbo">
+            <div class="col">
+                <ol type="i">
+                    <li>
+                        We propose a light-field domain adaptation module to
+                        achieve LFSR using SISR models. To the best of our
+                        knowledge, this is the first work in this direction.
+                    </li>
+                    <li>
+                        We show that the proposed module can utilize angular
+                        information present in SA images to improve the per-
+                        formance, and ablation studies support our claims.
+                    </li>
+                    <li>
+                        Our qualitative and quantitative analysis shows that the
+                        performance of our method is better than light-field
+                        domain-specific super-resolution solutions, and any
+                        SISR models can adopt our proposed modification to
+                        make it work for LFSR.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <hr />
+        <!------------------------------Proposed module-------------------->
+        <h2 id="headingStyles" class="text-center text-md-start">
+            Proposed Module
+        </h2>
+
+        <!-------------------------------FIGURE 2--------------------------->
+        <div class="row ">
+            <div class="col d-flex justify-content-center">
+                <figure class="figure">
+                    <span class="d-flex justify-content-center">
+                        <img class="img-fluid figure-img" src="assets/lfsafa-sr/teaser/fig2.jpg"
+                            class="figure-img img-fluid rounded" title="Proposed sub-aperture feature adaptation module"
+                            height="600" width="600"
+                            alt="proposed sub-aperture feature adaptation module image" /></a></span>
+                    <figcaption class="text-center" id="figCap">
+                        The proposed sub-aperture feature adaptation module
+                        consists of <i>n</i> SAS modules and 1 fusion module. <i>f</i><sub>i</sub> is the
+                        extracted feature of a sub-aperture image using a pre-trained
+                        model <i>F</i><sub>feat</sub> and <i>f'</i><sub>i</sub> is the modulated feature that contains
+                        more rich features that are acquired from other sub-aperture
+                        images. '<i>Conv, a, b, k</i>' represents 2D convolution with <i>a</i>
+                        number of input channels, <i>b</i> number of output channels, and
+                        <i>k</i> is the kernel size.
+                        ule <i>F</i><sub>feat</sub>, and another one is upscaling cum reconstruction
+                        module <i>F</i><sub>up</sub>. <i>F</i><sub>feat</sub> extracts the salient features from a single
+                        image that is up-scaled by <i>F</i><sub>up</sub>. Our main objective is to in-
+                        troduce a module that modulates the extracted features from
+                        <i>F</i><sub>feat</sub> by exploiting angular information across SAIs.
+                        <!--EDIT CAPTION HERE-->
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <hr>
 
         <!-----------------------------FOOTER------------------------------->
         <footer>

@@ -13,6 +13,8 @@ body {
 
 #jumbo {
   padding: 5px !important;
+  background-color: rgb(235, 235, 235);
+  border-radius: 4px;
 }
 
 #figCap {
