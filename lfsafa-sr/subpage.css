@@ -1,3 +1,65 @@
-body{
-    background-color: antiquewhite;
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@577&family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+/*.img_container {
+  position: relative;
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+}*/
+
+#jumbo {
+  padding: 5px !important;
+}
+
+#figCap {
+  font-size: calc(12px + 0.5vw) !important;
+  color: black;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+#flag {
+  height: 15px;
+  width: 19px;
+  margin-bottom: 5px;
+}
+
+footer {
+  color: rgb(187, 186, 186);
+  font-size: calc(8px + 0.5vw);
+
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+
+footer a {
+  color: rgb(155, 155, 155);
+}
+
+footer a:hover {
+  color: rgb(0, 0, 0);
+}
+
+#headingStyles,
+#sectionResult,
+#download,
+#cite {
+  text-align: left;
+  font-size: calc(18px + 0.5vw);
+  font-weight: bold;
+  color: rgb(23, 23, 141);
+}
+
+@media only screen and (max-width: 480px) {
+  #flag {
+    height: 10px;
+    width: 13px;
+    margin-bottom: 5px;
+  }
 }
