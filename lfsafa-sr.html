@@ -204,9 +204,8 @@
         <h2 id="headingStyles" class="text-center text-md-start">
             Proposed Module
         </h2>
-
-        <!-------------------------------FIGURE 2--------------------------->
         <div class="row ">
+            <!-------------------------------FIGURE 2--------------------------->
             <div class="col d-flex justify-content-center">
                 <figure class="figure">
                     <span class="d-flex justify-content-center">
@@ -224,7 +223,8 @@
                         number of input channels, <i>b</i> number of output channels, and
                         <i>k</i> is the kernel size.
                         ule <i>F</i><sub>feat</sub>, and another one is upscaling cum reconstruction
-                        module <i>F</i><sub>up</sub>. <i>F</i><sub>feat</sub> extracts the salient features from a single
+                        module <i>F</i><sub>up</sub>. <i>F</i><sub>feat</sub> extracts the salient features from a
+                        single
                         image that is up-scaled by <i>F</i><sub>up</sub>. Our main objective is to in-
                         troduce a module that modulates the extracted features from
                         <i>F</i><sub>feat</sub> by exploiting angular information across SAIs.
@@ -234,7 +234,67 @@
             </div>
         </div>
         <hr>
+        <!------------------------------Results and ABalation Studies-------------------->
+        <div class="row ">
+            <!-------------------------------FIGURE 2--------------------------->
+            <div class="col-sm-6">
+                <h2 id="headingStyles" class="text-center text-md-start">
+                    Results
+                </h2>
+                <figure class="figure">
+                    <span class="d-flex justify-content-center">
+                        <img class="img-fluid figure-img" src="assets/lfsafa-sr/resultAbalation/tab1.jpg"
+                            class="figure-img img-fluid rounded" title="Proposed sub-aperture feature adaptation module"
+                            height="600" width="600"
+                            alt="proposed sub-aperture feature adaptation module image" /></a></span>
+                    <figcaption class="text-center" id="figCap">
+                        Table 1: PSNR/SSIM values achieved by different methods
+                        for 2x and 4xSR. Our results are shown in bold
+                        <!--EDIT CAPTION HERE-->
+                    </figcaption>
+                </figure>
+            </div>
 
+            <div class="col-sm-6">
+                <h2 id="headingStyles" class="text-center text-md-start">
+                    Abalation Study
+                </h2>
+                <div class="row">
+                    <div class="col-12">
+                        <figure class="figure">
+                            <span class="d-flex justify-content-center">
+                                <img class="img-fluid figure-img" src="assets/lfsafa-sr/resultAbalation/tab2.jpg"
+                                    class="figure-img img-fluid rounded"
+                                    title="Model ablation studies" height="600" width="600"
+                                    alt="Table number 2, caption is mentioned below." /></a></span>
+                            <figcaption class="text-center" id="figCap">
+                                Table 2: Model ablation studies of our proposed LFSAFA
+                                module and the effect of angular resolution on the reconstruction performance. All the
+                                experiments are performed on the
+                                LFSAFA-RDN variant for 2x SR.
+                                <!--EDIT CAPTION HERE-->
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <figure class="figure">
+                            <span class="d-flex justify-content-center">
+                                <img class="img-fluid figure-img" src="assets/lfsafa-sr/resultAbalation/tab3.jpg"
+                                    class="figure-img img-fluid rounded"
+                                    title="Comparative analysis" height="600" width="600"
+                                    alt="Table number 3, caption is mentioned below." /></a></span>
+                            <figcaption class="text-center" id="figCap">
+                                Table 3: Comparative analysis of our proposed LFSAFA
+                                module-based LFSR models with their SISR counterparts.
+                                <!--EDIT CAPTION HERE-->
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
         <!-----------------------------FOOTER------------------------------->
         <footer>
             <p style="text-align: center">
