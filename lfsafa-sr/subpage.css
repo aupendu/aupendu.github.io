@@ -4,6 +4,7 @@
 body {
   background-color: rgb(255, 255, 255);
 }
+
 /*.img_container {
   position: relative;
   margin: auto;
@@ -18,8 +19,8 @@ body {
 }
 
 #jumbo li {
-    padding-top:6px;
-    padding-bottom: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 #figCap {
@@ -31,6 +32,7 @@ body {
 a {
   text-decoration: none;
 }
+
 #flag {
   height: 15px;
   width: 19px;
