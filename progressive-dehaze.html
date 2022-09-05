@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+  <!--Update this for shortest possible description-->
+  <meta name="description" content="Iterative Prior Updated Dehazing Network (IPUDN), a recurrent convolutional neural network
+      for progressive haze removal." />
+
+  <!--This part is to give credit to the person who developed the site-->
+  <meta name="author" content="Aniket Patra" />
+
+  <!---------------------og tags are for open graph ----------------->
+  <meta property="og:title" content="Iterative Dehazing" />
+
+  <meta property="og:url" content="https://aupendu.github.io/progressive-dehaze" />
+  <meta property="og:image" content="https://aupendu.github.io/assets/images/train_og_iterativedehaze.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Iterative Dehazing Training Stage 3" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Iterative Prior Updated Dehazing Network (IPUDN), a recurrent convolutional neural network
+      for progressive haze removal." />
+
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!---------------TWITTER CRDS------------------------>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Iterative Dehazing" />
+  <meta name="twitter:description" content="Iterative Prior Updated Dehazing Network (IPUDN), a recurrent convolutional neural network
+      for progressive haze removal." />
+  <meta name="twitter:url" content="https://aupendu.github.io/progressive-dehaze" />
+  <meta name="twitter:image" content="https://aupendu.github.io/assets/images/train_og_iterativedehaze.jpg" />
+
+  <title>Iterative Dehazing</title>
+
+  <!--Page Icon-->
+  <link rel="icon" type="image/png" href="assets/images/ak2.ico" />
+
+  <!--STYLESHEETS (.css)-->
+
+  <!--For Bootstrap 5-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"
+    integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+    onerror="this.onerror=null;this.href='assets/dependencies/bootstrap-5.0.1-dist/css/bootstrap.min.css';" />
+  <!--For Cocoen-->
+  <link rel="stylesheet" href="assets/dependencies/cocoen-2.0.5/dist/css/cocoen.min.css" />
+  <!--Extrenal css-->
+  <link rel="stylesheet" href="iterative-dehaze/subpage.css" />
+</head>
+
+<body>
+  <div class="container" style="background-color: rgb(255, 255, 255)">
+    <!--Top Nav-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://aupendu.github.io/"><i class="fas fa-house-user d-inline-block"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#sectionResult">Result</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#download">Download</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cite">Citation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="mailTo">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Topic Name-->
+    <h1 style="
+          text-align: center;
+          font-size: calc(25px + 0.5vw);
+          font-family: 'Raleway', sans-serif;
+          font-weight: bold;
+        ">
+      Progressive Update Guided Interdependent Networks for Single Image
+      Dehazing
+    </h1>
+
+    <!--Author Name-->
+
+    <h2 style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        ">
+      <a href="https://github.com/aupendu" target="_blank" style="text-decoration: none; color: rgb(70, 70, 70)"
+        onmouseover="this.style.color='gray'" onmouseout="this.style.color='rgb(70, 70, 70)'"><u>Aupendu Kar</u></a>,
+      Sobhan Kanti Dhara, Debashis Sen, Prabir Kumar Biswas
+    </h2>
+
+    <!--Institution Name-->
+
+    <h3 style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        ">
+      Department of Electronics and Electrical Communication Engineering
+      <br />
+      Indian Institute of Technology Kharagpur, India
+    </h3>
+    <hr />
+    <p style="text-align: center">
+      Use the slider to compare before and after
+    </p>
+
+    <!--*******************   TEASER **************************-->
+    <div class="row">
+      <div class="col-4 pb-3">
+        <div class="cocoen">
+          <img src="assets/subpage_iterative_dehaze/Teaser/A.jpg" alt="City filled with smog or fog."
+            title="Foggy City" />
+          <img src="assets/subpage_iterative_dehaze/Teaser/A_Out.jpg"
+            alt="City after removing the smog or fog using iterative dehazing technique" title="Fog Removed City" />
+        </div>
+      </div>
+      <div class="col-4 pb-3">
+        <div class="cocoen">
+          <img src="assets/subpage_iterative_dehaze/Teaser/Z.jpg" alt="City with Foggy Metro Rail."
+            title="A view of foggy metro." />
+          <img src="assets/subpage_iterative_dehaze/Teaser/Z_Out.jpg"
+            alt="Metro Rail after removing the smog or fog using iterative dehazing technique"
+            title="After removing the Fog." />
+        </div>
+      </div>
+      <div class="col-4 pb-3">
+        <div class="cocoen">
+          <img src="assets/subpage_iterative_dehaze/Teaser/H.jpg" alt="A view of densely Foggy Railway Bridge"
+            title="Foggy Railway bridge" />
+          <img src="assets/subpage_iterative_dehaze/Teaser/H_Out.jpg"
+            alt="Railway Bridge after removing the smog or fog using iterative dehazing technique"
+            title="Fog removed Railway bridge." />
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <!------------ABSTRACT---------------->
+
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-archive"></i>&nbsp;Abstract
+    </h2>
+    <div class="row">
+      <div class="col-sm">
+        <p style="text-align: justify">
+          Images with haze of different varieties often pose a significant
+          challenge to dehazing. Therefore, guidance by estimates of haze
+          parameters related to its variety would be beneficial and they
+          should be progressively updated along with iterative haze reduction
+          to allow optimal dehazing. To this end, we propose a multi-network
+          dehazing framework containing novel interdependent dehazing and haze
+          parameter updater networks that operate within a unique iterative
+          mechanism. The haze parameters, transmission map and atmospheric
+          light, are first estimated using specific convolutional networks
+          allowing color cast handling. The estimated parameters are then used
+          as priors in our dehazing module, where the estimates are
+          progressively updated by novel convolutional networks using the
+          iterative mechanism. The updating takes place jointly with
+          progressive dehazing by a convolutional network that invokes
+          inter-iteration dependencies. The joint updating and dehazing within
+          the iterative mechanism gradually modify the haze parameter
+          estimates toward achieving optimal dehazing. Through ablation
+          studies, our iterative dehazing framework is shown to be more
+          effective than the use of conventional LSTM based recurrence,
+          image-to-image mapping and haze model based estimation. Our dehazing
+          framework is qualitatively and quantitatively found to outperform
+          the state-of-the-art on synthetic and real-world hazy images of
+          several datasets with varied hazy conditions.
+        </p>
+      </div>
+    </div>
+    <hr />
+
+    <!---------------------------Pipeline-------------------------------->
+
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-stream"></i>&nbsp;Schematic Framework
+    </h2>
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Training_Pipeline/GAx.jpg" target="_blank">
+            <img src="assets/subpage_iterative_dehaze/Training_Pipeline/GAx.jpg"
+              alt="Training Pipeline for iterative dehazing technique " class="figure-img img-fluid rounded"
+              title="Image Training" height="600" width="600" /></a>
+          <figcaption class="text-center" id="figCap">
+            Schematic framework of our proposed dehazing approach
+            <!--EDIT CAPTION HERE-->
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <!------------------------------HIGHLIGHTS-------------------->
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-satellite-dish"></i>&nbsp;Highlights
+    </h2>
+    <div class="row" id="jumbo">
+      <div class="col">
+        <ol type="a">
+          <li>
+            We propose an end-to-end dehazing module that progressively dehazes hazy images using
+            interdependent dehazing and updater networks within a novel iterative mechanism.
+          </li>
+          <li>
+            We introduce novel updater networks that update initial estimates of transmission map
+            and atmospheric light to guide the dehazing process.
+          </li>
+          <li>
+            We propose a dehazing network that performs the progressive dehazing jointly with the
+            progressive updating by the updaters while invoking inter-interation dependencies.
+          </li>
+          <li>
+            To handle color cast in hazy images, we estimate channel-wise atmospheric light using a novel
+            deep network and subsequently update it in the dehazing module.
+          </li>
+          <li>
+            We find our dehazing framework to be effective in different types of hazy conditions.
+            We show that it outperforms the state-of-the-art and possesses a unique image artifact handling capability.
+            The importance of our iterative mechanism, the guidance by updated transmission map and atmospheric light,
+            and the end-to-end learning of our dehazing module are established through ablation studies.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <hr />
+    <!---------------------------------Architecture--------------------------------->
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-dna"></i>&nbsp;Model Architecture: Iterative Dehazing
+    </h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Model_Architecture/algox.PNG"
+            target="_blank">
+            <img src="assets/subpage_iterative_dehaze/Model_Architecture/algox.PNG" alt="Algorithm for Iterative Transmission and Atmospheric Light Update based Recurrent
+                Neural Network for Single Image Dehazing" class="figure-img img-fluid rounded"
+              title="Algorithm for Iterative Dehazing" height="400" width="450" /></a>
+          <figcaption class="text-center" id="figCap">
+            Proposed Dehazing Algorithm
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Model_Architecture/modelx.PNG"
+            target="_blank">
+            <img src="assets/subpage_iterative_dehaze/Model_Architecture/modelx.PNG" alt="Architectural Model for Iterative Transmission and Atmospheric Light Update based Recurrent
+                Neural Network for Single Image Dehazing" class="figure-img img-fluid rounded"
+              title="Architecture of Dehaze Model" /></a>
+          <figcaption class="text-center" id="figCap">
+            Our Proposed LSTM based Iterative Dehazing Network
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+
+    <!--------------------------------------Architecture II----------------------------------->
+
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-dna"></i>&nbsp;Model Architecture: Transmission and
+      Atmospheric
+    </h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Model_Architecture_t&a/AmbModel.jpg"
+            target="_blank">
+            <img src="assets/subpage_iterative_dehaze/Model_Architecture_t&a/AmbModel.jpg" alt="Ambient Model for Iterative Transmission and Atmospheric Light Update based Recurrent
+                Neural Network for Single Image Dehazing" class="figure-img img-fluid rounded"
+              title="Atmospheric Light Model" /></a>
+          <figcaption class="text-center" id="figCap">
+            Proposed Atmospheric Light Estimation Model
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Model_Architecture_t&a/Transmission_Model.jpg"
+            target="_blank">
+            <img src="assets/subpage_iterative_dehaze/Model_Architecture_t&a/Transmission_Model.jpg" alt="Transmission Model for Iterative Transmission and Atmospheric Light Update based Recurrent
+                Neural Network for Single Image Dehazing" class="figure-img img-fluid rounded"
+              title="Transmission Model" /></a>
+          <figcaption class="text-center" id="figCap">
+            Densely Connected Transmission Map Estimation Model [1]
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+
+    <!----------------------------------COMPARISON-------------->
+
+    <h2 id="sectionResult" class="text-center text-md-start">
+      <i class="fas fa-dice-d6"></i>&nbsp;Comparison with other Models
+    </h2>
+    <div class="row">
+      <div class="col-2">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Comparison/Hazy.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Visual_Comparison/Hazy.jpg"
+              alt="Image collage for a set of Hazy images." class="figure-img img-fluid" title="Hazy Images" /></a>
+          <figcaption class="text-center" id="figCap">Hazy</figcaption>
+        </figure>
+      </div>
+      <div class="col-2">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Comparison/EPDN.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Visual_Comparison/EPDN.jpg"
+              alt="Filtered Hazy images after using Enhanced Pix2pix Dehazing Network model"
+              class="figure-img img-fluid" title="After Using EPDN" /></a>
+          <figcaption class="text-center" id="figCap">EPDN [2]</figcaption>
+        </figure>
+      </div>
+      <div class="col-2">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Comparison/HazeLine.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Visual_Comparison/HazeLine.jpg"
+              alt="Filtered Hazy images after using Haze-line model." class="figure-img img-fluid"
+              title="After using Haze-line" /></a>
+          <figcaption class="text-center" id="figCap">
+            Haze-line [3]
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-2">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Comparison/FSID.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Visual_Comparison/FSID.jpg"
+              alt="Filtered Hazy images after using Fast Single Image Dehazing model." class="figure-img img-fluid"
+              title="After using FSID" /></a>
+          <figcaption class="text-center" id="figCap">FSID [4]</figcaption>
+        </figure>
+      </div>
+      <div class="col-2">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Comparison/MSBDN.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Visual_Comparison/MSBDN.jpg"
+              alt="Filtered Hazy images after using Multi-Scale Boosted Dehazing Network model."
+              class="figure-img img-fluid" title="After using MSBDN" /></a>
+          <figcaption class="text-center" id="figCap">MSBDN [5]</figcaption>
+        </figure>
+      </div>
+      <div class="col-2">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Visual_Comparison/Our.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Visual_Comparison/Our.jpg" alt="Filtered Hazy images after using Iterative Transmission and Atmospheric Light Update based Recurrent
+                Neural Network for Single Image Dehazing" class="figure-img img-fluid"
+              title="After using Our model" /></a>
+          <figcaption class="text-center" id="figCap">
+            Our Proposed IPUDN
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <!-----------------------------------Ablation------------------------------------------------------>
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-microscope"></i>&nbsp;Ablation Studies
+    </h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/1_0009_Hazy.jpg" target="_blank">
+            <img src="assets/subpage_iterative_dehaze/Ablation/1_0009_Hazy.jpg" alt="Hazy image of a market place"
+              class="figure-img img-fluid rounded" />
+          </a>
+          <figcaption class="text-center" id="figCap">Hazy Image</figcaption>
+        </figure>
+      </div>
+      <!--<div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/2_0009_GT.jpg"
+              target="_blank"
+              ><img
+                 
+                src="assets/subpage_iterative_dehaze/Ablation/2_0009_GT.jpg"
+                alt=""
+                class="figure-img img-fluid rounded"
+            /></a>
+            <figcaption class="figure-caption text-center">Caption2</figcaption>
+          </figure>
+        </div>-->
+      <div class="col-sm-4">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/3_0009_ResNet_L1.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Ablation/3_0009_ResNet_L1.jpg"
+              alt="Using ResNet on the Hazy image." class="figure-img img-fluid rounded" title="Using ResNet" /></a>
+          <figcaption class="text-center" id="figCap">ResNet16</figcaption>
+        </figure>
+      </div>
+
+      <div class="col-sm-4">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/4_0009_LResX2_L1.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Ablation/4_0009_LResX2_L1.jpg"
+              alt="Using LResX2 on the Hazy image." class="figure-img img-fluid rounded" title="Using LResX2" /></a>
+          <figcaption class="text-center" id="figCap">ResNet6+A+T</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/5_0009_LResXLSTM2_L1.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Ablation/5_0009_LResXLSTM2_L1.jpg"
+              alt="Using LResXLSTM2 on the Hazy image." class="figure-img img-fluid rounded"
+              title="Using LResXLSTM2" /></a>
+          <figcaption class="text-center" id="figCap">
+            ResNet6+A+T+LSTM
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/6_0009_LResXC2_L1.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Ablation/6_0009_LResXC2_L1.jpg"
+              alt="Using LResXC2 on the Hazy image." class="figure-img img-fluid rounded" title="Using LResXC2" /></a>
+          <figcaption class="text-center" id="figCap">
+            ResNet6+A+T+IUN
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Ablation/7_0009_LResXLSTMC2_L1.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Ablation/7_0009_LResXLSTMC2_L1.jpg"
+              alt="Using LResXLSTMC2 on the Hazy image." class="figure-img img-fluid rounded"
+              title="Using LResXLSTMC2" /></a>
+          <figcaption class="text-center" id="figCap">
+            ResNet6+A+T+IUN+LSTM
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <!--------------------------------Extension to Other Applications---------------------------------------------->
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-globe-asia"></i>&nbsp;Extension to Other Applications
+    </h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Glare.jpg" target="_blank"><img
+              src="assets/subpage_iterative_dehaze/Enhance/Glare.jpg"
+              alt="Glare reduction using our iterative dehaze method." class="figure-img img-fluid rounded"
+              title="Glare reduction in cityscape" /></a>
+          <figcaption class="text-center" id="figCap">Glare</figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Rain.jpg" target="_blank"><img
+              src="assets/subpage_iterative_dehaze/Enhance/Rain.jpg"
+              alt="Rain reduction using our iterative dehaze method." class="figure-img img-fluid rounded"
+              title="Rain effect reduction from a scenary" /></a>
+          <figcaption class="text-center" id="figCap">Rain</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Halation.jpg" target="_blank"><img
+              src="assets/subpage_iterative_dehaze/Enhance/Halation.jpg"
+              alt="Halation reduction using our iterative dehaze method." class="figure-img img-fluid rounded"
+              title="Halation reduction of a scenary" /></a>
+          <figcaption class="text-center" id="figCap">Halation</figcaption>
+        </figure>
+      </div>
+
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Underwater.jpg"
+            target="_blank"><img src="assets/subpage_iterative_dehaze/Enhance/Underwater.jpg"
+              alt="Underwater glare reduction using our iterative dehaze method." class="figure-img img-fluid rounded"
+              title="Underwater image cleaning" /></a>
+          <figcaption class="text-center" id="figCap">Underwater</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <figure class="figure">
+          <a href="https://aupendu.github.io/assets/subpage_iterative_dehaze/Enhance/Hazefree.jpg" target="_blank"><img
+              src="assets/subpage_iterative_dehaze/Enhance/Hazefree.jpg"
+              alt="Haze reduction using our iterative dehaze method." class="figure-img img-fluid rounded"
+              title="Haze reduction from an image of horse" /></a>
+          <figcaption class="text-center figure-caption" id="figCap">
+            Hazefree
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <!-----------------------DOWNLOADS------------------------------->
+    <h2 id="download" class="text-center text-md-start">
+      <i class="fas fa-file-download"></i>&nbsp;Download
+    </h2>
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <figure class="figure">
+          <a href="https://arxiv.org/abs/2008.01701" rel="external nofollow" target="_blank"
+            onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"><img
+              src="assets/images/arxiv.png" alt="Arxiv image icon" width="220px" height="120px" title="Click to Open" />
+          </a>
+          <figcaption class="text-center figure-caption" style="font-size: calc(12px + 0.5vw)">
+            Paper
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-4 text-center">
+        <figure class="figure">
+          <a href="https://github.com/aupendu/iterative-dehaze" rel="external nofollow" target="_blank"
+            onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"><i class="fab fa-github"
+              style="font-size: 120px; color: rgb(54, 54, 54)"></i>
+          </a>
+          <figcaption class="text-center figure-caption" style="font-size: calc(12px + 0.5vw)">
+            Code
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-4 text-center">
+        <figure class="figure">
+          <a href="https://github.com/aupendu/iterative-dehaze" rel="external nofollow" target="_blank"
+            onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"><img
+              src="assets/images/gdrive.png" alt="Google drive image icon" width="150px" height="120px"
+              title="Click to Open" />
+          </a>
+          <figcaption class="text-center figure-caption" style="font-size: calc(12px + 0.5vw)">
+            Training & Testing Datasets
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <!-------------------------REFERENCES---------------------------->
+    <h2 id="headingStyles" class="text-center text-md-start">
+      <i class="fas fa-asterisk"></i>&nbsp;References
+    </h2>
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li style="text-align: justify">
+            H. Zhang and V. M. Patel, “Densely connected pyramid dehazing
+            network,” in Proceedings of the IEEE conference on computer vision
+            and pattern recognition, 2018, pp. 3194–3203.
+          </li>
+          <li style="text-align: justify">
+            Y. Qu, Y. Chen, J. Huang, and Y. Xie, “Enhanced pix2pix dehazing
+            network,” in Proceedings of the IEEE Conference on Computer Vision
+            and Pattern Recognition, 2019, pp. 8160–8168.
+          </li>
+          <li style="text-align: justify">
+            D. Berman, T. Treibitz, and S. Avidan, “Single image dehazing
+            using haze-lines,” IEEE Transactions on Pattern Analysis and
+            Machine Intelligence, vol. 42, no. 3, pp. 720–734, 2020.
+          </li>
+          <li style="text-align: justify">
+            S. E. Kim, T. H. Park, and I. K. Eom, “Fast single image dehazing
+            using saturation based transmission map estimation,” IEEE
+            Transactions on Image Processing, vol. 29, pp. 1985–1998, 2020.
+          </li>
+          <li style="text-align: justify">
+            H. Dong, J. Pan, L. Xiang, Z. Hu, X. Zhang, F. Wang, and M.-H.
+            Yang, “Multi-scale boosted dehazing network with dense feature
+            fusion,” in IEEE/CVF Conference on Computer Vision and Pattern
+            Recognition (CVPR), June 2020.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <!-------------------------CITATION---------------------------->
+    <h2 id="cite" class="text-center text-md-start">
+      <i class="fas fa-map-marker"></i>&nbsp;Citation (BibTeX)
+    </h2>
+    <div class="row">
+      <div class="col" id="jumbo">
+        <p id="myInput">
+          <span style="display: block; padding-left: 35px">@misc{kar2020transmission,><br />
+            <span style="padding-left: 53px; display: block">title={Progressive Update Guided Interdependent Networks
+              for Single Image
+              Dehazing},<br />
+              author={Aupendu Kar and Sobhan Kanti Dhara and Debashis Sen and
+              Prabir Kumar Biswas},<br />
+              year={2020},<br />
+              eprint={2008.01701},<br />
+              archivePrefix={arXiv},<br />
+              primaryClass={cs.CV}<br /></span>
+            }</span>
+        </p>
+      </div>
+    </div>
+    <hr />
+
+    <!-----------------------------FOOTER------------------------------->
+    <footer>
+      <p style="text-align: center">
+        <i class="far fa-copyright"></i> 2020
+        <a href="https://github.com/aupendu" target="_blank">Aupendu Kar</a>.
+        Made in
+        <a href="https://www.incredibleindia.org/" target="_blank"><img id="flag"
+            src="/assets/images/india-flag-icon-32.png" alt="My Great Country India's Flag" /></a>
+        by
+        <a href="https://thingsbypatra.pythonanywhere.com//" target="_blank">Patra
+        </a>
+      </p>
+    </footer>
+  </div>
+
+  <!--SCRIPTS (.js)-->
+  <!--Font Awesome 5-->
+  <script src="https://kit.fontawesome.com/58bac38d13.js" crossorigin="anonymous"></script>
+
+  <!--JQUERY-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!--Bootstrap 5-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"
+    onerror="this.onerror=null;this.src='assets/dependencies/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js';this.removeAttribute('integrity');this.removeAttribute('crossorigin');"></script>
+
+  <!--For Cocoen-->
+  <script src="assets/dependencies/cocoen-2.0.5/dist/js/cocoen.min.js"></script>
+  <script src="assets/dependencies/cocoen-2.0.5/dist/js/cocoen-jquery.min.js"></script>
+
+  <!--External JS-->
+  <script src="iterative-dehaze/subjs.js"></script>
+
+  <!-----For Cocoen-------------->
+  <script>
+    $(function () {
+      $(".cocoen").cocoen();
+    });
+  </script>
+</body>
+
+</html>
