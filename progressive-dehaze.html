@@ -222,26 +222,16 @@
       <div class="col">
         <ol type="a">
           <li>
-            We propose an end-to-end dehazing module that progressively dehazes hazy images using
-            interdependent dehazing and updater networks within a novel iterative mechanism.
+            We propose an end-to-end dehazing module that progressively dehazes hazy images using interdependent dehazing and updater networks.
           </li>
           <li>
-            We introduce novel updater networks that update initial estimates of transmission map
-            and atmospheric light to guide the dehazing process.
+            We introduce novel haze parameter updater networks that update initial estimates of transmission map and atmospheric light to guide the dehazing process.
           </li>
           <li>
-            We propose a dehazing network that performs the progressive dehazing jointly with the
-            progressive updating by the updaters while invoking inter-interation dependencies.
+            We propose a dehazing network that performs the refined dehazing jointly with the progressive updating by the updaters while invoking inter-step dependencies.
           </li>
           <li>
-            To handle color cast in hazy images, we estimate channel-wise atmospheric light using a novel
-            deep network and subsequently update it in the dehazing module.
-          </li>
-          <li>
-            We find our dehazing framework to be effective in different types of hazy conditions.
-            We show that it outperforms the state-of-the-art and possesses a unique image artifact handling capability.
-            The importance of our iterative mechanism, the guidance by updated transmission map and atmospheric light,
-            and the end-to-end learning of our dehazing module are established through ablation studies.
+            To handle color cast in hazy images, channel-wise atmospheric light is initially estimated using a novel deep network and then updated in the dehazing module.
           </li>
         </ol>
       </div>
@@ -372,7 +362,7 @@
                 Neural Network for Single Image Dehazing" class="figure-img img-fluid"
               title="After using Our model" /></a>
           <figcaption class="text-center" id="figCap">
-            Our Proposed IPUDN
+            Our Proposed PUG-D
           </figcaption>
         </figure>
       </div>
@@ -587,12 +577,12 @@
             In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2037-2046).
           </li>
           <li style="text-align: justify">
-            [5] Ju, M., Ding, C., Ren, W., & Yang, Y. (2021). 
+            [5] Ju, M., Ding, C., Ren, W., & Yang, Y. (2022). 
             IDBP: Image dehazing using blended priors including non-local, local, and global priors. 
             IEEE Transactions on Circuits and Systems for Video Technology.
           </li>
           <li style="text-align: justify">
-            [6] Zhang, X., Wang, J., Wang, T., & Jiang, R. (2021). 
+            [6] Zhang, X., Wang, J., Wang, T., & Jiang, R. (2022). 
             Hierarchical feature fusion with mixed convolution attention for single image dehazing. 
             IEEE Transactions on Circuits and Systems for Video Technology, 32(2), 510-522.
           </li>
@@ -607,7 +597,7 @@
     <div class="row">
       <div class="col" id="jumbo">
         <p id="myInput">
-          <span style="display: block; padding-left: 35px">@misc{kar2020transmission,><br />
+          <span style="display: block; padding-left: 35px">@misc{kar2022progressive,><br />
             <span style="padding-left: 53px; display: block">title={Progressive Update Guided Interdependent Networks
               for Single Image
               Dehazing},<br />
