@@ -166,29 +166,16 @@
     <div class="row">
       <div class="col-sm">
         <p style="text-align: justify">
-          Images with haze of different varieties often pose a significant
-          challenge to dehazing. Therefore, guidance by estimates of haze
-          parameters related to its variety would be beneficial and they
-          should be progressively updated along with iterative haze reduction
-          to allow optimal dehazing. To this end, we propose a multi-network
-          dehazing framework containing novel interdependent dehazing and haze
-          parameter updater networks that operate within a unique iterative
-          mechanism. The haze parameters, transmission map and atmospheric
-          light, are first estimated using specific convolutional networks
-          allowing color cast handling. The estimated parameters are then used
-          as priors in our dehazing module, where the estimates are
-          progressively updated by novel convolutional networks using the
-          iterative mechanism. The updating takes place jointly with
-          progressive dehazing by a convolutional network that invokes
-          inter-iteration dependencies. The joint updating and dehazing within
-          the iterative mechanism gradually modify the haze parameter
-          estimates toward achieving optimal dehazing. Through ablation
-          studies, our iterative dehazing framework is shown to be more
-          effective than the use of conventional LSTM based recurrence,
-          image-to-image mapping and haze model based estimation. Our dehazing
-          framework is qualitatively and quantitatively found to outperform
-          the state-of-the-art on synthetic and real-world hazy images of
-          several datasets with varied hazy conditions.
+          Images with haze of different varieties often pose a significant challenge to dehazing. 
+          Therefore, guidance by estimates of haze parameters related to the variety would be beneficial, and their progressive update jointly with haze reduction will allow effective dehazing. 
+          To this end, we propose a multi-network dehazing framework containing novel interdependent dehazing and haze parameter updater networks that operate in a progressive manner. 
+          The haze parameters, transmission map and atmospheric light, are first estimated using dedicated convolutional networks that allow color-cast handling. 
+          The estimated parameters are then used to guide our dehazing module, where the estimates are progressively updated by novel convolutional networks. 
+          The updating takes place jointly with progressive dehazing using a network that invokes inter-step dependencies. 
+          The joint progressive updating and dehazing gradually modify the haze parameter values toward achieving effective dehazing. 
+          Through different studies, our dehazing framework is shown to be more effective than image-to-image mapping and predefined haze formation model based dehazing. 
+          The framework is also found capable of handling a wide variety of hazy conditions wtih different types and amounts of haze and color casts. 
+          Our dehazing framework is qualitatively and quantitatively found to outperform the state-of-the-art on synthetic and real-world hazy images of multiple datasets with varied haze conditions.
         </p>
       </div>
     </div>
@@ -597,6 +584,11 @@
             Hierarchical feature fusion with mixed convolution attention for single image dehazing. 
             IEEE Transactions on Circuits and Systems for Video Technology, 32(2), 510-522.
           </li>
+          <li style="text-align: justify">
+            [6] Mandal, M., Meedimale, Y.R., Reddy, M.S.K. and Vipparthi, S.K., 2022. 
+            Neural Architecture Search for Image Dehazing. 
+            IEEE Transactions on Artificial Intelligence.
+          </li>
         </ul>
       </div>
     </div>
@@ -614,7 +606,7 @@
               Dehazing},<br />
               author={Aupendu Kar and Sobhan Kanti Dhara and Debashis Sen and
               Prabir Kumar Biswas},<br />
-              year={2022},<br />
+              year={2023},<br />
               eprint={2008.01701},<br />
               archivePrefix={arXiv},<br />
               primaryClass={cs.CV}<br /></span>
@@ -627,7 +619,7 @@
     <!-----------------------------FOOTER------------------------------->
     <footer>
       <p style="text-align: center">
-        <i class="far fa-copyright"></i> 2020
+        <i class="far fa-copyright"></i> 2023
         <a href="https://github.com/aupendu" target="_blank">Aupendu Kar</a>.
         Made in
         <a href="https://www.incredibleindia.org/" target="_blank"><img id="flag"
