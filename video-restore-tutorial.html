@@ -15,6 +15,7 @@
     header {
       background-color: #004080;
       color: white;
+      max-height: 400px;
       max-width: 900px;
       padding: 40px;
       margin: auto;
@@ -36,7 +37,9 @@
     }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 40px;
+      margin: auto;
+      max-width: 900px;
       background-color: #eee;
       font-size: 0.9em;
     }
@@ -71,57 +74,26 @@
   </style>
 </head>
 <body>
-<header>
-  <div style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-bottom: 10px;">
-    <img src="video-restore-tutorial/dolby-logo-universum.jpg" alt="Dolby Logo" style="height: 100px;">
-    <img src="video-restore-tutorial/icvgip_logo_oval.png" alt="ICVGIP 2025 Logo" style="height: 100px;">
+<header style="line-height:5pt;">
+  <div style="display: flex; justify-content:flex-start; align-items: center; gap: 650px; margin-bottom: 0px;">
+    <img src="video-restore-tutorial/DLB_Corp_rgb_wht_@2x.png" alt="Dolby Logo" style="height: 50px;">
+    <img src="video-restore-tutorial/icvgip_logo_oval.png" alt="ICVGIP 2025 Logo" style="height: 70px;">
   </div>
-  <h1>ICVGIP 2025 Tutorial</h1>
-  <p>Advances and Challenges in Real-World Video Restoration</p>
-  <p><strong>Date:</strong> December 17, 2025 | <strong>Location:</strong> ICVGIP 2025, IIT Mandi, India</p>
+  <p style="font-size: smaller; font-style: italic;">A Tutorial on </p>
+  <p><strong>Advances and Challenges in Real-World Video Restoration</strong></p>
+  <p style="font-size: smaller;"><strong>Location:</strong> ICVGIP 2025, IIT Mandi, India</p>
+  <p style="font-size: smaller;"><strong>Date:</strong> December 17, 2025 </p>
 </header>
 
   <main>
-    <section>
-      <h2>Speakers</h2>
-      <div class="speaker-grid">
-        <div class="speaker-card">
-          <img src="video-restore-tutorial/gsu.jpg" alt="Guan-Ming Su">
-          <h3>Guan-Ming Su</h3>
-          <p>Guan-Ming Su is Director at Dolby Laboratories, leading image technology development. 
-            He holds a Ph.D. in Electrical and Computer Engineering from the University of Maryland. 
-            His expertise spans multimedia coding, computer vision, 3D imaging, HDR, and machine learning. 
-            He has held roles in Dolby Vision, Marvell, and ESS Technology, contributing to video codec architecture and advanced imaging systems.</p>
-        </div>
-        <div class="speaker-card">
-          <img src="video-restore-tutorial/aupendu.jpg" alt="Aupendu Kar">
-          <h3>Aupendu Kar</h3>
-          <p>Aupendu Kar is a Senior Researcher at Dolby Laboratories, specializing in computer vision and deep learning. 
-            His work focuses on low-level vision tasks like image super-resolution, dehazing, rain removal, and underwater enhancement. 
-            He also explores learning frameworks grounded in physical models and has contributed to medical image analysis.</p>
-        </div>
-        <div class="speaker-card">
-          <img src="video-restore-tutorial/shiv.jpg" alt="Shiv Gehlot">
-          <h3>Shiv Gehlot</h3>
-          <p>Shiv Gehlot is a Senior Researcher at Dolby Laboratories, working on computer vision, multimodal learning, and generative AI. 
-            He holds a Ph.D. from IIIT-Delhi, with research spanning deep learning, medical imaging, and signal processing.</p>
-        </div>
-        <div class="speaker-card">
-          <img src="video-restore-tutorial/sutanu.jpg" alt="Sutanu Bera">
-          <h3>Sutanu Bera</h3>
-          <p>Sutanu Bera is a Senior Researcher at Dolby Laboratories, working on video restoration and low-level image processing using deep learning. 
-            He holds a Ph.D. from IIT Kharagpur and has prior research experience in low-dose CT denoising, GAN-based restoration, and invertible networks.
-        </div>
-      </div>
-    </section>
 
     <section>
       <h2>Abstract</h2>
-      <p>
+      <p style="text-align: justify;">
         Video restoration is an essential component of multimedia processing, with applications in archival preservation, media production, streaming, and consumer content. 
         This tutorial offers a structured overview of the field, tracing developments from classical filtering to deep learning and generative approaches.
       </p>
-      <p>
+      <p style="text-align: justify;">
         We structure the discussion around four perspectives: enhancement of perceptual detail, restoration of chromatic fidelity, adaptation to unknown degradations, and development of unified restoration frameworks. 
         The tutorial concludes with an outlook on emerging research directions, including adaptation of foundation models, test-time refinement, generative architectures, and multimodal guidance.
       </p>
@@ -130,40 +102,98 @@
     <section>
       <h2>Timeline (3 Hours)</h2>
       <div class="timeline">
-        <h3>Hour 1: Foundations and Classical Approaches</h3>
+        <h3>Hour 1</h3>
+        <h4>Introduction & Motivation</h4>
         <ul>
-          <li>Introduction to video degradation types</li>
-          <li>Classical filtering and enhancement techniques</li>
-          <li>Limitations of traditional methods</li>
+          <li>Welcome and tutorial overview</li>
+          <li>Importance of video restoration in multimedia (archival, production, streaming)</li>
+          <li>Typical degradations in videos (noise, blur, compression artifacts, chromatic distortions, etc.)</li>
+          <li>Challenges: mixed/unknown degradations, generalization, deployment</li>
+        </ul>
+        <h4>Historical Foundations</h4>
+        <ul>
+          <li>Classical approaches: filtering, deblurring, deblocking </li>
+          <li>Early machine learning methods for restoration </li>
+          <li>Limitations of handcrafted pipelines </li>
+          <li>Transition to data-driven methods </li>
         </ul>
 
-        <h3>Hour 2: Deep Learning and Unified Models</h3>
+        <h3>Hour 2</h3>
+        <h4>Semantic Detail Enhancement</h4>
         <ul>
-          <li>Perceptual detail enhancement using neural networks</li>
-          <li>Color fidelity restoration and inter-frame consistency</li>
-          <li>Unified restoration frameworks (denoising, deblurring, SR)</li>
+          <li>Problem space: noise, texture loss, structural artifacts</li>
+          <li>Representative models: CNNs, GAN, Diffusion Models</li>
+          <li>Applications: Compression artifact reduction, denoising, deblurring, etc.</li>
+        </ul>
+        <h4>Chromatic Fidelity Restoration</h4>
+        <ul>
+          <li>Challenges in color distortions & temporal consistency</li>
+          <li>Neural color transfer and deep recolorization models</li>
+          <li>Applications: film recolorization, consumer video enhancement</li>
         </ul>
 
-        <h3>Hour 3: Emerging Trends and Future Directions</h3>
+        <h3>Hour 3</h3>
+        <h4>Unified Restoration Frameworks</h4>
         <ul>
-          <li>Zero-shot and foundation model adaptation</li>
-          <li>Test-time refinement strategies</li>
-          <li>Multimodal guidance and vision-language integration</li>
-          <li>Q&A and open discussion</li>
+          <li>Motivation for multi-task architectures</li>
+          <li>Representative frameworks</li>
+          <li>Discussion of failure cases and domain shifts</li>
         </ul>
+        <h4>Adaptation to Unknown Degradations</h4>
+        <ul>
+          <li>Foundation-model adaptation for video restoration</li>
+          <li>Multimodal integration (e.g., vision–language guidance)</li>
+          <li>Open research problems and future opportunities</li>
+        </ul>
+
       </div>
     </section>
 
     <section>
       <h2>Target Audience</h2>
-      <p>
+      <p style="text-align: justify;">
         This tutorial is intended for researchers, practitioners, and students in computer vision, multimedia, and machine learning.
-      </p>
-      <p>
-        Participants will gain a structured taxonomy of restoration approaches, organized around general principles and recent research trends. They will also develop a critical understanding of current limitations and learn about emerging approaches—from foundation-model adaptation to multimodal integration—that are defining the next phase of progress.
+        Participants will gain a structured taxonomy of restoration approaches, organized around general principles and recent research trends. 
+        They will also develop a critical understanding of current limitations and learn about emerging approaches from foundation-model adaptation to multimodal integration that are defining the next phase of progress.
       </p>
     </section>
+
+    <section>
+      <h2>Speakers</h2>
+      <div class="speaker-grid">
+        <div class="speaker-card" style="text-align: justify;">
+          <img src="video-restore-tutorial/gsu.jpg" alt="Guan-Ming Su">
+          <h3>Guan-Ming Su</h3>
+          <p>Guan-Ming Su is Director at Dolby Laboratories, leading image technology development. 
+            He holds a Ph.D. in Electrical and Computer Engineering from the University of Maryland. 
+            His expertise spans multimedia coding, computer vision, 3D imaging, HDR, and machine learning. 
+            He has held roles in Dolby Vision, Marvell, and ESS Technology, contributing to video codec architecture and advanced imaging systems.</p>
+        </div>
+        <div class="speaker-card" style="text-align: justify;">
+          <img src="video-restore-tutorial/aupendu.jpg" alt="Aupendu Kar">
+          <h3>Aupendu Kar</h3>
+          <p>Aupendu Kar is a Senior Researcher at Dolby Laboratories, specializing in computer vision and deep learning. 
+            His work focuses on low-level vision tasks like image super-resolution, dehazing, rain removal, and underwater enhancement. 
+            He also explores learning frameworks grounded in physical models and has contributed to medical image analysis.</p>
+        </div>
+        <div class="speaker-card" style="text-align: justify;">
+          <img src="video-restore-tutorial/shiv.jpg" alt="Shiv Gehlot">
+          <h3>Shiv Gehlot</h3>
+          <p>Shiv Gehlot is a Senior Researcher at Dolby Laboratories, working on computer vision, multimodal learning, and generative AI. 
+            He holds a Ph.D. from IIIT-Delhi, with current research focused on video and audio processing. 
+            His recent work includes developing diffusion-based frameworks for diverse video enhancement tasks, along with deep audio quality prediction, and notable contributions to generative video coding.</p>
+        </div>
+        <div class="speaker-card" style="text-align: justify;">
+          <img src="video-restore-tutorial/sutanu.jpg" alt="Sutanu Bera">
+          <h3>Sutanu Bera</h3>
+          <p>Sutanu Bera is a Senior Researcher at Dolby Laboratories, working on video restoration and low-level image processing using deep learning. 
+            He holds a Ph.D. from IIT Kharagpur and has prior research experience in low-dose CT denoising, GAN-based restoration, and invertible networks.
+        </div>
+      </div>
+    </section>
   </main>
+
+
 
   <footer>
     &copy; 2025 ICVGIP Tutorial Organizers. Visit <a href="https://icvgip.in/2025/" target="_blank">ICVGIP 2025</a> for more details.
