@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICVGIP 2025 Tutorial</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      font-size: xx-large;
+      text-align: center;
+    }
+    main {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #004080;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      font-size: 0.9em;
+    }
+    .timeline {
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-left: 4px solid #004080;
+    }
+    .timeline h3 {
+      margin-top: 0;
+    }
+    .speakers ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .speakers li {
+      margin-bottom: 5px;
+    }
+    .speaker-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .speaker-card {
+      flex: 1;
+      min-width: 200px;
+    }
+    .speaker-card img {
+      width: 100%;
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ICVGIP 2025 Tutorial</h1>
+    <p>Advances and Challenges in Real-World Video Restoration</p>
+    <p><strong>Date:</strong> December 17, 2025 | <strong>Location:</strong> ICVGIP 2025, IIT Mandi, India</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Speakers</h2>
+      <div class="speaker-grid">
+        <div class="speaker-card">
+          <img src="video-restore-tutorial/gsu.jpg" alt="Guan-Ming Su">
+          <h3>Guan-Ming Su</h3>
+          <p>Guan-Ming Su is Director at Dolby Laboratories, leading image technology development. 
+            He holds a Ph.D. in Electrical and Computer Engineering from the University of Maryland. 
+            His expertise spans multimedia coding, computer vision, 3D imaging, HDR, and machine learning. 
+            He has held roles in Dolby Vision, Marvell, and ESS Technology, contributing to video codec architecture and advanced imaging systems.</p>
+        </div>
+        <div class="speaker-card">
+          <img src="video-restore-tutorial/aupendu.jpg" alt="Aupendu Kar">
+          <h3>Aupendu Kar</h3>
+          <p>Aupendu Kar is a Senior Researcher at Dolby Laboratories, specializing in computer vision and deep learning. 
+            His work focuses on low-level vision tasks like image super-resolution, dehazing, rain removal, and underwater enhancement. 
+            He also explores learning frameworks grounded in physical models and has contributed to medical image analysis.</p>
+        </div>
+        <div class="speaker-card">
+          <img src="video-restore-tutorial/shiv.jpg" alt="Shiv Gehlot">
+          <h3>Shiv Gehlot</h3>
+          <p>Shiv Gehlot is a Senior Researcher at Dolby Laboratories, working on computer vision, multimodal learning, and generative AI. 
+            He holds a Ph.D. from IIIT-Delhi, with research spanning deep learning, medical imaging, and signal processing.</p>
+        </div>
+        <div class="speaker-card">
+          <img src="video-restore-tutorial/sutanu.jpg" alt="Sutanu Bera">
+          <h3>Sutanu Bera</h3>
+          <p>Sutanu Bera is a Senior Researcher at Dolby Laboratories, working on video restoration and low-level image processing using deep learning. 
+            He holds a Ph.D. from IIT Kharagpur and has prior research experience in low-dose CT denoising, GAN-based restoration, and invertible networks.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        Video restoration is an essential component of multimedia processing, with applications in archival preservation, media production, streaming, and consumer content. 
+        This tutorial offers a structured overview of the field, tracing developments from classical filtering to deep learning and generative approaches.
+      </p>
+      <p>
+        We structure the discussion around four perspectives: enhancement of perceptual detail, restoration of chromatic fidelity, adaptation to unknown degradations, and development of unified restoration frameworks. 
+        The tutorial concludes with an outlook on emerging research directions, including adaptation of foundation models, test-time refinement, generative architectures, and multimodal guidance.
+      </p>
+    </section>
+
+    <section>
+      <h2>Timeline (3 Hours)</h2>
+      <div class="timeline">
+        <h3>Hour 1: Foundations and Classical Approaches</h3>
+        <ul>
+          <li>Introduction to video degradation types</li>
+          <li>Classical filtering and enhancement techniques</li>
+          <li>Limitations of traditional methods</li>
+        </ul>
+
+        <h3>Hour 2: Deep Learning and Unified Models</h3>
+        <ul>
+          <li>Perceptual detail enhancement using neural networks</li>
+          <li>Color fidelity restoration and inter-frame consistency</li>
+          <li>Unified restoration frameworks (denoising, deblurring, SR)</li>
+        </ul>
+
+        <h3>Hour 3: Emerging Trends and Future Directions</h3>
+        <ul>
+          <li>Zero-shot and foundation model adaptation</li>
+          <li>Test-time refinement strategies</li>
+          <li>Multimodal guidance and vision-language integration</li>
+          <li>Q&A and open discussion</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Target Audience</h2>
+      <p>
+        This tutorial is intended for researchers, practitioners, and students in computer vision, multimedia, and machine learning.
+      </p>
+      <p>
+        Participants will gain a structured taxonomy of restoration approaches, organized around general principles and recent research trends. They will also develop a critical understanding of current limitations and learn about emerging approaches—from foundation-model adaptation to multimodal integration—that are defining the next phase of progress.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ICVGIP Tutorial Organizers. Visit <a href="https://icvgip.in/2025/" target="_blank">ICVGIP 2025</a> for more details.
+  </footer>
+</body>
+</html>
