@@ -1,0 +1,90 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Heebo:wght@400;500;700&display=swap");
+
+body {
+  background: linear-gradient(135deg, #f4f8ff 0%, #eef4ff 100%);
+  color: #24324a;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(47, 93, 154, 0.12);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 2.5rem !important;
+}
+
+#jumbo {
+  padding: 1.25rem 1.4rem !important;
+  background: linear-gradient(120deg, #f7fbff 0%, #eef5ff 100%);
+  border: 1px solid rgba(47, 93, 154, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(47, 93, 154, 0.05);
+}
+
+#figCap {
+  font-size: calc(12px + 0.4vw) !important;
+  color: #4d5f76;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: #2f5d9a;
+}
+
+img {
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(19, 35, 58, 0.12);
+}
+
+#flag {
+  height: 15px;
+  width: 19px;
+  margin-bottom: 5px;
+}
+
+footer {
+  color: #9aa8bc;
+  font-size: calc(8px + 0.5vw);
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+
+footer a {
+  color: #6781a7;
+}
+
+footer a:hover {
+  color: #2f5d9a;
+}
+
+#headingStyles,
+#sectionResult,
+#download,
+#cite {
+  text-align: left;
+  font-size: calc(20px + 0.4vw);
+  font-weight: 700;
+  color: #2f5d9a;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid rgba(47, 93, 154, 0.15);
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding: 1.2rem !important;
+    border-radius: 16px;
+  }
+
+  #flag {
+    height: 10px;
+    width: 13px;
+    margin-bottom: 5px;
+  }
+}
+

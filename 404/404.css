@@ -1,0 +1,87 @@
+﻿body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f4f8ff 0%, #eef4ff 100%);
+  color: #24324a;
+}
+
+.error-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.error-card {
+  width: min(760px, 100%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(47, 93, 154, 0.14);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.error-badge {
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(47, 93, 154, 0.1);
+  color: #2f5d9a;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #2f5d9a;
+  margin-bottom: 0.75rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: #51667d;
+  margin-bottom: 1.5rem;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.quick-links .btn {
+  border-radius: 999px;
+}
+
+.info-box {
+  border-top: 1px solid rgba(47, 93, 154, 0.14);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.info-box h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2b4462;
+}
+
+.info-box p {
+  color: #5d6f85;
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .error-card {
+    padding: 1.5rem;
+  }
+
+  .quick-links {
+    flex-direction: column;
+  }
+}
+
