@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    
+    <meta
+      name="description"
+      content="Fast Bayesian Uncertainty Estimation and reduction of Batch
+      Normalized Single Image Super-Resolution Network."
+    />
+
+    
+
+
+    
+    <meta property="og:title" content="SR Uncertainty" />
+    <meta
+      property="og:url"
+      content="https://aupendu.github.io/sr-uncertainty"
+    />
+    <meta
+      property="og:image"
+      content="https://aupendu.github.io/assets/images/lr_sruncertainty.jpg"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Zero Restore Training Framework" />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:description"
+      content="Fast Bayesian Uncertainty Estimation and reduction of Batch
+      Normalized Single Image Super-Resolution Network"
+    />
+
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SR Uncertainty" />
+    <meta
+      name="twitter:description"
+      content="Fast Bayesian Uncertainty Estimation and reduction of Batch
+      Normalized Single Image Super-Resolution Network"
+    />
+    <meta
+      name="twitter:url"
+      content="https://aupendu.github.io/sr-uncertainty"
+    />
+    <meta
+      name="twitter:image"
+      content="https://aupendu.github.io/assets/images/lr_sruncertainty.jpg"
+    />
+
+    <title>SR Uncertainty</title>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"
+      integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      onerror="this.onerror=null;this.href='../assets/dependencies/bootstrap-5.0.1-dist/css/bootstrap.min.css';"
+    />
+
+    
+    <link rel="stylesheet" href="./subpage.css" />
+
+    
+    <link rel="icon" type="image/png" href="../assets/images/ak2.ico" />
+  </head>
+  <body>
+    <div class="container">
+      
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="https://aupendu.github.io/"
+              ><i class="fas fa-house-user d-inline-block"></i
+            ></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#sectionResult">Result</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#download">Download</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#cite">Citation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="mailTo">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      
+      <h1
+        style="
+          text-align: center;
+          font-size: calc(25px + 0.5vw);
+          font-family: 'Raleway', sans-serif;
+          font-weight: bold;
+        "
+      >
+        Fast Bayesian Uncertainty Estimation and reduction of Batch Normalized
+        Single Image Super-Resolution Network
+      </h1>
+
+      
+
+      <h2
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        "
+      >
+        <a
+          href="https://aupendu.github.io"
+          target="_blank"
+          style="text-decoration: none; color: rgb(70, 70, 70)"
+          onmouseover="this.style.color='gray'"
+          onmouseout="this.style.color='rgb(70, 70, 70)'"
+          ><u>Aupendu Kar</u></a
+        >,
+
+        <a
+          href="http://www.ecdept.iitkgp.ac.in/Eece/facultydetails/ece-pkb"
+          target="_blank"
+          style="text-decoration: none; color: rgb(70, 70, 70)"
+          onmouseover="this.style.color='gray'"
+          onmouseout="this.style.color='rgb(70, 70, 70)'"
+          >Prabir Kumar Biswas</a
+        >
+      </h2>
+
+      
+
+      <h3
+        style="
+          text-align: center;
+          font-size: calc(10px + 0.5vw);
+          font-family: 'Roboto', sans-serif;
+        "
+      >
+        Department of Electronics and Electrical Communication Engineering
+        <br />
+        Indian Institute of Technology Kharagpur, India
+      </h3>
+      <hr />
+
+      
+
+      <div class="row text-center">
+        <div class="col">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/new.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/GA/new.png"
+                height="235px"
+                width="600px"
+                alt="the left image is an LR image,
+                and the modelâ€™s uncertainty during upscaling is in the right."
+                class="figure-img img-fluid"
+                title="LR Image and Uncertainty"
+              />
+            </a>
+            
+          </figure>
+        </div>
+      </div>
+
+      <div class="row text-center spacer">
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/lr_combined.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/GA/lr_combined.png"
+                alt="Two LR Images"
+                class="figure-img img-fluid wally"
+                title="LR Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              LR Image
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/hr_combined.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/GA/hr_combined.png"
+                alt="Two HR images."
+                class="figure-img img-fluid wally"
+                title="HR Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              HR Image
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/sr_combined.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/GA/sr_combined.png"
+                alt="Two SR Images"
+                class="figure-img img-fluid wally"
+                title="SR Images"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              SR Image
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/GA/un_combined.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/GA/un_combined.png"
+                alt="Two Uncertainty Images"
+                class="figure-img img-fluid wally"
+                title="Uncertainty Images"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="text-center figure-caption" id="figCap">
+        In the first row images, the left image is an LR image, and the modelâ€™s
+        uncertainty during upscaling is in the right. Two cropped regions have
+        different textures. We can observe from two patches in the second and
+        third-row that whenever the model fails to reconstruct the texture
+        correctly (second-row image), it leads to higher uncertainty.
+      </p>
+
+      <hr />
+
+      
+
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="fas fa-archive"></i>&nbsp;Abstract
+      </h2>
+      <div class="row">
+        <div class="col-sm">
+          <p style="text-align: justify">
+            Convolutional neural network (CNN) has achieved unprecedented
+            success in image super-resolution tasks in recent years. However,
+            the network's performance depends on the distribution of the
+            training sets and degrades on out-of-distribution samples. This
+            paper adopts a Bayesian approach for estimating uncertainty
+            associated with output and applies it in a deep image
+            super-resolution model to address the concern mentioned above. We
+            use the uncertainty estimation technique using the
+            batch-normalization layer, where stochasticity of the batch mean and
+            variance generate Monte-Carlo (MC) samples. The MC samples, which
+            are nothing but different super-resolved images using different
+            stochastic parameters, reconstruct the image, and provide a
+            confidence or uncertainty map of the reconstruction. We propose a
+            faster approach for MC sample generation, and it allows the variable
+            image size during testing. Therefore, it will be useful for image
+            reconstruction domain. Our experimental findings show that this
+            uncertainty map strongly relates to the quality of reconstruction
+            generated by the deep CNN model and explains its limitation.
+            Furthermore, this paper proposes an approach to reduce the model's
+            uncertainty for an input image, and it helps to defend the
+            adversarial attacks on the image super-resolution model. The
+            proposed uncertainty reduction technique also improves the
+            performance of the model for out-of-distribution test images. To the
+            best of our knowledge, we are the first to propose an adversarial
+            defense mechanism in any image reconstruction domain.
+          </p>
+        </div>
+      </div>
+      <hr />
+      
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="fas fa-satellite-dish"></i>&nbsp;Highlights
+      </h2>
+      <div class="row jumbotron" id="jumbo">
+        <div class="col">
+          <ol type="a">
+            <li>
+              We propose a faster implementation of Monte Carlo
+              batch-normalization uncertainty to generate MC samples and
+              overcome the hurdle of variable image size.
+            </li>
+            <li>
+              We address the uncertainty of deep SISR models using Bayesian
+              approach to measure it. To the best of our knowledge, we are the
+              first to estimate uncertainty in deep learning models for image
+              reconstruction. We also discuss the advantages and implications of
+              uncertainty in SISR and its usefulness in understanding the
+              model's limitations and outcome.
+            </li>
+            <li>
+              We also propose an approach to reduce the model uncertainty for a
+              test image. The uncertainty reduction method acts as a defense
+              against the adversarial attack on the SISR model and proves to be
+              beneficial for out-of-distribution noisy low-resolution images.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <hr />
+
+      
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="fas fa-dna"></i>&nbsp;Modified Method for Uncertainty
+        Estimation
+      </h2>
+      <div class="row">
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo1.jpg"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/algos/algo1.jpg"
+                alt="Image of Algorithm 1"
+                class="figure-img img-fluid rounded"
+                title="Algorithm 1"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Algorithm 1
+              
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo2.jpg"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/algos/algo2.jpg"
+                alt="Image of Algorithm 2"
+                class="figure-img img-fluid rounded"
+                title="Algorithm 2"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Algorithm 2
+              
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+
+      
+
+      <h2 id="sectionResult" class="text-center text-md-start">
+        <i class="fas fa-poll"></i>&nbsp;Proposed Method for Uncertainty
+        Reduction
+      </h2>
+      <div class="row text-center">
+        <div class="col-sm-5">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo3.jpg"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/algos/algo3.jpg"
+                height="501px"
+                width="396px"
+                alt="Image of Proposed Algorithm."
+                class="figure-img img-fluid"
+                title="Algorithm 3"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Algorithm 3
+              
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-7" style="margin-top: auto; margin-bottom: auto">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/algos/algo3_sideImg.jpg"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/algos/algo3_sideImg.jpg"
+                height="501px"
+                width="396px"
+                alt="A plotting"
+                class="figure-img img-fluid"
+                title="Scale: Ã—4, Adv. Attack: 8"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Effect of perturbation level for adversarial defense
+              
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <hr />
+
+      
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="fas fa-microscope"></i>&nbsp;Understanding Uncertainty
+      </h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/plot/MCvsP_BSDS100_4.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/plot/MCvsP_BSDS100_4.png"
+                alt="PSNR vs MC Samples Image. Present effect of PSNR and uncertainty with the increase of MC samples"
+                class="figure-img img-fluid"
+                title="PSNR vs MC Samples Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              PSNR vs MC Samples
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/plot/MCvsU_BSDS100_4.png"
+              target="_blank"
+              ><img
+                src="../assets/subpage_sr_uncertainty/plot/MCvsU_BSDS100_4.png"
+                alt="Uncertainty vs MC Samples. Present effect of PSNR and uncertainty with the increase of MC samples"
+                class="figure-img img-fluid"
+                title="Uncertainty vs MC Samples Image"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs MC Samples
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/plot/PvsU_BSDS100_4.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/plot/PvsU_BSDS100_4.png"
+                alt="PSNR vs Uncertainty. Present impact of PSNR and adv. noise with uncertainty"
+                class="figure-img img-fluid"
+                title="PSNR vs Uncertainty Image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              PSNR vs Uncertainty
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/plot/AdvAttackvsUn_BSDS100_4.png"
+              target="_blank"
+              ><img
+                src="../assets/subpage_sr_uncertainty/plot/AdvAttackvsUn_BSDS100_4.png"
+                alt=" Uncertainty vs Adv. Noise Level. Present impact of PSNR and adv. noise with uncertainty"
+                class="figure-img img-fluid"
+                title="Uncertainty vs Adv. Noise Level image"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs Adv. Noise Level
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/plot/UvsFactor.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/plot/UvsFactor.png"
+                alt="Uncertainty vs Scale. Present the influence of Bayesian uncertainty with different Scale factor models and random noise on LR images"
+                class="figure-img img-fluid"
+                title="Uncertainty vs Scale image"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs Scale
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-4">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/plot/NoiseVsUn.png"
+              target="_blank"
+              ><img
+                src="../assets/subpage_sr_uncertainty/plot/NoiseVsUn.png"
+                alt="Uncertainty vs Noise Level. Present the influence of Bayesian uncertainty with different Scale factor models and random noise on LR images"
+                class="figure-img img-fluid"
+                title="Uncertainty vs Noise Level image"
+            /></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Uncertainty vs Noise Level
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="text-justify figure-caption" id="figCap">
+        (a)-(b) present effect of PSNR and uncertainty with the increase of MC
+        samples and (c)-(d) present impact of PSNR and adv. noise with
+        uncertainty. (e)-(f) present the influence of Bayesian uncertainty with
+        different Scale factor models and random noise on LR images. (click on
+        the image for the best view)
+      </p>
+      <hr />
+
+      
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="fas fa-window-restore"></i>&nbsp;Performance Analysis of
+        Adversarial Defense
+      </h2>
+      <div class="row">
+        <div class="col">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/table2.jpg"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/table2.jpg"
+                alt="A table showing  Quantitative evaluation of our proposed Bayesian
+                uncertainty reduction technique"
+                class="figure-img img-fluid"
+                title="Table of performance analysis"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Table 2. Quantitative evaluation of our proposed Bayesian
+              uncertainty reduction technique based adversarial defense
+              mechanism.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <hr />
+
+      
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="far fa-eye"></i>&nbsp;Visual Results of Adversarial Defense
+      </h2>
+      <div class="row">
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/FullHR.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/FullHR.png"
+                alt="Image of a man's face. HR."
+                class="figure-img img-fluid"
+                title="HR"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              HR
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/FullLRx2.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/FullLRx2.png"
+                alt="Image of a man's face. LR"
+                class="figure-img img-fluid"
+                title="LR"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              LR
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/FullLRx2A4.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/FullLRx2A4.png"
+                alt="Image of a man's face. Adversarial LR"
+                class="figure-img img-fluid"
+                title="Adversarial LR"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Adversarial LR
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/BeforeDefense.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/BeforeDefense.png"
+                alt="Image of a man's face. Input Image. SR (No Def.)"
+                class="figure-img img-fluid"
+                title="SR (No Def.)"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              SR (No Def.)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/AfterDefense.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/AfterDefense.png"
+                alt="Image of a man's face. Input Image. SR (After Def.)"
+                class="figure-img img-fluid"
+                title="SR (After Def.)"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              SR (After Def.)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/BeforeUncertainty.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/BeforeUncertainty.png"
+                alt="Image of a man's face. Input Image. UN (No Def.)"
+                class="figure-img img-fluid"
+                title="UN (No Def.)"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              UN (No Def.)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm col-6">
+          <figure class="figure">
+            <a
+              href="https://aupendu.github.io/assets/subpage_sr_uncertainty/ADX/AfterUncertainty.png"
+              target="_blank"
+            >
+              <img
+                src="../assets/subpage_sr_uncertainty/ADX/AfterUncertainty.png"
+                alt="Image of a man's face. Input Image. UN (After Def.)"
+                class="figure-img img-fluid"
+                title="UN (After Def.)"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              UN (After Def.)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="text-center figure-caption" id="figCap">
+        Performance of our proposed adversarial defense mechanism using the
+        Bayesian uncertainty reduction technique. The cropped region shows
+        undesired artifacts in the SR image without any defense, and our defense
+        mechanism successfully suppresses those artifacts.
+      </p>
+
+      <hr />
+
+      
+      <h2 id="download" class="text-center text-md-start">
+        <i class="fas fa-download"></i>&nbsp;Downloads
+      </h2>
+      <div class="row">
+        <div class="col-md-3 text-center">
+          <figure class="figure">
+            <a
+              href="https://openaccess.thecvf.com/content/CVPR2021/html/Kar_Fast_Bayesian_Uncertainty_Estimation_and_Reduction_of_Batch_Normalized_Single_CVPR_2021_paper.html"
+              rel="external nofollow"
+              target="_blank"
+              ><img
+                class="img-fluid"
+                src="../assets/images/cvpr2021_logo.png"
+                alt="CVPR2021 image icon"
+                title="Click to Open"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+                width="255px"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Paper
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-3 text-center">
+          <figure class="figure">
+            <a
+              href="https://drive.google.com/file/d/1UE7--CRcsCik_Y0QHAF2ZLm1mNL6Vu2u/view?usp=sharing"
+              rel="external nofollow"
+              target="_blank"
+              onmouseover="this.style.opacity='0.5'"
+              onmouseout="this.style.opacity='1'"
+              ><i
+                class="fas fa-file-pdf"
+                style="font-size: 120px; color: rgb(54, 54, 54)"
+              ></i
+            ></a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Poster
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <figure class="figure">
+            <a
+              href="https://github.com/aupendu/sr-uncertainty"
+              rel="external nofollow"
+              target="_blank"
+              onmouseover="this.style.opacity='0.5'"
+              onmouseout="this.style.opacity='1'"
+              ><i
+                class="fab fa-github"
+                style="font-size: 120px; color: rgb(54, 54, 54)"
+              ></i>
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Code
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-3 text-center">
+          <figure class="figure">
+            <a href=" " rel="external nofollow" target="_blank"
+              ><img
+                src="../assets/images/gdrive.png"
+                alt="Google drive image icon"
+                width="150px"
+                height="120px"
+                title="Click to Open"
+                onmouseover="this.style.opacity='0.5'"
+                onmouseout="this.style.opacity='1'"
+              />
+            </a>
+            <figcaption class="text-center figure-caption" id="figCap">
+              Results
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr />
+      
+      <h2 id="headingStyles" class="text-center text-md-start">
+        <i class="fas fa-asterisk"></i>&nbsp;References
+      </h2>
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li style="text-align: justify">
+              Kim, J., Lee, J.K. and Lee, K.M., 2016. Accurate image
+              super-resolution using very deep convolutional networks. In
+              Proceedings of the IEEE conference on computer vision and pattern
+              recognition (pp. 1646-1654).
+            </li>
+            <li style="text-align: justify">
+              Choi, J.H., Zhang, H., Kim, J.H., Hsieh, C.J. and Lee, J.S., 2019.
+              Evaluating robustness of deep image super-resolution against
+              adversarial attacks. In Proceedings of the IEEE/CVF International
+              Conference on Computer Vision (pp. 303-311).
+            </li>
+            <li style="text-align: justify">
+              Gal, Y. and Ghahramani, Z., 2016, June. Dropout as a bayesian
+              approximation: Representing model uncertainty in deep learning. In
+              international conference on machine learning (pp. 1050-1059).
+              PMLR.
+            </li>
+            <li style="text-align: justify">
+              Teye, M., Azizpour, H. and Smith, K., 2018, July. Bayesian
+              uncertainty estimation for batch normalized deep networks. In
+              International Conference on Machine Learning (pp. 4907-4916).
+              PMLR.
+            </li>
+            <li style="text-align: justify">
+              Kendall, A., Badrinarayanan, V. and Cipolla, R., 2017, July.
+              Bayesian segnet: Model uncertainty in deep convolutional
+              encoder-decoder architectures for scene understanding. In British
+              Machine Vision Conference 2017, BMVC 2017.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      
+      <h2 id="cite" class="text-center text-md-start">
+        <i class="fas fa-map-marker"></i>&nbsp;Citation (BibTeX)
+      </h2>
+      <div class="row">
+        <div class="col jumbotron" id="jumbo">
+          <p id="myInput">
+            <span style="display: block; padding-left: 15px"
+              >@InProceedings{Kar_2021_CVPR,
+              <span style="padding-left: 53px; display: block"
+                >author = {Kar, Aupendu and Biswas, Prabir Kumar}, <br />
+                title = {Fast Bayesian Uncertainty Estimation and reduction of
+                Batch Normalized Single Image Super-Resolution Network}, <br />
+                booktitle = {Proceedings of the IEEE/CVF Conference on Computer
+                Vision and Pattern Recognition (CVPR)}, <br />
+                month = {June}, <br />
+                year = {2021}, <br />
+                pages = {4957-4966}<br />
+              </span>
+              &nbsp;}</span
+            >
+          </p>
+        </div>
+      </div>
+      <hr />
+
+      
+      <footer class="mt-3 mt-md-0">
+        <p style="text-align: center">
+          <i class="far fa-copyright"></i> 2025
+          <a href="https://github.com/aupendu" target="_blank">Aupendu Kar</a>.
+          All rights reserved.
+        </p>
+      </footer>
+    </div>
+    
+    <script
+      src="https://kit.fontawesome.com/58bac38d13.js"
+      crossorigin="anonymous"
+    ></script>
+
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+      onerror="this.onerror=null;this.src='assets/dependencies/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js';this.removeAttribute('integrity');this.removeAttribute('crossorigin');"
+    ></script>
+
+    
+    <script src="./subjs.js"></script>
+  </body>
+</html>
