@@ -1,5 +1,1 @@
-plugins:
-  - jekyll-redirect-from
-
-redirect_from:
-  - /pages/
+# GitHub Pages Jekyll configuration
