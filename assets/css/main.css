@@ -74,13 +74,19 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .social-links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
-  margin: 0 0.25rem 0.6rem 0;
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 6px 16px rgba(47, 93, 154, 0.12);
@@ -96,8 +102,7 @@ h2 {
 .fa-twitter-square,
 .ai-google-scholar-square,
 .ai-researchgate-square,
-.ai-dblp-square,
-.ai-cv-square {
+.ai-dblp-square {
   color: #2f5d9a !important;
 }
 
@@ -105,8 +110,7 @@ h2 {
 .fa-twitter-square:hover,
 .ai-google-scholar-square:hover,
 .ai-researchgate-square:hover,
-.ai-dblp-square:hover,
-.ai-cv-square:hover {
+.ai-dblp-square:hover {
   color: #5678a7 !important;
 }
 
@@ -139,6 +143,16 @@ h2 {
 
 .quick-nav {
   padding: 0.9rem 1rem;
+}
+
+.publication-tabs {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+}
+
+.publication-tabs > div {
+  flex: 0 0 25%;
+  min-width: 130px;
 }
 
 .quick-nav-link {
@@ -179,6 +193,54 @@ h2 {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.publication-list {
+  display: flex;
+  flex-direction: column-reverse;
+  list-style: none;
+  padding-left: 2.5rem;
+  margin-bottom: 0;
+  counter-reset: publication;
+}
+
+.publication-list li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  counter-increment: publication;
+}
+
+.publication-list li::before {
+  position: absolute;
+  left: -2.5rem;
+  width: 2rem;
+  color: #2f5d9a;
+  font-weight: 700;
+  text-align: right;
+}
+
+.publication-list-journal li::before {
+  content: "J" counter(publication) ".";
+}
+
+.publication-list-conference li::before {
+  content: "C" counter(publication) ".";
+}
+
+.publication-list-workshop li::before {
+  content: "W" counter(publication) ".";
+}
+
+.publication-list li:last-child {
+  margin-bottom: 0;
+}
+
+.publication-source {
+  color: #6880a1;
+  font-size: 0.9rem;
+  margin: 1.5rem 0 0;
+  text-align: center;
 }
 
 .nested-list {
