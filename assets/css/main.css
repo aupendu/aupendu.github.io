@@ -385,6 +385,23 @@ footer a:hover {
   color: #2f5d9a;
 }
 
+.visit-counter {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  font-size: 0.85em;
+}
+
+.visit-counter span {
+  white-space: nowrap;
+}
+
+.visit-counter i {
+  margin-right: 0.25rem;
+}
+
 .arrowUp {
   font-size: calc(35px + 0.5vw);
   color: #6f86a8;
