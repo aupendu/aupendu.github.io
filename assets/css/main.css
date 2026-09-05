@@ -313,6 +313,32 @@ h2 {
   content: "W" counter(publication) ".";
 }
 
+.talks-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.talks-list li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.talks-list li::before {
+  position: absolute;
+  left: 0;
+  width: 2rem;
+  color: #2f5d9a;
+  font-weight: 700;
+  text-align: right;
+  content: attr(data-value) ".";
+}
+
+.talks-list li:last-child {
+  margin-bottom: 0;
+}
+
 .publication-list li:last-child {
   margin-bottom: 0;
 }
