@@ -1,7 +1,3 @@
----
-permalink: /professional-activities.html
----
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +9,9 @@ permalink: /professional-activities.html
   <meta property="og:url" content="https://aupendu.github.io/professional-activities.html" />
   <title>Professional Activities | Aupendu Kar</title>
 
-  <link rel="stylesheet" href="assets/css/main.css?v=20260905" />
-  <link rel="stylesheet" href="assets/dependencies/academicons-1.9.1/css/academicons.min.css" />
-  <link rel="stylesheet" href="assets/dependencies/bootstrap-5.0.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/main.css?v=20260905" />
+  <link rel="stylesheet" href="../../assets/dependencies/academicons-1.9.1/css/academicons.min.css" />
+  <link rel="stylesheet" href="../../assets/dependencies/bootstrap-5.0.1-dist/css/bootstrap.min.css" />
 </head>
 
 <body id="getToTop">
@@ -59,13 +55,13 @@ permalink: /professional-activities.html
         </div>
       </div>
       <div class="col-lg-5 col-md-6 col-12 text-center text-md-end mt-3 mt-md-0 mb-3 mb-md-0">
-        <img src="assets/images/PPkar.jpg" class="img-fluid profile-photo" alt="Image of Aupendu Kar" />
+        <img src="../../assets/images/PPkar.jpg" class="img-fluid profile-photo" alt="Image of Aupendu Kar" />
       </div>
     </div>
 
     <nav class="section-card quick-nav" aria-label="Professional activities sections">
       <div class="row g-2">
-        <div class="col-sm-6 col-lg-3"><a class="quick-nav-link" href="index.html">Profile</a></div>
+        <div class="col-sm-6 col-lg-3"><a class="quick-nav-link" href="../../index.html">Profile</a></div>
         <div class="col-sm-6 col-lg-3"><a class="quick-nav-link" href="#talks">Talks</a></div>
         <div class="col-sm-6 col-lg-3"><a class="quick-nav-link" href="#service">Service</a></div>
         <div class="col-sm-6 col-lg-3"><a class="quick-nav-link" href="#conferences">Conferences</a></div>
@@ -111,15 +107,9 @@ permalink: /professional-activities.html
     </section>
 
     <section class="section-card" id="conferences">
-      <h2 class="headColor">Conference Participation</h2>
+      <h2 class="headColor">Conferences Attended</h2>
       <hr />
-      <ol id="conference-list" class="talks-list">
-        <li>Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP) (2025) (Location: Mandi, India)</li>
-        <li>Computer Vision and Pattern Recognition (CVPR) (2025) (Location: Nashville, USA)</li>
-        <li>International Conference on Acoustics, Speech and Signal Processing (ICASSP) (2025) (Location: Hyderabad, India)</li>
-        <li>International Conference on Image Processing (ICIP) (2022) (Location: Bordeaux, France)</li>
-        <li> Medical Image Computing and Computer Assisted Intervention (MICCAI) (2021) (Location: Online)</li>
-        <li>Computer Vision and Pattern Recognition (CVPR) (2021) (Location: Online)</li>
+      <ol id="conference-list" class="talks-list" data-conferences-list>
       </ol>
     </section>
 
@@ -134,26 +124,8 @@ permalink: /professional-activities.html
     </p>
   </footer>
   <script src="https://kit.fontawesome.com/58bac38d13.js" crossorigin="anonymous"></script>
-  <script src="assets/js/talks.js"></script>
-  <script>
-    const talksList = document.getElementById('talks-list');
-    if (talksList) {
-      const items = Array.from(talksList.querySelectorAll('li'));
-      const total = items.length;
-      items.forEach((item, index) => {
-        item.setAttribute('data-value', total - index);
-      });
-    }
+  <script src="../../assets/js/talks.js"></script>
 
-    const conferenceList = document.getElementById('conference-list');
-    if (conferenceList) {
-      const items = Array.from(conferenceList.querySelectorAll('li'));
-      const total = items.length;
-      items.forEach((item, index) => {
-        item.setAttribute('data-value', total - index);
-      });
-    }
-  </script>
 </body>
 
 </html>

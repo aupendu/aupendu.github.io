@@ -21,6 +21,24 @@ const talks = [
     }
 ];
 
+const conferences = [
+    "Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP) (2025) (Location: Mandi, India)",
+    "Computer Vision and Pattern Recognition (CVPR) (2025) (Location: Nashville, USA)",
+    "International Conference on Acoustics, Speech and Signal Processing (ICASSP) (2025) (Location: Hyderabad, India)",
+    "International Conference on Image Processing (ICIP) (2022) (Location: Bordeaux, France)",
+    "Medical Image Computing and Computer Assisted Intervention (MICCAI) (2021) (Location: Online)",
+    "Computer Vision and Pattern Recognition (CVPR) (2021) (Location: Online)"
+];
+
+window.conferences = conferences;
+
+function assignCounterValues(list) {
+    const items = Array.from(list.querySelectorAll("li"));
+    items.forEach((item, index) => {
+        item.setAttribute("data-value", items.length - index);
+    });
+}
+
 function renderTalks(list, limit) {
     const visibleTalks = typeof limit === "number" ? talks.slice(0, limit) : talks;
 
@@ -31,11 +49,30 @@ function renderTalks(list, limit) {
         item.append(lead, " ", document.createTextNode(talk.details));
         list.appendChild(item);
     });
+
+    assignCounterValues(list);
+}
+
+function renderConferences(list, limit) {
+    const visibleConferences = typeof limit === "number" ? conferences.slice(0, limit) : conferences;
+
+    visibleConferences.forEach((conference) => {
+        const item = document.createElement("li");
+        item.textContent = conference;
+        list.appendChild(item);
+    });
+
+    assignCounterValues(list);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-talks-list]").forEach((list) => {
         const limit = list.dataset.talksLimit ? Number(list.dataset.talksLimit) : undefined;
         renderTalks(list, limit);
+    });
+
+    document.querySelectorAll("[data-conferences-list]").forEach((list) => {
+        const limit = list.dataset.conferencesLimit ? Number(list.dataset.conferencesLimit) : undefined;
+        renderConferences(list, limit);
     });
 });
