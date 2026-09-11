@@ -145,6 +145,28 @@ h2 {
   padding: 0.9rem 1rem;
 }
 
+.quick-nav .row {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.quick-nav .row > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media (max-width: 767.98px) {
+  .quick-nav .row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .quick-nav .row > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 .publication-tabs {
   flex-wrap: nowrap !important;
   overflow-x: auto;
@@ -311,6 +333,10 @@ h2 {
 
 .publication-list-workshop li::before {
   content: "W" counter(publication) ".";
+}
+
+.publication-list-patent li::before {
+  content: "P" counter(publication) ".";
 }
 
 .talks-list {
