@@ -60,7 +60,7 @@ permalink: /visual-tokenizer-tutorial
 
     .eyebrow {
       margin: 0 0 12px;
-      color: #9be2dc;
+      color: #c3fff3;
       font-size: 0.88rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -69,7 +69,7 @@ permalink: /visual-tokenizer-tutorial
     h1 {
       max-width: 850px;
       margin: 0;
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(1.75rem, 2.8vw, 2.2rem);
       line-height: 1.12;
     }
 
@@ -78,7 +78,7 @@ permalink: /visual-tokenizer-tutorial
       flex-wrap: wrap;
       gap: 10px 28px;
       margin: 28px 0 0;
-      color: #e1ecef;
+      color: #f1fbff;
     }
 
     .event-meta strong { color: var(--white); }
@@ -108,7 +108,6 @@ permalink: /visual-tokenizer-tutorial
     p { margin: 0; text-align: justify; }
 
     .overview {
-      max-width: 790px;
       color: #344b59;
       font-size: 1.08rem;
       text-align: justify;
@@ -162,19 +161,9 @@ permalink: /visual-tokenizer-tutorial
 
     .detail-list li + li { margin-top: 8px; }
 
-    .references {
-      padding-left: 1.8rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .references li { padding-left: 4px; }
-    .references li + li { margin-top: 9px; }
-
     .speaker-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 28px;
       margin-top: 22px;
     }
@@ -196,6 +185,12 @@ permalink: /visual-tokenizer-tutorial
       font-size: 1.15rem;
     }
 
+    .speaker-card h3 a {
+      color: inherit;
+      text-decoration-color: var(--teal);
+      text-underline-offset: 3px;
+    }
+
     .speaker-role {
       margin-bottom: 10px;
       color: var(--teal);
@@ -206,7 +201,7 @@ permalink: /visual-tokenizer-tutorial
     .speaker-card p:last-child {
       color: var(--muted);
       font-size: 0.95rem;
-      text-align: justify;
+      text-align: left;
     }
 
     .conference-link {
@@ -272,26 +267,6 @@ permalink: /visual-tokenizer-tutorial
         Participants will leave with a practical methodology for selecting tokenizers, configuring MMDiTs, diagnosing interface mismatches, designing informative ablations, and evaluating tokenizer and generator choices as one integrated pipeline.
       </p>
       <p style="margin-top: 16px;"><strong>Keywords:</strong> Generative Vision Models; Visual Tokenizers; Multimodal Diffusion Transformers; Tokenizer–Generator Interface.</p>
-    </section>
-
-    <section aria-labelledby="motivation-heading">
-      <h2 id="motivation-heading">Motivation and Relevance</h2>
-      <p class="motivation-copy">
-        Generative computer vision is moving rapidly toward transformer-based latent generation. DiTs are replacing convolutional U-Nets in many state-of-the-art systems, while visual tokenizers have evolved from discrete VQ-VAE representations toward semantic tokenizers, representation autoencoders, adaptive mechanisms, hierarchical latents, and multimodal representations. This expanding design space makes the tokenizer–generator interface increasingly important.
-      </p>
-      <p class="motivation-copy" style="margin-top: 14px;">
-        Tokenization directly affects the information content, semantic organization, token count, latent geometry, and statistical structure available to an MMDiT. These properties influence attention complexity, optimization behavior, controllability, scalability, and sample quality. A tokenizer and generator designed independently can reconstruct well yet generate poorly, scale inefficiently, or fail under multimodal conditioning. The tutorial focuses on aligning learned compression, latent structure, multimodal conditioning, efficient attention, and controllable generation to build robust image and video systems.
-      </p>
-    </section>
-
-    <section aria-labelledby="focus-heading">
-      <h2 id="focus-heading">Focus and Distinction</h2>
-      <p class="focus-copy">
-        Rather than presenting tokenizers, DiTs, and MMDiTs as separate architecture catalogs, the tutorial follows the development of a complete latent generative system: define the representation, design the tokenizer, configure the generator, align their interface, and evaluate the end-to-end system.
-      </p>
-      <p class="focus-copy" style="margin-top: 14px;">
-        This perspective helps explain why particular tokenizer–MMDiT pairings succeed or fail. Generation quality, efficiency, controllability, and semantic fidelity depend not only on the tokenizer or generator in isolation, but also on how their representations, objectives, attention mechanisms, and decoding constraints work together.
-      </p>
     </section>
 
     <section aria-labelledby="schedule-heading">
@@ -364,48 +339,34 @@ permalink: /visual-tokenizer-tutorial
       </ul>
     </section>
 
-    <section aria-labelledby="presenters-heading">
-      <h2 id="presenters-heading">Presenters</h2>
+    <section aria-labelledby="organizers-heading">
+      <h2 id="organizers-heading">Organizers</h2>
       <div class="speaker-grid">
         <article class="speaker-card">
+          <img src="/assets/subpage_video_restore_tutorial/gsu.jpg" alt="Guan-Ming Su" />
+          <h3><a href="https://sites.google.com/site/wwwgmsu" target="_blank" rel="noopener">Guan-Ming Su</a></h3>
+          <p class="speaker-role">Dolby Laboratories</p>
+          <p>Guan-Ming Su is a Director at Dolby Laboratories, leading image technology development. His expertise spans multimedia coding, computer vision, 3D imaging, HDR, and machine learning.</p>
+        </article>
+        <article class="speaker-card">
           <img src="/assets/subpage_video_restore_tutorial/shiv.jpg" alt="Shiv Gehlot" />
-          <h3>Shiv Gehlot</h3>
+          <h3><a href="https://shivgahlout.github.io/" target="_blank" rel="noopener">Shiv Gehlot</a></h3>
           <p class="speaker-role">Dolby Laboratories</p>
           <p>Shiv Gehlot is a Staff Researcher at Dolby Laboratories, working on computer vision, multimodal learning, and generative AI. His research spans video and audio processing, diffusion-based video enhancement, audio quality prediction, and generative video coding.</p>
         </article>
         <article class="speaker-card">
           <img src="/assets/subpage_video_restore_tutorial/aupendu.jpg" alt="Aupendu Kar" />
-          <h3>Aupendu Kar</h3>
+          <h3><a href="https://aupendu.github.io/" target="_blank" rel="noopener">Aupendu Kar</a></h3>
           <p class="speaker-role">Dolby Laboratories</p>
           <p>Aupendu Kar is a Senior Researcher at Dolby Laboratories, specializing in computer vision and deep learning. His work includes low-level vision, image restoration, super-resolution, and learning frameworks grounded in physical models.</p>
         </article>
         <article class="speaker-card">
           <img src="/assets/subpage_video_restore_tutorial/sutanu.jpg" alt="Sutanu Bera" />
-          <h3>Sutanu Bera</h3>
+          <h3><a href="https://szbera.github.io/" target="_blank" rel="noopener">Sutanu Bera</a></h3>
           <p class="speaker-role">Dolby Laboratories</p>
           <p>Sutanu Bera is a Senior Researcher at Dolby Laboratories, working on video restoration and low-level image processing with deep learning. His research experience includes low-dose CT denoising, GAN-based restoration, and invertible networks.</p>
         </article>
       </div>
-    </section>
-
-    <section aria-labelledby="references-heading">
-      <h2 id="references-heading">References</h2>
-      <ol class="references">
-        <li>Xiao, Z., Kreis, K., &amp; Vahdat, A. (2024). A survey on generative diffusion models. <i>IEEE Transactions on Knowledge and Data Engineering, 36</i>(7), 2814–2830.</li>
-        <li>Peebles, W., &amp; Xie, S. (2023). Scalable diffusion models with transformers. In <i>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</i> (pp. 4195–4205).</li>
-        <li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. In <i>Advances in Neural Information Processing Systems (NeurIPS, Vol. 33)</i>.</li>
-        <li>Razavi, A., van den Oord, A., &amp; Vinyals, O. (2019). Generating diverse high-fidelity images with VQ-VAE-2. In <i>Advances in Neural Information Processing Systems (NeurIPS, Vol. 32)</i>.</li>
-        <li>Esser, P., Chiu, J., Atighehchian, P., Granskog, J., &amp; Germanidis, A. (2024). Scaling rectified flow transformers for high-resolution image synthesis. <i>arXiv</i>.</li>
-        <li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</i> (pp. 10684–10695).</li>
-        <li>Zheng, B., et al. (2025). Diffusion transformers with representation autoencoders. <i>arXiv</i>.</li>
-        <li>Assran, M., Duval, Q., Misra, I., et al. (2023). DINOv2: Learning robust visual features without supervision. <i>arXiv</i>.</li>
-        <li>Yu, L., et al. (2023). MAGVIT-v2: Language model beats diffusion—Tokenizer is key to visual generation. <i>arXiv</i>.</li>
-        <li>Liu, X., Gong, C., Liu, Q., et al. (2023). Flow straight and fast: Learning to generate and transfer data with rectified flow. In <i>Proceedings of the International Conference on Learning Representations (ICLR)</i>.</li>
-        <li>Esser, P., Chiu, J., Atighehchian, P., Granskog, J., &amp; Germanidis, A. (2024). Scaling rectified flow transformers for high-resolution image synthesis. <i>arXiv</i>.</li>
-        <li>Blattmann, A., Dockhorn, T., Kulal, S., et al. (2023). Stable video diffusion: Scaling latent video diffusion models to large datasets. <i>arXiv</i>.</li>
-        <li>Brooks, T., Holynski, A., &amp; Efros, A. A. (2023). InstructPix2Pix: Learning to follow image editing instructions. In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</i> (pp. 18392–18402).</li>
-        <li>Zhang, L., &amp; Agrawala, M. (2023). Adding conditional control to text-to-image diffusion models (ControlNet). In <i>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</i> (pp. 3836–3847).</li>
-      </ol>
     </section>
 
     <section aria-labelledby="conference-heading">
