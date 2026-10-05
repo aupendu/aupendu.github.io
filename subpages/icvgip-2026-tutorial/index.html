@@ -1,0 +1,424 @@
+---
+permalink: /visual-tokenizer-tutorial
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ICVGIP 2026 tutorial on co-designing visual tokenizers and multimodal diffusion transformers." />
+  <title>From Visual Tokens to Generation | ICVGIP 2026 Tutorial</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b3a;
+      --muted: #526574;
+      --blue: #123e5c;
+      --teal: #087e83;
+      --paper: #f3f6f4;
+      --line: #d7e1df;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    .page-header {
+      padding: 28px 24px 56px;
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .header-inner, main, footer {
+      width: min(100% - 40px, 980px);
+      margin-inline: auto;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 74px;
+      margin-bottom: 46px;
+    }
+
+    .brand-row img {
+      display: block;
+      width: auto;
+      max-width: min(42%, 220px);
+      max-height: 66px;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #9be2dc;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.12;
+    }
+
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      margin: 28px 0 0;
+      color: #e1ecef;
+    }
+
+    .event-meta strong { color: var(--white); }
+
+    main {
+      position: relative;
+      margin-top: -24px;
+      padding: 36px clamp(22px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    section + section {
+      margin-top: 38px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 1.45rem;
+      line-height: 1.3;
+    }
+
+    p { margin: 0; text-align: justify; }
+
+    .overview {
+      max-width: 790px;
+      color: #344b59;
+      font-size: 1.08rem;
+      text-align: justify;
+    }
+
+    .schedule {
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .schedule li {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .schedule li:last-child { border-bottom: 0; }
+
+    .schedule time {
+      color: var(--teal);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .schedule h3 {
+      margin: 0 0 5px;
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .schedule p, .motivation-copy, .focus-copy {
+      color: var(--muted);
+      text-align: justify;
+    }
+
+    .schedule .break-row {
+      padding-inline: 14px;
+      border-left: 3px solid var(--teal);
+      background: #f0f7f5;
+    }
+
+    .detail-list {
+      margin: 14px 0 0;
+      padding-left: 1.3rem;
+      color: var(--muted);
+    }
+
+    .detail-list li + li { margin-top: 8px; }
+
+    .references {
+      padding-left: 1.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .references li { padding-left: 4px; }
+    .references li + li { margin-top: 9px; }
+
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 22px;
+    }
+
+    .speaker-card { min-width: 0; }
+
+    .speaker-card img {
+      display: block;
+      width: min(100%, 200px);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 30%;
+      background: #e4ebea;
+    }
+
+    .speaker-card h3 {
+      margin: 14px 0 2px;
+      color: var(--ink);
+      font-size: 1.15rem;
+    }
+
+    .speaker-role {
+      margin-bottom: 10px;
+      color: var(--teal);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .speaker-card p:last-child {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: justify;
+    }
+
+    .conference-link {
+      color: var(--teal);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding-block: 28px 36px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .page-header { padding: 20px 0 46px; }
+      .header-inner, main, footer { width: min(100% - 28px, 980px); }
+      .brand-row { margin-bottom: 32px; }
+      .speaker-grid { grid-template-columns: 1fr; gap: 26px; }
+      .schedule li { grid-template-columns: 1fr; gap: 4px; }
+      .speaker-card {
+        display: grid;
+        grid-template-columns: 112px minmax(0, 1fr);
+        column-gap: 18px;
+        align-items: start;
+      }
+      .speaker-card img { grid-row: span 3; width: 112px; }
+      .speaker-card h3 { margin-top: 0; }
+      .speaker-role { margin-bottom: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <div class="brand-row" aria-label="Tutorial organizers">
+        <img src="/assets/subpage_video_restore_tutorial/DLB_Corp_rgb_wht_@2x.png" alt="Dolby" />
+        <img src="https://icvgip.in/2026/jsImgSlider/images/icvgip-logo.png" alt="ICVGIP 2026" />
+      </div>
+      <p class="eyebrow">Selected tutorial · ICVGIP 2026</p>
+      <h1>From Visual Tokens to Generation: Co-designing Visual Tokenizers and Multimodal Diffusion Transformers</h1>
+      <div class="event-meta">
+        <span><strong>Date:</strong> December 21, 2026</span>
+        <span><strong>Venue:</strong> Indian Statistical Institute, Kolkata</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p class="overview">
+        Modern image and video generation increasingly relies on latent-space transformers, including Diffusion Transformers (DiTs) and Multimodal Diffusion Transformers (MMDiTs). Their effectiveness is fundamentally constrained by the visual tokenizer that defines the latent representation: what visual information is preserved, how it is compressed, how semantics are organized, and what sequence structure the generator must learn.
+      </p>
+      <p class="overview" style="margin-top: 16px;">
+        This tutorial presents a focused framework for co-designing visual tokenizers and MMDiTs as one latent generative system. It examines discrete, continuous, hybrid, semantic, adaptive, and representation-autoencoder-based tokenizers, connecting their choices to generator design decisions such as patchified latent tokens, positional representations, timestep conditioning, modality-specific projections, joint and efficient attention, and diffusion or rectified-flow objectives.
+      </p>
+      <p class="overview" style="margin-top: 16px;">
+        The central focus is the tokenizer–MMDiT interface: token rate, latent dimensionality, topology, normalization, semantic structure, positional geometry, modality identifiers, attention layout, and decoding constraints. Through design principles, failure modes, and compact system-design exercises, participants examine how these choices affect optimization stability, attention cost, controllability, semantic fidelity, and generation quality in image and video generation, editing, and multimodal conditional generation.
+      </p>
+      <p class="overview" style="margin-top: 16px;">
+        Participants will leave with a practical methodology for selecting tokenizers, configuring MMDiTs, diagnosing interface mismatches, designing informative ablations, and evaluating tokenizer and generator choices as one integrated pipeline.
+      </p>
+      <p style="margin-top: 16px;"><strong>Keywords:</strong> Generative Vision Models; Visual Tokenizers; Multimodal Diffusion Transformers; Tokenizer–Generator Interface.</p>
+    </section>
+
+    <section aria-labelledby="motivation-heading">
+      <h2 id="motivation-heading">Motivation and Relevance</h2>
+      <p class="motivation-copy">
+        Generative computer vision is moving rapidly toward transformer-based latent generation. DiTs are replacing convolutional U-Nets in many state-of-the-art systems, while visual tokenizers have evolved from discrete VQ-VAE representations toward semantic tokenizers, representation autoencoders, adaptive mechanisms, hierarchical latents, and multimodal representations. This expanding design space makes the tokenizer–generator interface increasingly important.
+      </p>
+      <p class="motivation-copy" style="margin-top: 14px;">
+        Tokenization directly affects the information content, semantic organization, token count, latent geometry, and statistical structure available to an MMDiT. These properties influence attention complexity, optimization behavior, controllability, scalability, and sample quality. A tokenizer and generator designed independently can reconstruct well yet generate poorly, scale inefficiently, or fail under multimodal conditioning. The tutorial focuses on aligning learned compression, latent structure, multimodal conditioning, efficient attention, and controllable generation to build robust image and video systems.
+      </p>
+    </section>
+
+    <section aria-labelledby="focus-heading">
+      <h2 id="focus-heading">Focus and Distinction</h2>
+      <p class="focus-copy">
+        Rather than presenting tokenizers, DiTs, and MMDiTs as separate architecture catalogs, the tutorial follows the development of a complete latent generative system: define the representation, design the tokenizer, configure the generator, align their interface, and evaluate the end-to-end system.
+      </p>
+      <p class="focus-copy" style="margin-top: 14px;">
+        This perspective helps explain why particular tokenizer–MMDiT pairings succeed or fail. Generation quality, efficiency, controllability, and semantic fidelity depend not only on the tokenizer or generator in isolation, but also on how their representations, objectives, attention mechanisms, and decoding constraints work together.
+      </p>
+    </section>
+
+    <section aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading">Technical Content and Schedule · 180 Minutes</h2>
+      <p class="focus-copy">The session progresses from representation design to end-to-end generative system evaluation, with a dedicated question-and-answer segment.</p>
+      <ol class="schedule">
+        <li>
+          <time>0–20 min</time>
+          <div>
+            <h3>Problem Framing: Why Tokenizer–Generator Co-design Matters</h3>
+            <p>Frame visual tokenization as the step that defines the latent space in which generation occurs. Introduce the trade-off between compressing images, videos, and related modalities and preserving the information, geometry, and semantic structure needed by the generator.</p>
+          </div>
+        </li>
+        <li>
+          <time>20–60 min</time>
+          <div>
+            <h3>Visual Tokenizers: Architectures and Design Principles</h3>
+            <p>Compare discrete tokenizers, continuous latent autoencoders, representation autoencoders, semantic tokenizers, adaptive tokenization, and hybrid discrete–continuous approaches. Discuss latent capacity, compression ratio, token count, channel dimensionality, and semantic alignment, and how these choices affect reconstruction fidelity, temporal consistency, optimization stability, attention cost, and generative learnability.</p>
+          </div>
+        </li>
+        <li class="break-row">
+          <time>60–70 min</time>
+          <div><h3>Break</h3></div>
+        </li>
+        <li>
+          <time>70–110 min</time>
+          <div>
+            <h3>DiTs and MMDiTs in Tokenizer-defined Latent Spaces</h3>
+            <p>Introduce latent diffusion and rectified-flow objectives, then derive DiTs as transformer denoisers over patchified latent tokens. Cover positional representations, timestep conditioning, adaptive normalization, self-attention, velocity or noise prediction, and efficient attention. Extend to MMDiTs through modality-specific projections and joint attention, including how cross-attention, dual-stream, single-stream, and hybrid designs depend on tokenizer output structure.</p>
+          </div>
+        </li>
+        <li>
+          <time>110–145 min</time>
+          <div>
+            <h3>The Tokenizer–MMDiT Interface</h3>
+            <p>Analyze latent dimensionality, token density, normalization, semantic organization, positional geometry, modality identifiers, and attention masks as interface design choices. Discuss why strong reconstruction or denoising alone is insufficient when the representation and generator are misaligned, and why systems benefit from joint tokenizer–MMDiT design.</p>
+          </div>
+        </li>
+        <li>
+          <time>145–170 min</time>
+          <div>
+            <h3>Applications, Adaptation, and Practical System Design</h3>
+            <p>Cover text-to-image generation, video generation, image editing, multimodal conditioning, controllable synthesis, and domain-specific generation. Discuss fine-tuning, adapters, feature injection, guidance, inversion, and control branches for adapting systems to these settings.</p>
+          </div>
+        </li>
+        <li>
+          <time>170–180 min</time>
+          <div>
+            <h3>Question Answering and Discussion</h3>
+            <p>Reserve time for participant questions, clarification of design trade-offs, and open research directions, connecting the tutorial principles to attendees’ own research problems and system-design constraints.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="audience-heading">
+      <h2 id="audience-heading">Intended Audience</h2>
+      <p class="motivation-copy">
+        The tutorial is intended for graduate students, academic researchers, and industry practitioners working in computer vision, generative modeling, multimodal learning, and representation learning. Familiarity with deep learning, transformers, and diffusion models is helpful but not required. The material starts with foundational concepts and progresses to current research directions, making it useful to newcomers and experienced researchers interested in tokenizer–generator co-design.
+      </p>
+    </section>
+
+    <section aria-labelledby="outcomes-heading">
+      <h2 id="outcomes-heading">Anticipated Learning Outcomes</h2>
+      <p class="motivation-copy">By the end of the tutorial, participants should be able to:</p>
+      <ul class="detail-list">
+        <li>Analyze the end-to-end latent generative pipeline, from visual tokenization through multimodal diffusion and decoding.</li>
+        <li>Compare tokenizer families and MMDiT architectures in terms of fidelity, scalability, efficiency, reconstruction quality, semantic alignment, controllability, and computational cost.</li>
+        <li>Explore how tokenizers and MMDiTs can be co-designed for specific application requirements.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="presenters-heading">
+      <h2 id="presenters-heading">Presenters</h2>
+      <div class="speaker-grid">
+        <article class="speaker-card">
+          <img src="/assets/subpage_video_restore_tutorial/shiv.jpg" alt="Shiv Gehlot" />
+          <h3>Shiv Gehlot</h3>
+          <p class="speaker-role">Dolby Laboratories</p>
+          <p>Shiv Gehlot is a Staff Researcher at Dolby Laboratories, working on computer vision, multimodal learning, and generative AI. His research spans video and audio processing, diffusion-based video enhancement, audio quality prediction, and generative video coding.</p>
+        </article>
+        <article class="speaker-card">
+          <img src="/assets/subpage_video_restore_tutorial/aupendu.jpg" alt="Aupendu Kar" />
+          <h3>Aupendu Kar</h3>
+          <p class="speaker-role">Dolby Laboratories</p>
+          <p>Aupendu Kar is a Senior Researcher at Dolby Laboratories, specializing in computer vision and deep learning. His work includes low-level vision, image restoration, super-resolution, and learning frameworks grounded in physical models.</p>
+        </article>
+        <article class="speaker-card">
+          <img src="/assets/subpage_video_restore_tutorial/sutanu.jpg" alt="Sutanu Bera" />
+          <h3>Sutanu Bera</h3>
+          <p class="speaker-role">Dolby Laboratories</p>
+          <p>Sutanu Bera is a Senior Researcher at Dolby Laboratories, working on video restoration and low-level image processing with deep learning. His research experience includes low-dose CT denoising, GAN-based restoration, and invertible networks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="references-heading">
+      <h2 id="references-heading">References</h2>
+      <ol class="references">
+        <li>Xiao, Z., Kreis, K., &amp; Vahdat, A. (2024). A survey on generative diffusion models. <i>IEEE Transactions on Knowledge and Data Engineering, 36</i>(7), 2814–2830.</li>
+        <li>Peebles, W., &amp; Xie, S. (2023). Scalable diffusion models with transformers. In <i>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</i> (pp. 4195–4205).</li>
+        <li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. In <i>Advances in Neural Information Processing Systems (NeurIPS, Vol. 33)</i>.</li>
+        <li>Razavi, A., van den Oord, A., &amp; Vinyals, O. (2019). Generating diverse high-fidelity images with VQ-VAE-2. In <i>Advances in Neural Information Processing Systems (NeurIPS, Vol. 32)</i>.</li>
+        <li>Esser, P., Chiu, J., Atighehchian, P., Granskog, J., &amp; Germanidis, A. (2024). Scaling rectified flow transformers for high-resolution image synthesis. <i>arXiv</i>.</li>
+        <li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</i> (pp. 10684–10695).</li>
+        <li>Zheng, B., et al. (2025). Diffusion transformers with representation autoencoders. <i>arXiv</i>.</li>
+        <li>Assran, M., Duval, Q., Misra, I., et al. (2023). DINOv2: Learning robust visual features without supervision. <i>arXiv</i>.</li>
+        <li>Yu, L., et al. (2023). MAGVIT-v2: Language model beats diffusion—Tokenizer is key to visual generation. <i>arXiv</i>.</li>
+        <li>Liu, X., Gong, C., Liu, Q., et al. (2023). Flow straight and fast: Learning to generate and transfer data with rectified flow. In <i>Proceedings of the International Conference on Learning Representations (ICLR)</i>.</li>
+        <li>Esser, P., Chiu, J., Atighehchian, P., Granskog, J., &amp; Germanidis, A. (2024). Scaling rectified flow transformers for high-resolution image synthesis. <i>arXiv</i>.</li>
+        <li>Blattmann, A., Dockhorn, T., Kulal, S., et al. (2023). Stable video diffusion: Scaling latent video diffusion models to large datasets. <i>arXiv</i>.</li>
+        <li>Brooks, T., Holynski, A., &amp; Efros, A. A. (2023). InstructPix2Pix: Learning to follow image editing instructions. In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</i> (pp. 18392–18402).</li>
+        <li>Zhang, L., &amp; Agrawala, M. (2023). Adding conditional control to text-to-image diffusion models (ControlNet). In <i>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</i> (pp. 3836–3847).</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="conference-heading">
+      <h2 id="conference-heading">Conference</h2>
+      <p>
+        ICVGIP 2026 takes place December 21–24, 2026, in Kolkata. Tutorials and workshops are scheduled for December 21 at the Indian Statistical Institute.
+        <a class="conference-link" href="https://icvgip.in/2026/" target="_blank" rel="noopener">Visit the ICVGIP 2026 website</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 ICVGIP Tutorial Organizers
+  </footer>
+</body>
+</html>
