@@ -1,5 +1,7 @@
 ---
-permalink: /video-restore-tutorial.html
+permalink: /video-restore-tutorial
+redirect_from:
+  - /video-restore-tutorial.html
 ---
 
 <!DOCTYPE html>
@@ -7,28 +9,67 @@ permalink: /video-restore-tutorial.html
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ICVGIP 2025 Tutorial</title>
+  <title>Real-World Video Restoration | ICVGIP 2025 Tutorial</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
     header {
       background-color: #004080;
       color: white;
-      max-height: 400px;
-      max-width: 900px;
+      width: 100%;
+      max-width: 980px;
       padding: 40px;
       margin: auto;
-      font-size: xx-large;
       text-align: center;
+    }
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .brand-row img {
+      display: block;
+      width: auto;
+      max-width: min(42%, 220px);
+      max-height: 70px;
+      object-fit: contain;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+    header h1 {
+      margin: 0 auto 18px;
+      max-width: 800px;
+      color: white;
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      line-height: 1.2;
+    }
+    .event-meta,
+    .header-links {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    .header-links a {
+      color: #b0f808;
     }
     main {
       padding: 40px;
-      max-width: 900px;
+      width: 100%;
+      max-width: 980px;
       margin: auto;
       background-color: white;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -43,7 +84,8 @@ permalink: /video-restore-tutorial.html
       text-align: center;
       padding: 40px;
       margin: auto;
-      max-width: 900px;
+      width: 100%;
+      max-width: 980px;
       background-color: #eee;
       font-size: 0.9em;
     }
@@ -63,32 +105,93 @@ permalink: /video-restore-tutorial.html
       margin-bottom: 5px;
     }
     .speaker-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 20px;
     }
     .speaker-card {
-      flex: 1;
-      min-width: 200px;
+      min-width: 0;
+    }
+    .speaker-card p {
+      text-align: left;
     }
     .speaker-card img {
+      display: block;
       width: 100%;
       max-width: 200px;
+    }
+    .speaker-card h3 {
+      margin: 12px 0 6px;
+    }
+    .speaker-card h3 a {
+      color: #004080;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .speaker-role {
+      margin: 0 0 8px;
+      color: #0a6a8d;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      header,
+      main,
+      footer {
+        padding: 24px 18px;
+      }
+      .brand-row {
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .brand-row img {
+        max-width: 44%;
+        max-height: 52px;
+      }
+      header h1 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+      }
+      .event-meta,
+      .header-links {
+        font-size: 0.95rem;
+      }
+      main h2 {
+        font-size: 1.45rem;
+      }
+      .timeline {
+        padding: 16px;
+      }
+      .timeline ul {
+        padding-left: 20px;
+      }
+      .speaker-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .speaker-card img {
+        width: 88px;
+      }
+      .speaker-card h3 {
+        margin: 12px 0 6px;
+      }
+      .speaker-card p:last-child {
+        margin-bottom: 0;
+        text-align: left;
+      }
     }
   </style>
 </head>
 <body>
-<header style="line-height:5pt;">
-  <div style="display: flex; justify-content:flex-start; align-items: center; gap: 650px; margin-bottom: 0px;">
-    <img src="./assets/subpage_video_restore_tutorial/DLB_Corp_rgb_wht_@2x.png" alt="Dolby Logo" style="height: 50px;">
-    <img src="./assets/subpage_video_restore_tutorial/icvgip_logo_oval.png" alt="ICVGIP 2025 Logo" style="height: 70px;">
+<header>
+  <div class="brand-row" aria-label="Tutorial organizers">
+    <img src="/assets/subpage_video_restore_tutorial/DLB_Corp_rgb_wht_@2x.png" alt="Dolby Logo">
+    <img src="/assets/subpage_video_restore_tutorial/icvgip_logo_oval.png" alt="ICVGIP 2025 Logo">
   </div>
-  <p style="font-size: smaller; font-style: italic;">A Tutorial on </p>
-  <p><strong>Advances and Challenges in Real-World Video Restoration</strong></p>
-  <p style="font-size: smaller;"><strong>Location:</strong> ICVGIP 2025, IIT Mandi, India</p>
-  <p style="font-size: smaller;"><strong>Date:</strong> December 17, 2025 </p>
-  <p style="font-size: smaller;color: #b0f808;">Related Survey Paper [<a href="https://drive.google.com/file/d/1Bd4dohpyMboqVEwee9013l0xtoqxtoNp/view?usp=sharing" style="color: #b0f808;">Click here</a>] </p>
-  <p style="font-size: smaller;color: #b0f808;">Other Relevant Dolby Publications [<a href="https://drive.google.com/file/d/1yKpHrI12quFGDSU1n2o3Ctjr1-t0YOb5/view?usp=sharing" style="color: #b0f808;">Click here</a>]</p>
+  <p class="eyebrow">A Tutorial on</p>
+  <h1>Advances and Challenges in Real-World Video Restoration</h1>
+  <p class="event-meta"><strong>Location:</strong> ICVGIP 2025, IIT Mandi, India</p>
+  <p class="event-meta"><strong>Date:</strong> December 17, 2025</p>
+  <p class="header-links">Related Survey Paper [<a href="https://ieeexplore.ieee.org/abstract/document/11416952/" target="_blank" rel="noopener">IEEE Xplore</a> | <a href="http://www.conf-icnc.org/2026/papers/p734-gehlot.pdf" target="_blank" rel="noopener">PDF</a>]</p>
 </header>
 
   <main>
@@ -167,33 +270,37 @@ permalink: /video-restore-tutorial.html
     <section>
       <h2>Speakers</h2>
       <div class="speaker-grid">
-        <div class="speaker-card" style="text-align: justify;">
+        <div class="speaker-card">
           <img src="./assets/subpage_video_restore_tutorial/gsu.jpg" alt="Guan-Ming Su">
-          <h3>Guan-Ming Su</h3>
+          <h3><a href="https://sites.google.com/site/wwwgmsu" target="_blank" rel="noopener">Guan-Ming Su</a></h3>
+          <p class="speaker-role">Dolby Laboratories</p>
           <p>Guan-Ming Su is Director at Dolby Laboratories, leading image technology development. 
             He holds a Ph.D. in Electrical and Computer Engineering from the University of Maryland. 
             His expertise spans multimedia coding, computer vision, 3D imaging, HDR, and machine learning. 
             He has held roles in Dolby Vision, Marvell, and ESS Technology, contributing to video codec architecture and advanced imaging systems.</p>
         </div>
-        <div class="speaker-card" style="text-align: justify;">
+        <div class="speaker-card">
           <img src="./assets/subpage_video_restore_tutorial/aupendu.jpg" alt="Aupendu Kar">
-          <h3>Aupendu Kar</h3>
+          <h3><a href="https://aupendu.github.io/" target="_blank" rel="noopener">Aupendu Kar</a></h3>
+          <p class="speaker-role">Dolby Laboratories</p>
           <p>Aupendu Kar is a Senior Researcher at Dolby Laboratories, specializing in computer vision and deep learning. 
             His work focuses on low-level vision tasks like image super-resolution, dehazing, rain removal, and underwater enhancement. 
             He also explores learning frameworks grounded in physical models and has contributed to medical image analysis.</p>
         </div>
-        <div class="speaker-card" style="text-align: justify;">
+        <div class="speaker-card">
           <img src="./assets/subpage_video_restore_tutorial/shiv.jpg" alt="Shiv Gehlot">
-          <h3>Shiv Gehlot</h3>
+          <h3><a href="https://shivgahlout.github.io/" target="_blank" rel="noopener">Shiv Gehlot</a></h3>
+          <p class="speaker-role">Dolby Laboratories</p>
           <p>Shiv Gehlot is a Senior Researcher at Dolby Laboratories, working on computer vision, multimodal learning, and generative AI. 
             He holds a Ph.D. from IIIT-Delhi, with current research focused on video and audio processing. 
             His recent work includes developing diffusion-based frameworks for diverse video enhancement tasks, along with deep audio quality prediction, and notable contributions to generative video coding.</p>
         </div>
-        <div class="speaker-card" style="text-align: justify;">
+        <div class="speaker-card">
           <img src="./assets/subpage_video_restore_tutorial/sutanu.jpg" alt="Sutanu Bera">
-          <h3>Sutanu Bera</h3>
+          <h3><a href="https://szbera.github.io/" target="_blank" rel="noopener">Sutanu Bera</a></h3>
+          <p class="speaker-role">Dolby Laboratories</p>
           <p>Sutanu Bera is a Senior Researcher at Dolby Laboratories, working on video restoration and low-level image processing using deep learning. 
-            He holds a Ph.D. from IIT Kharagpur and has prior research experience in low-dose CT denoising, GAN-based restoration, and invertible networks.
+            He holds a Ph.D. from IIT Kharagpur and has prior research experience in low-dose CT denoising, GAN-based restoration, and invertible networks.</p>
         </div>
       </div>
     </section>
@@ -206,5 +313,3 @@ permalink: /video-restore-tutorial.html
   </footer>
 </body>
 </html>
-
-
