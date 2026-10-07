@@ -1,5 +1,10 @@
 const talks = [
     {
+        lead: "Organizing a tutorial titled",
+        details: "“From Visual Tokens to Generation: Co-designing Visual Tokenizers and Multimodal Diffusion Transformers” at the 17th Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP), December 2026.",
+        url: "/visual-tokenizer-tutorial"
+    },
+    {
         lead: "Delivered a talk at the Faculty Development Program",
         details: "on “Hand-crafted Features to Zero-shot Intelligence: The Evolution of Machine Learning” at the Institute of Engineering & Management (IEM), Salt Lake, Kolkata, on 23 March 2026."
     },
@@ -46,7 +51,12 @@ function renderTalks(list, limit) {
         const item = document.createElement("li");
         const lead = document.createElement("b");
         lead.textContent = talk.lead;
-        item.append(lead, " ", document.createTextNode(talk.details));
+        const details = talk.url ? document.createElement("a") : document.createTextNode(talk.details);
+        if (talk.url) {
+            details.href = talk.url;
+            details.textContent = talk.details;
+        }
+        item.append(lead, " ", details);
         list.appendChild(item);
     });
 
