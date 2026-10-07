@@ -10,7 +10,8 @@ const talks = [
     },
     {
         lead: "Organized a tutorial titled",
-        details: "“Advances and Challenges in Real-World Video Restoration” at the 16th Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP), December 2025."
+        details: "“Advances and Challenges in Real-World Video Restoration” at the 16th Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP), December 2025.",
+        url: "/video-restore-tutorial"
     },
     {
         lead: "Delivered an industry talk titled",
